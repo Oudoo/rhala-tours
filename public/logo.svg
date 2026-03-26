@@ -1,0 +1,14 @@
+<svg width="200" height="80" viewBox="0 0 200 80" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@900&amp;display=swap');
+    </style>
+  </defs>
+  <!-- Dot above the R -->
+  <circle cx="35" cy="15" r="8" fill="#01192B" />
+  
+  <!-- "RHALA" Text -->
+  <text x="10" y="70" font-family="'Montserrat', sans-serif" font-weight="900" font-size="60" fill="#01192B" letter-spacing="2">
+    RHALA
+  </text>
+</svg>
