@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 
 export default function Footer() {
@@ -10,9 +11,11 @@ export default function Footer() {
 
                     {/* Brand */}
                     <div className="max-w-md">
-                        <img
+                        <Image
                             src="/Logo.png"
                             alt="Rhala Logo"
+                            width={200}
+                            height={80}
                             className="h-20 w-auto object-contain mb-6"
                         />
                         <p className="text-xl font-light italic text-cream/80 mb-8">
