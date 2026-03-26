@@ -15,7 +15,7 @@ export const metadata: Metadata = {
   title: "RHALA | Modern Earthy Travel",
   description: "Experience the soul of Egypt with RHALA.",
   icons: {
-    icon: '/R Logo Icon.ico',
+    icon: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/R Logo Icon.ico`,
   },
 };
 
