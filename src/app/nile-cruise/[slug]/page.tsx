@@ -24,3 +24,4 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
     />
   );
 }
+
