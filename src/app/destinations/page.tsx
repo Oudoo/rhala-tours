@@ -6,42 +6,42 @@ import DestinationCard from '@/components/DestinationCard';
 const DESTINATIONS = [
     {
         name: "Cairo",
-        image: "https://loremflickr.com/800/1000/cairo,pyramids?lock=30",
+        image: "/tours-packages/The-Great-Pyramids-768x600.png",
         description: "The city of a thousand minarets, home to the Great Pyramids and the Sphinx."
     },
     {
         name: "Luxor",
-        image: "https://loremflickr.com/800/1000/luxor,temple?lock=31",
+        image: "/tours-packages/Luxor-Temple-egypt-768x600.png",
         description: "The world's greatest open-air museum, featuring Karnak and the Valley of the Kings."
     },
     {
         name: "Aswan",
-        image: "https://loremflickr.com/800/1000/aswan,nile?lock=32",
+        image: "/tours-packages/nile-cruise-768x600.png",
         description: "A serene city on the Nile, famous for its Nubian culture and the Philae Temple."
     },
     {
         name: "Alexandria",
-        image: "https://loremflickr.com/800/1000/alexandria,sea?lock=33",
+        image: "/tours-packages/alex-Citadel-of-Qaitbay-egypt-768x600.png",
         description: "The Pearl of the Mediterranean, founded by Alexander the Great."
     },
     {
         name: "Siwa Oasis",
-        image: "https://loremflickr.com/800/1000/siwa,oasis?lock=34",
+        image: "/tours-packages/Deir-el-Bahri-768x600.png",
         description: "An urban oasis in the Western Desert, known for its distinct culture and salt lakes."
     },
     {
         name: "Hurghada",
-        image: "https://loremflickr.com/800/1000/hurghada,sea?lock=35",
+        image: "/tours-packages/hurghada-beaches-768x600.png",
         description: "A premier red sea resort town with stunning coral reefs and sandy beaches."
     },
     {
         name: "Dahab",
-        image: "https://loremflickr.com/800/1000/dahab,sea?lock=36",
+        image: "/tours-packages/Beach-in-Hurghada-egypt-768x600.png",
         description: "A laid-back coastal town, a diver's paradise and a hub for windsurfing."
     },
     {
         name: "White Desert",
-        image: "https://loremflickr.com/800/1000/desert,white?lock=37",
+        image: "/tours-packages/Island-of-Agilika-egypt-768x600.png",
         description: "A surreal landscape of chalk rock formations created by sandstorms."
     }
 ];
@@ -79,7 +79,7 @@ export default function DestinationsPage() {
                             viewport={{ once: true }}
                             transition={{ delay: index * 0.1 }}
                         >
-                            <DestinationCard destination={dest} />
+                            <DestinationCard destination={dest} index={index} />
                         </motion.div>
                     ))}
                 </div>

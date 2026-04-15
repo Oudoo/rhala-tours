@@ -8,25 +8,25 @@ const COLLECTIONS = [
     {
         title: "Sahara Expeditions",
         description: "Traverse the Great Sand Sea and witness the surreal White Desert.",
-        image: "https://loremflickr.com/800/1000/egypt,desert?lock=10",
+        image: "/tours-packages/Hanging-Church-in-Egypt-768x600.png",
         className: "md:col-span-2 md:row-span-2 h-96 md:h-full" // Large Square (Left)
     },
     {
         title: "Ancient Wonders",
         description: "Walk in the footsteps of Pharaohs.",
-        image: "https://loremflickr.com/800/600/egypt,museum?lock=11",
+        image: "/tours-packages/visit-Egyptian-Museum-768x600.png",
         className: "md:col-span-1 md:row-span-1 h-64 md:h-auto" // Small Square (Top Mid)
     },
     {
         title: "Nile serenity",
         description: "Sail into the sunset on a Felucca.",
-        image: "https://loremflickr.com/800/600/nile,boat?lock=12",
+        image: "/tours-packages/nile-cruise-768x600.png",
         className: "md:col-span-1 md:row-span-1 h-64 md:h-auto" // Small Square (Top Right)
     },
     {
         title: "Coastal Escapes",
         description: "Dive into the Red Sea's vibrant coral reefs.",
-        image: "https://loremflickr.com/800/600/egypt,sea?lock=13",
+        image: "/tours-packages/Beach-in-Hurghada-egypt-768x600.png",
         className: "md:col-span-2 md:row-span-1 h-64 md:h-auto" // Wide Rectangle (Bottom Right)
     }
 ];

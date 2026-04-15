@@ -31,17 +31,7 @@ export default function AboutPage() {
     return (
         <div className="bg-cream min-h-screen pt-20">
             {/* Hero Section */}
-            <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
-                <div className="absolute inset-0 z-0">
-                    <Image
-                        src="https://loremflickr.com/1920/1080/egypt,temple?lock=40"
-                        alt="RHALA Team"
-                        fill
-                        className="object-cover"
-                    />
-                    <div className="absolute inset-0 bg-navy/60" />
-                </div>
-
+            <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-navy">
                 <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
                     <motion.span
                         initial={{ opacity: 0, y: 20 }}
@@ -95,7 +85,7 @@ export default function AboutPage() {
                     className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
                 >
                     <Image
-                        src="https://loremflickr.com/800/1000/egypt,people?lock=41"
+                        src="/tours-packages/visit-Jerash-Artemis-768x600.png"
                         alt="Local Guide"
                         fill
                         className="object-cover"

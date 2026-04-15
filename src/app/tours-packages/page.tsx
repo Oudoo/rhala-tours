@@ -20,7 +20,6 @@ const FEATURED_TOURS = ALL_TOURS.filter((t) => t.isPremium).slice(0, 8);
 export default function ToursPackagesPage() {
   return (
     <div className="flex flex-col min-h-screen bg-cream">
-      <Navbar />
 
       {/* ══════════ Hero Section ══════════ */}
       <section className="relative pt-32 pb-20 md:pt-40 md:pb-28 overflow-hidden bg-navy min-h-[60vh] flex items-center justify-center">
@@ -163,25 +162,25 @@ export default function ToursPackagesPage() {
       </section>
 
       {/* ══════════ Tailor-Made Tours ══════════ */}
-      <section id="tailor-made" className="py-20 bg-navy text-white scroll-mt-24">
+      <section id="tailor-made" className="py-20 bg-cream text-navy scroll-mt-24 border-y border-navy/5">
         <div className="max-w-4xl mx-auto px-6 text-center">
           <span className="text-gold uppercase tracking-[0.2em] font-bold text-xs block mb-4">
             Your Dream Egypt Trip
           </span>
-          <h2 className="text-3xl md:text-5xl font-bold text-white mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold text-navy mb-8">
             Egypt Tailor Made Tours
           </h2>
-          <p className="text-white/70 text-lg leading-relaxed mb-6">
+          <p className="text-navy/70 text-lg leading-relaxed mb-6">
             As a leading Tour Company in Egypt, Rhala Tours is dedicated to crafting exceptional, tailor-made tours that showcase the best of this ancient, captivating land. Our team of knowledgeable travel experts work closely with each client to design a personalized itinerary that caters to your unique interests and preferences.
           </p>
-          <p className="text-white/70 text-lg leading-relaxed mb-10">
+          <p className="text-navy/70 text-lg leading-relaxed mb-10">
             Whether you&apos;re seeking a deeper connection with Egypt&apos;s rich history and culture, or simply want to immerse yourself in the country&apos;s breathtaking natural beauty, our custom tours are designed to exceed your expectations.
           </p>
           <a
             href="https://wa.me/201000000000"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-gold text-navy px-8 py-4 rounded-full font-bold hover:bg-white transition-colors duration-300"
+            className="inline-flex items-center gap-2 bg-gold text-navy px-8 py-4 rounded-full font-bold hover:bg-navy hover:text-white transition-colors duration-300"
           >
             Start Planning Your Trip
             <ArrowRight size={20} />
@@ -227,7 +226,6 @@ export default function ToursPackagesPage() {
         </div>
       </section>
 
-      <Footer />
     </div>
   );
 }

@@ -9,35 +9,35 @@ import Image from 'next/image';
 const MOCK_POSTS = [
     {
         id: '1',
-        media_url: "https://loremflickr.com/600/600/tea,nile?lock=50",
+        media_url: "/tours-packages/Island-of-Agilika-egypt-768x600.png",
         permalink: "https://instagram.com",
         like_count: 1200,
         caption: "Egyptian tea by the Nile"
     },
     {
         id: '2',
-        media_url: "https://loremflickr.com/600/600/whitedesert,sunset?lock=51",
+        media_url: "/tours-packages/Hanging-Church-in-Egypt-768x600.png",
         permalink: "https://instagram.com",
         like_count: 2400,
         caption: "White Desert sunset"
     },
     {
         id: '3',
-        media_url: "https://loremflickr.com/600/600/camel,pyramids?lock=52",
+        media_url: "/tours-packages/The-Great-Pyramids-768x600.png",
         permalink: "https://instagram.com",
         like_count: 3100,
         caption: "Camel ride at Pyramids"
     },
     {
         id: '4',
-        media_url: "https://loremflickr.com/600/600/hieroglyphics,luxor?lock=53",
+        media_url: "/tours-packages/Luxor-Temple-egypt-768x600.png",
         permalink: "https://instagram.com",
         like_count: 950,
         caption: "Luxor Temple hieroglyphics"
     },
     {
         id: '5',
-        media_url: "https://loremflickr.com/600/600/pool,relax?lock=54",
+        media_url: "/tours-packages/Beach-in-Hurghada-egypt-768x600.png",
         permalink: "https://instagram.com",
         like_count: 1800,
         caption: "Relaxing by the pool"

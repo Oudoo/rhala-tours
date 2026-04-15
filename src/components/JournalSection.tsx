@@ -38,7 +38,7 @@ export default function JournalSection() {
             author: formData.author,
             content: formData.content,
             excerpt: formData.content.substring(0, 100) + '...',
-            image: formData.image || `https://loremflickr.com/600/400/travel,nature?random=${Date.now()}`
+            image: formData.image || `/tours-packages/visit-Philae-Temple-768x600.png`
         });
 
         setIsSubmitting(false);

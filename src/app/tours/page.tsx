@@ -4,64 +4,7 @@ import { motion } from 'framer-motion';
 import TourCard from '@/components/TourCard';
 import { SlidersHorizontal } from 'lucide-react';
 
-const ALL_TOURS = [
-    {
-        title: "Grand Egyptian Discovery",
-        price: 2090,
-        duration: "9 Days",
-        image: "https://loremflickr.com/800/600/pyramids,egypt?lock=20",
-        category: "Best Seller"
-    },
-    {
-        title: "Nubian Soul",
-        price: 870,
-        duration: "5 Days",
-        image: "https://loremflickr.com/800/600/aswan,nile?lock=21",
-        category: "Budget"
-    },
-    {
-        title: "Royal Dahabiya",
-        price: 1500,
-        duration: "4 Days",
-        image: "https://loremflickr.com/800/600/dahabiya,boat?lock=22",
-        category: "Luxury"
-    },
-    {
-        title: "Siwa Oasis Retreat",
-        price: 1200,
-        duration: "6 Days",
-        image: "https://loremflickr.com/800/600/oasis,palm?lock=23",
-        category: "Adventure"
-    },
-    {
-        title: "Cairo City Break",
-        price: 450,
-        duration: "3 Days",
-        image: "https://loremflickr.com/800/600/cairo,city?lock=24",
-        category: "City"
-    },
-    {
-        title: "Luxor & Aswan Cruise",
-        price: 1100,
-        duration: "5 Days",
-        image: "https://loremflickr.com/800/600/luxor,temple?lock=25",
-        category: "Cruise"
-    },
-    {
-        title: "White Desert Camping",
-        price: 600,
-        duration: "3 Days",
-        image: "https://loremflickr.com/800/600/desert,camping?lock=26",
-        category: "Adventure"
-    },
-    {
-        title: "Red Sea Relaxation",
-        price: 800,
-        duration: "5 Days",
-        image: "https://loremflickr.com/800/600/redsea,diving?lock=27",
-        category: "Relaxation"
-    }
-];
+import { ALL_TOURS } from '@/data/toursData';
 
 export default function ToursPage() {
     return (

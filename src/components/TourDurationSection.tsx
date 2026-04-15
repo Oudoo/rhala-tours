@@ -12,7 +12,20 @@ interface Props {
 export default function TourDurationSection({ group, groupIndex }: Props) {
   return (
     <section
-      id={`duration-${group.durationDays}`}
+      id={
+        group.durationDays === 2 ? "2-days-1-night" :
+        group.durationDays === 3 ? "3-days-2-nights" :
+        group.durationDays === 4 ? "4-days-3-nights" :
+        group.durationDays === 5 ? "5-days-4-nights" :
+        group.durationDays === 6 ? "6-days-5-nights" :
+        group.durationDays === 7 ? "7-days-6-nights" :
+        group.durationDays === 8 ? "8-days-7-nights" :
+        group.durationDays === 9 ? "9-days-tours-egypt" :
+        group.durationDays === 10 ? "10-days-9-nights" :
+        group.durationDays === 11 ? "11-days-10-nights" :
+        group.durationDays === 12 ? "12-days-tours-egypt" :
+        "more-than-12-days"
+      }
       className="scroll-mt-32"
     >
       {/* Section header */}

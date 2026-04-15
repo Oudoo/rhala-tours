@@ -28,7 +28,7 @@ export function JournalProvider({ children }: { children: React.ReactNode }) {
 
     // Load from LocalStorage on mount
     useEffect(() => {
-        const saved = localStorage.getItem('rhala_journal_articles');
+        const saved = localStorage.getItem('rhala_journal_articles_v2');
         if (saved) {
             setArticles(JSON.parse(saved));
         } else {
@@ -39,7 +39,7 @@ export function JournalProvider({ children }: { children: React.ReactNode }) {
                     title: "Best Time to Visit Egypt (2026 Guide)",
                     author: "Sarah Jenkins",
                     date: "October 12, 2025",
-                    image: "https://loremflickr.com/600/400/egypt,luxor,temple?lock=40",
+                    image: "/tours-packages/temple-of-Luxo-egypt-768x600.png",
                     content: "Full content here...",
                     excerpt: "From the cool winter breezes of Luxor to the summer heat of Aswan. Find out when to book your trip based on weather and crowds.",
                     status: 'approved'
@@ -49,7 +49,7 @@ export function JournalProvider({ children }: { children: React.ReactNode }) {
                     title: "Red Sea Snorkeling: A Beginner's Guide",
                     author: "Mike Waters",
                     date: "November 5, 2025",
-                    image: "https://loremflickr.com/600/400/redsea,underwater,coral?lock=41",
+                    image: "/tours-packages/hurghada-beaches-768x600.png",
                     content: "Full content here...",
                     excerpt: "Discover the hidden reefs of Hurghada. What to pack, where to go, and why the Red Sea is a diver's paradise.",
                     status: 'approved'
@@ -59,7 +59,7 @@ export function JournalProvider({ children }: { children: React.ReactNode }) {
                     title: "Cairo Tour Operators: How to Choose",
                     author: "Amira Sayed",
                     date: "December 1, 2025",
-                    image: "https://loremflickr.com/600/400/cairo,museum,guide?lock=42",
+                    image: "/tours-packages/visit-Egyptian-Museum-768x600.png",
                     content: "Full content here...",
                     excerpt: "Not all tours are created equal. Here is what to look for in a guide, a vehicle, and an itinerary to ensure a safe and memorable trip.",
                     status: 'approved'
@@ -71,7 +71,7 @@ export function JournalProvider({ children }: { children: React.ReactNode }) {
     // Save to LocalStorage whenever articles change
     useEffect(() => {
         if (articles.length > 0) {
-            localStorage.setItem('rhala_journal_articles', JSON.stringify(articles));
+            localStorage.setItem('rhala_journal_articles_v2', JSON.stringify(articles));
         }
     }, [articles]);
 

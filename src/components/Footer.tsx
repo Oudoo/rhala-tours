@@ -38,8 +38,8 @@ export default function Footer() {
                             <ul className="space-y-4 text-sm text-cream/70">
                                 <li><a href="#" className="hover:text-gold transition-colors">Destinations</a></li>
                                 <li><a href="#" className="hover:text-gold transition-colors">About Us</a></li>
-                                <li><a href="#" className="hover:text-gold transition-colors">Our Journal</a></li>
-                                <li><a href="#" className="hover:text-gold transition-colors">Contact</a></li>
+                                <li><a href="/journal" className="hover:text-gold transition-colors">Our Journal</a></li>
+                                <li><a href="/contact" className="hover:text-gold transition-colors">Contact</a></li>
                             </ul>
                         </div>
 

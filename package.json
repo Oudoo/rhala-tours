@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "deploy": "npm run build && npx --cache /tmp/npm-cache surge ./out rhala-tours-preview-9823.surge.sh"
   },
   "dependencies": {
     "clsx": "^2.1.1",

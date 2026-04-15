@@ -1,10 +1,13 @@
 'use client';
 
+import { useState } from 'react';
 import { motion } from 'framer-motion';
-import { ArrowUpRight, Clock } from 'lucide-react';
+import { ArrowUpRight, Clock, Star } from 'lucide-react';
 import Image from 'next/image';
+import TourModal from './TourModal';
+import { Tour } from '@/data/toursData';
 
-interface TourProps {
+export interface TourProps extends Partial<Tour> {
     title: string;
     price?: number;
     duration: string;
@@ -24,12 +27,15 @@ interface TourProps {
 
 export default function TourCard({ tour, index = 0 }: { tour: TourProps, index?: number }) {
     const { customStyles } = tour;
+    const [isModalOpen, setIsModalOpen] = useState(false);
 
     return (
-        <motion.div
-            whileHover={{ y: -10 }}
-            className={`min-w-[300px] w-[350px] bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group flex flex-col h-full ${tour.isPremium ? 'border-2 border-gold/20' : ''}`}
-        >
+        <>
+            <motion.div
+                onClick={() => setIsModalOpen(true)}
+                whileHover={{ y: -10 }}
+                className={`min-w-[300px] w-[350px] bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group flex flex-col h-full ${tour.isPremium ? 'border-2 border-gold/20' : ''}`}
+            >
             <div className="relative h-64 overflow-hidden shrink-0">
                 <Image
                     src={tour.image}
@@ -76,16 +82,27 @@ export default function TourCard({ tour, index = 0 }: { tour: TourProps, index?:
                         <Clock size={16} className="mr-1" />
                         {tour.duration}
                     </div>
-                    {tour.price != null && (
-                        <span className="text-navy font-bold text-lg">
-                            ${tour.price.toLocaleString()}
-                        </span>
+                    {(tour.pricingOptions?.[0]?.price || tour.price) != null && (
+                        <div className="text-right leading-none">
+                            <span className="text-navy/50 text-[10px] uppercase font-bold tracking-wider block mb-1">From</span>
+                            <span className="text-navy font-bold text-lg">
+                                ${(tour.pricingOptions?.[0]?.price || tour.price)?.toLocaleString()}
+                            </span>
+                        </div>
                     )}
                 </div>
 
-                <h3 className={`text-xl font-bold mb-3 transition-colors ${tour.isPremium ? 'text-gold' : 'text-navy group-hover:text-gold'}`}>
+                <h3 className={`text-xl font-bold mb-3 transition-colors line-clamp-2 ${tour.isPremium ? 'text-gold' : 'text-navy group-hover:text-gold'}`}>
                     {tour.title}
                 </h3>
+                
+                {tour.reviews && (
+                    <div className="flex items-center mb-3">
+                        <Star size={14} className="text-gold fill-gold mr-1" />
+                        <span className="text-sm font-bold text-navy">{tour.reviews.rating}</span>
+                        <span className="text-xs text-navy/50 ml-1">({tour.reviews.count} reviews)</span>
+                    </div>
+                )}
 
                 {tour.description && (
                     <p className="text-navy/60 text-sm mb-4 line-clamp-3 flex-1">
@@ -110,5 +127,12 @@ export default function TourCard({ tour, index = 0 }: { tour: TourProps, index?:
                 </div>
             </div>
         </motion.div>
+
+            <TourModal 
+                isOpen={isModalOpen} 
+                onClose={() => setIsModalOpen(false)} 
+                tour={tour as Tour} 
+            />
+        </>
     );
 }
