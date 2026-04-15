@@ -2,140 +2,376 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { Heart, Globe, Shield, Leaf } from 'lucide-react';
+import {
+  Car,
+  Compass,
+  Hotel,
+  Eye,
+  Tent,
+  Heart,
+  ArrowRight,
+  Globe,
+} from 'lucide-react';
 
-const VALUES = [
-    {
-        icon: Heart,
-        title: "Passion for Egypt",
-        description: "We don't just show you Egypt; we share our deep love for its history, culture, and people."
-    },
-    {
-        icon: Globe,
-        title: "Authentic Connections",
-        description: "We bridge the gap between traveler and local, fostering meaningful interactions and understanding."
-    },
-    {
-        icon: Shield,
-        title: "Safety & Trust",
-        description: "Your safety is paramount. We partner with trusted local experts to ensure a worry-free journey."
-    },
-    {
-        icon: Leaf,
-        title: "Sustainable Travel",
-        description: "We believe in responsible tourism that preserves heritage and benefits local communities."
-    }
+// ── Services grid data ───────────────────────────────────────────────────────
+
+const SERVICES = [
+  {
+    icon: Car,
+    title: 'Private Transportation & Domestic Flights',
+    description:
+      'Comfortable, air-conditioned transfers and seamless internal flights across Egypt.',
+  },
+  {
+    icon: Compass,
+    title: 'Expert Tour Guidance',
+    description:
+      'Licensed Egyptologists and local specialists who bring history to life.',
+  },
+  {
+    icon: Hotel,
+    title: 'Premium Accommodation & Nile Cruises',
+    description:
+      'Hand-picked hotels, boutique riads and luxury floating stays on the Nile.',
+  },
+  {
+    icon: Eye,
+    title: 'Sightseeing & Activities',
+    description:
+      'From sunrise balloon rides to ancient temple explorations — every day is an adventure.',
+  },
+  {
+    icon: Tent,
+    title: 'Desert Camping & Coastal Trips',
+    description:
+      'Sleep under Saharan stars or dive the Red Sea coral reefs with expert guides.',
+  },
+  {
+    icon: Heart,
+    title: 'Honeymoon Vacations',
+    description:
+      'Romantic, bespoke itineraries crafted for once-in-a-lifetime celebrations.',
+  },
 ];
 
+// ── Animation variants ───────────────────────────────────────────────────────
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number = 0) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+  }),
+};
+
+const fadeIn = {
+  hidden: { opacity: 0 },
+  visible: { opacity: 1, transition: { duration: 0.8 } },
+};
+
+// ══════════════════════════════════════════════════════════════════════════════
+// About Page
+// ══════════════════════════════════════════════════════════════════════════════
+
 export default function AboutPage() {
-    return (
-        <div className="bg-cream min-h-screen pt-20">
-            {/* Hero Section */}
-            <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden bg-navy">
-                <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-                    <motion.span
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        className="text-gold tracking-[0.2em] uppercase font-bold text-sm mb-4 block"
-                    >
-                        Since 2010
-                    </motion.span>
-                    <motion.h1
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.2 }}
-                        className="text-4xl md:text-6xl lg:text-7xl font-bold text-cream mb-8 uppercase tracking-widest"
-                    >
-                        Our Story
-                    </motion.h1>
-                    <motion.p
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ delay: 0.4 }}
-                        className="text-lg md:text-xl text-cream/90 leading-relaxed max-w-2xl mx-auto"
-                    >
-                        RHALA was born from a desire to show the world the true soul of Egypt—beyond the guidebooks, into the heart of its living history.
-                    </motion.p>
-                </div>
-            </section>
+  return (
+    <div className="bg-cream min-h-screen">
+      {/* ════════════ 1. HERO ════════════ */}
+      <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/tours-packages/Hanging-Church-in-Egypt-768x600.png"
+          alt="Authentic downtown Cairo architecture"
+          fill
+          className="object-cover"
+          priority
+        />
+        {/* Overlay gradient */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/50 to-navy/80" />
 
-            {/* Mission Section */}
-            <section className="py-24 px-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-                <motion.div
-                    initial={{ opacity: 0, x: -30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                >
-                    <span className="text-gold uppercase tracking-[0.2em] font-bold text-sm block mb-4">Our Mission</span>
-                    <h2 className="text-4xl md:text-5xl font-bold text-navy mb-8 leading-tight">
-                        Big Change Starts <span className="text-gold">Small.</span>
-                    </h2>
-                    <p className="text-navy/80 text-lg leading-relaxed mb-6">
-                        We believe that travel has the power to transform—not just the traveler, but the destinations they visit. By focusing on small groups, intimate experiences, and local partnerships, we ensure that our footprint is light but our impact is profound.
-                    </p>
-                    <p className="text-navy/80 text-lg leading-relaxed">
-                        Every journey with RHALA contributes to the preservation of Egypt's monuments and the prosperity of its artisans, storytellers, and guardians.
-                    </p>
-                </motion.div>
+        {/* Content */}
+        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+          <motion.div
+            initial="hidden"
+            animate="visible"
+            variants={fadeIn}
+            className="mb-6"
+          >
+            <span className="inline-block text-gold/90 tracking-[0.3em] uppercase font-semibold text-xs md:text-sm border border-gold/30 px-5 py-2 rounded-full backdrop-blur-sm">
+              Since 2010
+            </span>
+          </motion.div>
 
-                <motion.div
-                    initial={{ opacity: 0, x: 30 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
-                    className="relative h-[500px] rounded-2xl overflow-hidden shadow-2xl"
-                >
-                    <Image
-                        src="/tours-packages/visit-Jerash-Artemis-768x600.png"
-                        alt="Local Guide"
-                        fill
-                        className="object-cover"
-                    />
-                </motion.div>
-            </section>
+          <motion.h1
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            custom={1}
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight"
+          >
+            See Egypt not as a visitor,
+            <br />
+            <span className="text-gold">but as a guest.</span>
+          </motion.h1>
 
-            {/* Values Section */}
-            <section className="bg-navy py-24 px-6">
-                <div className="max-w-7xl mx-auto">
-                    <div className="text-center mb-16">
-                        <span className="text-gold uppercase tracking-[0.2em] font-bold text-sm block mb-2">Philosophy</span>
-                        <h2 className="text-4xl md:text-5xl font-bold text-cream">Our Core Values</h2>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                        {VALUES.map((value, idx) => (
-                            <motion.div
-                                key={idx}
-                                initial={{ opacity: 0, y: 20 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: idx * 0.1 }}
-                                className="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm hover:bg-white/10 transition-colors"
-                            >
-                                <value.icon className="text-gold w-10 h-10 mb-6" />
-                                <h3 className="text-xl font-bold text-cream mb-4">{value.title}</h3>
-                                <p className="text-cream/70 leading-relaxed">
-                                    {value.description}
-                                </p>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
-            </section>
-
-            {/* CTA Section */}
-            <section className="py-32 px-6 text-center">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.95 }}
-                    whileInView={{ opacity: 1, scale: 1 }}
-                    viewport={{ once: true }}
-                    className="max-w-3xl mx-auto"
-                >
-                    <h2 className="text-4xl md:text-6xl font-bold text-navy mb-8">Ready to start your journey?</h2>
-                    <button className="bg-gold text-navy px-10 py-4 rounded-full font-bold text-lg tracking-wide hover:bg-gold/90 transition-transform transform hover:-translate-y-1 shadow-lg">
-                        Plan Your Trip
-                    </button>
-                </motion.div>
-            </section>
+          <motion.p
+            initial="hidden"
+            animate="visible"
+            variants={fadeUp}
+            custom={2}
+            className="text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto font-light"
+          >
+            We don&apos;t just guide tours — we create meaningful experiences
+            that connect you to the soul of Egypt.
+          </motion.p>
         </div>
-    );
+
+        {/* Bottom fade to cream */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream to-transparent" />
+      </section>
+
+      {/* ════════════ 2. THE STORY (Split-Screen) ════════════ */}
+      <section className="py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+          {/* Text side */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-80px' }}
+          >
+            <motion.span
+              variants={fadeUp}
+              custom={0}
+              className="text-gold uppercase tracking-[0.25em] font-bold text-xs block mb-4"
+            >
+              Our Story
+            </motion.span>
+
+            <motion.h2
+              variants={fadeUp}
+              custom={1}
+              className="text-3xl md:text-5xl font-bold text-navy mb-8 leading-tight"
+            >
+              Designed by Nature,
+              <br />
+              Culture, and{' '}
+              <span className="text-gold italic">Storytelling.</span>
+            </motion.h2>
+
+            <motion.p
+              variants={fadeUp}
+              custom={2}
+              className="text-navy/75 text-lg leading-relaxed mb-6"
+            >
+              At Rhala Tours Egypt, we believe that travel is more than visiting
+              landmarks — it&apos;s about experiencing a place through the eyes of
+              the locals, as they live it. Founded in the heart of downtown Cairo
+              by two architects and friends, Rhala Tours was created to offer a
+              different perspective for a vacation. Our background in
+              architecture shapes how we see the world — not just as
+              destinations, but as living spaces filled with history, character,
+              and human connection.
+            </motion.p>
+
+            <motion.p
+              variants={fadeUp}
+              custom={3}
+              className="text-navy/75 text-lg leading-relaxed"
+            >
+              While the iconic sites are undeniably breathtaking, we go beyond
+              the expected. We invite you to explore hidden streets, discover
+              everyday rituals, meet local artisans, taste authentic flavors, and
+              experience the rhythm of life as it naturally unfolds. We design
+              each journey to feel personal, immersive, and real — far from the
+              typical tourist path.
+            </motion.p>
+
+            {/* Decorative line */}
+            <motion.div
+              variants={fadeUp}
+              custom={4}
+              className="mt-10 flex items-center gap-3"
+            >
+              <div className="w-12 h-[2px] bg-gold" />
+              <span className="text-gold text-sm font-semibold tracking-wider uppercase">
+                Founded in Cairo
+              </span>
+            </motion.div>
+          </motion.div>
+
+          {/* Image side */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95, x: 40 }}
+            whileInView={{ opacity: 1, scale: 1, x: 0 }}
+            viewport={{ once: true, margin: '-80px' }}
+            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+            className="relative"
+          >
+            {/* Main image */}
+            <div className="relative h-[500px] md:h-[600px] rounded-3xl overflow-hidden shadow-2xl">
+              <Image
+                src="/tours-packages/Karnak-Temple-in-egypt-768x600.png"
+                alt="Egyptian architecture and local culture"
+                fill
+                className="object-cover"
+              />
+            </div>
+
+            {/* Floating accent card */}
+            <div className="absolute -bottom-6 -left-6 bg-navy text-white p-6 rounded-2xl shadow-xl max-w-[200px]">
+              <p className="text-3xl font-bold text-gold mb-1">15+</p>
+              <p className="text-sm text-white/80 leading-snug">
+                Years crafting authentic Egyptian journeys
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* ════════════ 3. SERVICES (Icon Grid) ════════════ */}
+      <section className="py-24 md:py-32 bg-[#EDE7D5]">
+        <div className="max-w-7xl mx-auto px-6">
+          {/* Header */}
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-60px' }}
+            className="text-center mb-16 max-w-3xl mx-auto"
+          >
+            <motion.span
+              variants={fadeUp}
+              custom={0}
+              className="text-gold uppercase tracking-[0.25em] font-bold text-xs block mb-4"
+            >
+              What We Offer
+            </motion.span>
+
+            <motion.h2
+              variants={fadeUp}
+              custom={1}
+              className="text-3xl md:text-5xl font-bold text-navy mb-6 leading-tight"
+            >
+              Seamless, Tailormade
+              <br />
+              <span className="text-gold">Egyptian Journeys.</span>
+            </motion.h2>
+
+            <motion.p
+              variants={fadeUp}
+              custom={2}
+              className="text-navy/70 text-lg leading-relaxed"
+            >
+              We are a premier inbound travel agency specializing in fully
+              customized Egypt vacations. From the moment your feet touch
+              Egyptian soil until your departure flight, we take care of
+              absolutely everything.
+            </motion.p>
+          </motion.div>
+
+          {/* Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {SERVICES.map((service, idx) => (
+              <motion.div
+                key={service.title}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, margin: '-40px' }}
+                variants={fadeUp}
+                custom={idx}
+                className="group bg-white/60 backdrop-blur-sm p-8 rounded-2xl
+                           border border-navy/5 hover:border-gold/30
+                           hover:shadow-lg hover:-translate-y-1
+                           transition-all duration-300"
+              >
+                <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                  <service.icon
+                    size={26}
+                    className="text-gold"
+                    strokeWidth={1.5}
+                  />
+                </div>
+                <h3 className="text-navy font-bold text-lg mb-3 leading-snug">
+                  {service.title}
+                </h3>
+                <p className="text-navy/60 text-sm leading-relaxed">
+                  {service.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════ 4. CTA BANNER — 100% Private ════════════ */}
+      <section className="relative py-28 md:py-36 overflow-hidden">
+        {/* Background image */}
+        <Image
+          src="/tours-packages/desert-camping-768x600.png"
+          alt="Desert landscape"
+          fill
+          className="object-cover"
+        />
+        <div className="absolute inset-0 bg-navy/85" />
+
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+          >
+            <motion.h2
+              variants={fadeUp}
+              custom={0}
+              className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+            >
+              100% Private.{' '}
+              <span className="text-gold">100% Yours.</span>
+            </motion.h2>
+
+            <motion.p
+              variants={fadeUp}
+              custom={1}
+              className="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-8"
+            >
+              Whether you have a few hours to spare on a layover or two months
+              to explore every corner of Egypt, we craft a plan specifically for
+              your needs. Every itinerary is tailormade.
+            </motion.p>
+
+            {/* Spanish-speaking badge */}
+            <motion.div
+              variants={fadeUp}
+              custom={2}
+              className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm
+                         border border-white/20 rounded-full px-5 py-2.5 mb-10"
+            >
+              <Globe size={16} className="text-gold" />
+              <span className="text-white/90 text-sm font-medium">
+                Proudly catering to our Spanish-speaking guests from across the
+                globe.{' '}
+                <span className="text-gold font-bold">¡Hablamos Español!</span>
+              </span>
+            </motion.div>
+
+            <motion.div variants={fadeUp} custom={3}>
+              <a
+                href="https://wa.me/+201557469694"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-3 bg-gold text-navy
+                           px-10 py-4 rounded-full font-bold text-lg
+                           hover:bg-white transition-colors duration-300
+                           shadow-lg hover:shadow-xl
+                           transform hover:-translate-y-0.5 active:translate-y-0"
+              >
+                Plan Your Custom Journey
+                <ArrowRight size={20} />
+              </a>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
 }

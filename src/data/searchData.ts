@@ -67,11 +67,29 @@ const DESTINATIONS: SearchResult[] = [
 
 // ── Tour Packages ─────────────────────────────────────────────────────────────
 
+/** Maps durationDays → the anchor ID used by TourDurationSection */
+function durationAnchor(days: number): string {
+  const map: Record<number, string> = {
+    2: '2-days-1-night',
+    3: '3-days-2-nights',
+    4: '4-days-3-nights',
+    5: '5-days-4-nights',
+    6: '6-days-5-nights',
+    7: '7-days-6-nights',
+    8: '8-days-7-nights',
+    9: '9-days-tours-egypt',
+    10: '10-days-9-nights',
+    11: '11-days-10-nights',
+    12: '12-days-tours-egypt',
+  };
+  return map[days] ?? 'more-than-12-days';
+}
+
 const TOUR_PACKAGES: SearchResult[] = DURATION_GROUPS.flatMap((group) =>
   group.tours.map((tour) => ({
     title: tour.title,
     subtitle: `Tour Package — ${tour.duration}`,
-    href: `/tours-packages#duration-${group.durationDays}`,
+    href: `/tours-packages#${durationAnchor(group.durationDays)}`,
     keywords: [
       ...tour.tags.map((t) => t.toLowerCase()),
       (tour.category ?? '').toLowerCase(),
@@ -107,49 +125,49 @@ const PERSONAL_EXPERIENCES: SearchResult[] = [
   {
     title: 'Desert Safari',
     subtitle: 'Adrenaline Experience',
-    href: '/#adrenaline',
+    href: '/personal-experience/adrenaline-seekers',
     keywords: ['safari', 'dune bashing', '4x4', 'desert', 'adventure'],
   },
   {
     title: 'Mountain Hiking',
     subtitle: 'Adrenaline Experience',
-    href: '/#adrenaline',
+    href: '/personal-experience/adrenaline-seekers',
     keywords: ['hiking', 'sinai trail', 'mountain', 'trekking', 'nature'],
   },
   {
     title: 'Pyramids Paragliding',
     subtitle: 'Adrenaline Experience',
-    href: '/#adrenaline',
+    href: '/personal-experience/adrenaline-seekers',
     keywords: ['paragliding', 'pyramids', 'aerial', 'flying', 'giza'],
   },
   {
     title: 'Nile Kayaking',
     subtitle: 'Adrenaline Experience',
-    href: '/#adrenaline',
+    href: '/personal-experience/adrenaline-seekers',
     keywords: ['kayak', 'kayaking', 'nile', 'river', 'water sports', 'paddle'],
   },
   {
     title: 'Sky Diving',
     subtitle: 'Adrenaline Experience',
-    href: '/#adrenaline',
+    href: '/personal-experience/adrenaline-seekers',
     keywords: ['skydiving', 'sky', 'jump', 'freefall', 'extreme'],
   },
   {
     title: 'Helicopter Tour',
     subtitle: 'Adrenaline Experience',
-    href: '/#adrenaline',
+    href: '/personal-experience/adrenaline-seekers',
     keywords: ['helicopter', 'aerial view', 'cairo', 'flying', 'sightseeing'],
   },
   {
     title: 'Honeymoon Tours',
     subtitle: 'Personal Experience',
-    href: '/tours-packages',
+    href: '/personal-experience/honeymoon',
     keywords: ['honeymoon', 'romantic', 'couple', 'love', 'wedding', 'anniversary'],
   },
   {
     title: 'Local Experiences',
     subtitle: 'Personal Experience',
-    href: '/tours',
+    href: '/personal-experience/local-experiences',
     keywords: ['local', 'authentic', 'culture', 'immersive', 'community'],
   },
 ];
