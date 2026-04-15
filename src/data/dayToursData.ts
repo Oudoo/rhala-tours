@@ -1,0 +1,883 @@
+// ─────────────────────────────────────────────────────────────────
+//  Day Tours Data — grouped by city / region
+// ─────────────────────────────────────────────────────────────────
+
+export interface DayTour {
+  slug: string;
+  title: string;
+  subtitle: string;
+  duration: string;
+  price: number;
+  image: string;
+  category: string;
+  tags: string[];
+  isPremium?: boolean;
+  reviews?: { rating: number; count: number };
+  overview: string;
+  itinerary: { stop: number; title: string; details: string }[];
+  included: string[];
+  excluded: string[];
+  highlights: string[];
+  pricingOptions: { title: string; price: number; description: string }[];
+  pickupLocation: string;
+  pickupTime: string;
+  availability: string;
+  guideLanguages: string[];
+  importantNotes: string[];
+  cancellationPolicy: string;
+}
+
+export interface DayTourGroup {
+  id: string;
+  title: string;
+  description: string;
+  tours: DayTour[];
+}
+
+export const DAY_TOUR_GROUPS: DayTourGroup[] = [
+  // ── CAIRO ──────────────────────────────────────────────────────
+  {
+    id: "cairo-day-tours",
+    title: "Cairo Day Tours",
+    description:
+      "Journey through 5,000 years of history in Egypt's vibrant capital. From the awe-inspiring Giza Plateau to the treasure-filled Egyptian Museum, our Cairo day tours deliver iconic sights with expert Egyptologist guidance.",
+    tours: [
+      {
+        slug: "giza-pyramids-sphinx",
+        title: "Giza Pyramids & Sphinx Full Day Tour",
+        subtitle: "Marvel at the last surviving ancient wonder of the world",
+        duration: "8 Hours",
+        price: 75,
+        image: "/tours-packages/Day-tour-to-Pyramids-768x600.png",
+        category: "Cairo Day Tours",
+        tags: ["Best Seller"],
+        isPremium: true,
+        reviews: { rating: 4.9, count: 312 },
+        overview:
+          "Stand in the shadow of the last surviving ancient wonder on this private full-day tour of the Giza Plateau. Accompanied by a licensed Egyptologist, you will explore the Great Pyramid of Khufu, the Pyramid of Khafre, the enigmatic Great Sphinx, and the Valley Temple. The tour also includes a visit to the ancient necropolis of Sakkara and the Step Pyramid of Djoser — the world's oldest monumental stone structure.",
+        itinerary: [
+          { stop: 1, title: "Hotel Pickup & Drive to Giza", details: "Your guide meets you at your Cairo or Giza hotel at 08:00 AM and transfers you in a private air-conditioned vehicle to the Giza Plateau." },
+          { stop: 2, title: "Great Pyramids of Giza", details: "Explore the three iconic pyramids of Khufu, Khafre, and Menkaure. Your Egyptologist explains their construction mysteries, astronomical alignment, and the civilisation that built them. Optional camel or horse ride available (own expense)." },
+          { stop: 3, title: "The Great Sphinx & Valley Temple", details: "Descend to the Sphinx enclosure for an up-close view of this legendary limestone guardian. Visit the adjacent Valley Temple of Khafre, one of the oldest temples in Egypt." },
+          { stop: 4, title: "Panoramic Plateau View & Lunch", details: "Drive to the panoramic viewpoint for the classic pyramid photo. Enjoy a lunch break at a local restaurant (included) with time to relax." },
+          { stop: 5, title: "Sakkara & the Step Pyramid of Djoser", details: "Head south to Sakkara to see the Step Pyramid — the world's first pyramid built by Imhotep circa 2650 BC. Walk through the funerary complex and explore decorated mastaba tombs." },
+          { stop: 6, title: "Return Transfer", details: "Private transfer back to your hotel or any Cairo address, arriving approximately at 05:00 PM." },
+        ],
+        included: [
+          "Licensed Egyptologist guide (English, French, Spanish, German)",
+          "Private air-conditioned vehicle & driver",
+          "Hotel / airport pickup and drop-off",
+          "Entrance fees to Pyramids & Sphinx",
+          "Entrance fees to Sakkara / Step Pyramid",
+          "Lunch at a local restaurant",
+          "Bottled water throughout",
+        ],
+        excluded: [
+          "International flights or airfare",
+          "Egypt entry visa",
+          "Inside pyramid entry ticket (optional, ~$15)",
+          "Camel or horse ride (optional)",
+          "Personal spending & tipping",
+          "Travel insurance",
+        ],
+        highlights: [
+          "Private Egyptologist guide — no large groups",
+          "Visit all three Giza pyramids + the Sphinx",
+          "Explore Sakkara, the oldest pyramid complex in Egypt",
+          "Flexible start time to suit your schedule",
+          "Door-to-door private transport",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 120, description: "Private tour for 1 person" },
+          { title: "Couple", price: 85, description: "Per person for 2 travelers" },
+          { title: "Small Group (3–6)", price: 75, description: "Per person for 3–6 travelers" },
+        ],
+        pickupLocation: "Your hotel or any Cairo / Giza address",
+        pickupTime: "08:00 AM (flexible)",
+        availability: "Daily, all year round",
+        guideLanguages: ["English", "Spanish", "French", "German", "Italian"],
+        importantNotes: [
+          "Wear comfortable, flat walking shoes",
+          "Sun protection and hat recommended",
+          "Conservative dress required at some sites",
+          "Valid passport needed for entry",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before the tour. Secure your spot today with a fully refundable deposit.",
+      },
+      {
+        slug: "egyptian-museum-khan-khalili",
+        title: "Egyptian Museum & Khan el-Khalili Bazaar",
+        subtitle: "Ancient treasures meet vibrant bazaar life",
+        duration: "7 Hours",
+        price: 65,
+        image: "/tours-packages/visit-Egyptian-Museum-768x600.png",
+        category: "Cairo Day Tours",
+        tags: ["Cultural"],
+        reviews: { rating: 4.8, count: 228 },
+        overview:
+          "Dive into the heart of Islamic Cairo on this full-day private tour combining the world-famous Egyptian Museum with the sensory explosion of Khan el-Khalili bazaar. Your Egyptologist guide brings the museum's 120,000 artefacts to life — highlighting the dazzling treasures of Tutankhamun's tomb — before leading you through narrow medieval alleyways to Egypt's most legendary market.",
+        itinerary: [
+          { stop: 1, title: "Pickup & Egyptian Museum", details: "Pick up at 09:00 AM, drive to Tahrir Square. Spend 2.5–3 hours exploring the museum's Royal Mummy Room, Tutankhamun Gallery, and ancient jewellery halls." },
+          { stop: 2, title: "Coptic Cairo", details: "Visit the Hanging Church (Al-Muallaqah), the Coptic Museum, and the Ben Ezra Synagogue — all within the historic Coptic quarter." },
+          { stop: 3, title: "Lunch Break", details: "Enjoy authentic Egyptian cuisine at a local restaurant in the heart of Old Cairo." },
+          { stop: 4, title: "Khan el-Khalili Bazaar", details: "Explore the labyrinthine lanes of Cairo's iconic souq, established in 1382. Browse spices, papyrus, jewellery, and handcrafts. Optional tea at the historic El Fishawy coffeehouse." },
+          { stop: 5, title: "Return Transfer", details: "Private vehicle returns you to your hotel by approximately 05:00 PM." },
+        ],
+        included: [
+          "Licensed Egyptologist guide",
+          "Private A/C vehicle & driver",
+          "Hotel pickup & drop-off",
+          "Entrance to Egyptian Museum",
+          "Entrance to Hanging Church & Coptic Museum",
+          "Lunch at a local restaurant",
+          "Bottled water",
+        ],
+        excluded: [
+          "International flights",
+          "Egypt entry visa",
+          "Royal Mummy Room ticket (~$10, optional)",
+          "Shopping & personal expenses",
+          "Tipping",
+        ],
+        highlights: [
+          "Tutankhamun's golden mask — the star of the museum",
+          "Guided walk through Medieval Islamic Cairo",
+          "Authentic shopping experience at Khan el-Khalili",
+          "Coptic quarter with ancient churches and synagogue",
+          "Private guide with no shared groups",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 110, description: "Private, 1 person" },
+          { title: "Couple", price: 75, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 65, description: "Per person" },
+        ],
+        pickupLocation: "Your Cairo hotel",
+        pickupTime: "09:00 AM",
+        availability: "Daily (Museum closed Friday mornings)",
+        guideLanguages: ["English", "Spanish", "French", "German"],
+        importantNotes: [
+          "Modest dress required at religious sites",
+          "Bargaining is expected & fun at the bazaar",
+          "Carry small bills for tips and purchases",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before the tour. Full refund guaranteed.",
+      },
+      {
+        slug: "memphis-sakkara-dahshur",
+        title: "Memphis, Sakkara & Dahshur Day Tour",
+        subtitle: "Egypt's ancient capital and three pyramid sites in one day",
+        duration: "8 Hours",
+        price: 70,
+        image: "/tours-packages/The-Great-Pyramids-768x600.png",
+        category: "Cairo Day Tours",
+        tags: ["Off the Beaten Path"],
+        reviews: { rating: 4.8, count: 174 },
+        overview:
+          "Escape the crowds and discover the remarkable ancient sites south of Cairo. This tour takes you to Memphis — Egypt's first capital city — the Step Pyramid complex at Sakkara, and the hauntingly beautiful Bent and Red Pyramids at Dahshur, often considered more atmospheric than Giza with far fewer tourists.",
+        itinerary: [
+          { stop: 1, title: "Memphis Open-Air Museum", details: "Visit the ancient capital of the Old Kingdom. See the giant alabaster Sphinx and the colossal fallen statue of Ramesses II. Your guide explains Memphis's 3,000-year reign as Egypt's capital." },
+          { stop: 2, title: "Sakkara Necropolis & Step Pyramid", details: "Walk through the funerary complex of Djoser, designed by Imhotep circa 2650 BC. Enter the underground chambers and explore decorated mastaba tombs of Old Kingdom nobles." },
+          { stop: 3, title: "Lunch Break", details: "Enjoy a relaxed lunch at a local restaurant near the sites." },
+          { stop: 4, title: "Dahshur Pyramids", details: "Visit the Bent Pyramid — uniquely showing the mid-construction change of angle — and the Red Pyramid, Egypt's first true smooth-sided pyramid. You can enter the Red Pyramid's internal chambers." },
+          { stop: 5, title: "Return to Cairo", details: "Private transfer back to your hotel, arriving by 5:00 PM." },
+        ],
+        included: [
+          "Private Egyptologist guide",
+          "Air-conditioned vehicle & driver",
+          "Hotel pickup & drop-off",
+          "All entrance fees (Memphis, Sakkara, Dahshur)",
+          "Lunch",
+          "Bottled water",
+        ],
+        excluded: [
+          "Flights & visa",
+          "Tipping",
+          "Personal shopping",
+          "Inside pyramid entry at Sakkara (optional)",
+        ],
+        highlights: [
+          "See Dahshur's pyramids with far fewer tourists",
+          "Enter the Red Pyramid's inner chambers",
+          "The world's first pyramid at Sakkara",
+          "Ancient capital of Memphis open-air museum",
+          "Fully private — no shared buses",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 115, description: "Private, 1 person" },
+          { title: "Couple", price: 80, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 70, description: "Per person" },
+        ],
+        pickupLocation: "Your Cairo or Giza hotel",
+        pickupTime: "08:00 AM",
+        availability: "Daily",
+        guideLanguages: ["English", "French", "Spanish"],
+        importantNotes: [
+          "Wear flat walking shoes — sandy terrain",
+          "Some pyramid interiors require stooping",
+          "Bring a torch/flashlight for pyramid chambers",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before departure.",
+      },
+      {
+        slug: "cairo-coptic-islamic",
+        title: "Cairo Coptic & Islamic Heritage Tour",
+        subtitle: "2,000 years of faith and architecture in one city",
+        duration: "6 Hours",
+        price: 55,
+        image: "/tours-packages/Hanging-Church-in-Egypt-768x600.png",
+        category: "Cairo Day Tours",
+        tags: ["Cultural"],
+        reviews: { rating: 4.7, count: 143 },
+        overview:
+          "Explore two millennia of religious history in one deeply enriching day. Start in Roman-era Coptic Cairo with the Hanging Church and Ben Ezra Synagogue, then journey into the medieval heart of Islamic Cairo — the Citadel of Saladin, the Mohamed Ali Mosque, and the vibrant Al-Muizz Street.",
+        itinerary: [
+          { stop: 1, title: "Coptic Cairo Quarter", details: "Visit the Hanging Church (Al-Muallaqah), built over a Roman fortress gatehouse. Explore the Coptic Museum and the ancient Ben Ezra Synagogue." },
+          { stop: 2, title: "Saladin Citadel & Mohamed Ali Mosque", details: "Drive to the Citadel, the commanding fortress of Saladin. Enter the stunning Ottoman-style Mohamed Ali Alabaster Mosque with panoramic city views." },
+          { stop: 3, title: "Al-Muizz Street & Al-Azhar Mosque", details: "Stroll along Al-Muizz Li-Din Allah Street, lined with Islamic architectural masterpieces. Visit Al-Azhar Mosque, one of the world's oldest universities, founded in 970 AD." },
+          { stop: 4, title: "Return Transfer", details: "Private vehicle drops you back at your hotel." },
+        ],
+        included: [
+          "Private Egyptologist guide",
+          "A/C vehicle & driver",
+          "Hotel pickup & drop-off",
+          "Entrance to Coptic Museum",
+          "Entrance to Saladin Citadel & Mohamed Ali Mosque",
+          "Bottled water",
+        ],
+        excluded: [
+          "Flights & visa",
+          "Lunch (can be added on request)",
+          "Personal expenses & tipping",
+        ],
+        highlights: [
+          "The Hanging Church — Coptic Christianity's crown jewel",
+          "The Saladin Citadel's commanding hilltop views",
+          "Stroll the 1,000-year-old Al-Muizz Street",
+          "Al-Azhar, one of the world's oldest universities",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 95, description: "Private, 1 person" },
+          { title: "Couple", price: 65, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 55, description: "Per person" },
+        ],
+        pickupLocation: "Your Cairo hotel",
+        pickupTime: "09:00 AM",
+        availability: "Daily (mosque dress code applies)",
+        guideLanguages: ["English", "Spanish", "French", "German"],
+        importantNotes: [
+          "Women must cover hair at mosques (scarves provided)",
+          "Remove shoes before entering mosques",
+          "Modest clothing required throughout",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before the tour.",
+      },
+    ],
+  },
+
+  // ── ALEXANDRIA ─────────────────────────────────────────────────
+  {
+    id: "alexandria-day-tours",
+    title: "Alexandria Day Tours",
+    description:
+      "Discover the Pearl of the Mediterranean — Egypt's second city brimming with Greek, Roman, and Ptolemaic history. Our Alexandria day tours bring ancient glories and beautiful coastal scenery to life.",
+    tours: [
+      {
+        slug: "alexandria-full-day-from-cairo",
+        title: "Alexandria Full Day Tour from Cairo",
+        subtitle: "Catacombs, Qaitbay Citadel & Bibliotheca on the Mediterranean",
+        duration: "12 Hours",
+        price: 85,
+        image: "/tours-packages/alex-Citadel-of-Qaitbay-egypt-768x600.png",
+        category: "Alexandria Day Tours",
+        tags: ["Day Trip", "From Cairo"],
+        isPremium: true,
+        reviews: { rating: 4.8, count: 196 },
+        overview:
+          "Journey from Cairo to cosmopolitan Alexandria on Egypt's Mediterranean coast. This comprehensive private tour covers the city's most iconic landmarks: the Roman Catacombs of Kom el-Shoqafa, the Citadel of Qaitbay (built on the site of the ancient lighthouse), the Bibliotheca Alexandrina, and a scenic stroll along the elegant Corniche seafront.",
+        itinerary: [
+          { stop: 1, title: "Depart Cairo", details: "Early pickup at 07:00 AM and drive along the Alexandria Desert Road (~2.5 hours). Time to relax and enjoy the scenery." },
+          { stop: 2, title: "Catacombs of Kom el-Shoqafa", details: "Descend into Egypt's largest Roman burial site, a unique fusion of Egyptian, Greek, and Roman art. Dating to the 2nd century AD, these multi-level rock-cut chambers are among the Seven Wonders of the Middle Ages." },
+          { stop: 3, title: "Pompey's Pillar & Serapeum", details: "Visit the towering 27-metre pink granite column — the largest ancient monolith outside Rome — erected in honour of Emperor Diocletian in 297 AD." },
+          { stop: 4, title: "Seafood Lunch on the Corniche", details: "Enjoy fresh Mediterranean seafood at a renowned waterfront restaurant on Alexandria's scenic Corniche boulevard." },
+          { stop: 5, title: "Citadel of Qaitbay", details: "Explore the 15th-century Mamluk fortress built from the stones of the legendary Lighthouse of Alexandria — one of the original Seven Wonders of the Ancient World." },
+          { stop: 6, title: "Bibliotheca Alexandrina", details: "Tour the stunning modern library and cultural centre, built as a tribute to the ancient Great Library of Alexandria." },
+          { stop: 7, title: "Return to Cairo", details: "Depart Alexandria ~05:00 PM, arriving in Cairo around 07:30 PM." },
+        ],
+        included: [
+          "Private Egyptologist guide",
+          "Round-trip transport from Cairo (A/C vehicle)",
+          "All entrance fees",
+          "Lunch at a seafood restaurant",
+          "Bottled water",
+        ],
+        excluded: [
+          "Flights & visa",
+          "Tipping",
+          "Personal expenses",
+          "Optional horse-carriage ride on Corniche",
+        ],
+        highlights: [
+          "The Qaitbay Citadel — built on the ancient Lighthouse site",
+          "Eerie Roman catacombs combining three ancient civilisations",
+          "Fresh Mediterranean seafood lunch on the Corniche",
+          "The world-famous Bibliotheca Alexandrina",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 145, description: "Private, 1 person" },
+          { title: "Couple", price: 100, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 85, description: "Per person" },
+        ],
+        pickupLocation: "Your Cairo hotel",
+        pickupTime: "07:00 AM",
+        availability: "Daily",
+        guideLanguages: ["English", "French", "Spanish", "German"],
+        importantNotes: [
+          "This is a long day — wear comfortable shoes",
+          "Modest clothing for religious areas",
+          "Bring sunscreen for open-air sites",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before departure.",
+      },
+      {
+        slug: "alexandria-highlights-catacombs",
+        title: "Alexandria Highlights & Catacombs Tour",
+        subtitle: "Half-day immersion in Egypt's Mediterranean capital",
+        duration: "5 Hours",
+        price: 55,
+        image: "/tours-packages/alex-Citadel-of-Qaitbay-egypt-768x600.png",
+        category: "Alexandria Day Tours",
+        tags: ["Half Day"],
+        reviews: { rating: 4.7, count: 112 },
+        overview:
+          "Perfect for travellers already based in Alexandria, this focused half-day tour covers the city's essential ancient and medieval landmarks with a private licensed guide. Visit the Roman Catacombs, Pompey's Pillar, and the Citadel of Qaitbay before a scenic Corniche walk.",
+        itinerary: [
+          { stop: 1, title: "Catacombs of Kom el-Shoqafa", details: "Descend into the multi-level Romano-Egyptian burial complex, one of the most impressive ancient sites in Egypt." },
+          { stop: 2, title: "Pompey's Pillar", details: "See the monumental 27m granite column and remains of the Serapeum temple complex." },
+          { stop: 3, title: "Citadel of Qaitbay", details: "Walk through the beautifully preserved Mamluk fortress with sweeping Mediterranean views." },
+          { stop: 4, title: "Corniche Stroll", details: "End the tour with a leisurely walk along Alexandria's iconic seafront boulevard before returning to your hotel." },
+        ],
+        included: [
+          "Private licensed guide",
+          "A/C vehicle & driver",
+          "Hotel pickup & drop-off (Alexandria only)",
+          "All entrance fees",
+          "Bottled water",
+        ],
+        excluded: [
+          "Lunch (not included — half day)",
+          "Flights & visa",
+          "Tipping",
+          "Transport from Cairo",
+        ],
+        highlights: [
+          "The famous Catacombs of Kom el-Shoqafa",
+          "Panoramic Mediterranean views from Qaitbay Citadel",
+          "Pompey's Pillar — the ancient city's last giant monument",
+          "Private guide, no shared groups",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 90, description: "Private, 1 person" },
+          { title: "Couple", price: 65, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 55, description: "Per person" },
+        ],
+        pickupLocation: "Your Alexandria hotel",
+        pickupTime: "09:00 AM",
+        availability: "Daily",
+        guideLanguages: ["English", "French", "Spanish"],
+        importantNotes: [
+          "Wear comfortable shoes for uneven terrain",
+          "The catacombs require descending steep steps",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before the tour.",
+      },
+    ],
+  },
+
+  // ── LUXOR ───────────────────────────────────────────────────────
+  {
+    id: "luxor-day-tours",
+    title: "Luxor Day Tours",
+    description:
+      "Luxor is the world's greatest open-air museum. Walk among the grandest temple complexes ever built, descend into golden royal tombs, and watch the desert sunrise paint the Theban hills amber.",
+    tours: [
+      {
+        slug: "luxor-east-bank",
+        title: "Luxor East Bank Day Tour",
+        subtitle: "Karnak & Luxor Temples — the heart of ancient Thebes",
+        duration: "5 Hours",
+        price: 55,
+        image: "/tours-packages/Karnak-Temple-768x600.png",
+        category: "Luxor Day Tours",
+        tags: ["Half Day"],
+        isPremium: true,
+        reviews: { rating: 4.9, count: 267 },
+        overview:
+          "Explore the East Bank of the Nile — where the ancient city of Thebes once thrived. This half-day tour visits the colossal Karnak Temple Complex, one of the largest religious structures ever built, and the elegantly proportioned Luxor Temple, connected to Karnak by the ancient Avenue of Sphinxes.",
+        itinerary: [
+          { stop: 1, title: "Karnak Temple Complex", details: "Enter through the great Hypostyle Hall with its 134 massive papyrus columns. Your Egyptologist reveals the sacred lake, obelisks of Hatshepsut, and the shrine of Amun — built over 1,500 years by 30 pharaohs." },
+          { stop: 2, title: "Avenue of the Sphinxes", details: "Walk a portion of the ancient 3km processional road lined with ram-headed sphinxes that once connected Karnak to Luxor Temple." },
+          { stop: 3, title: "Luxor Temple", details: "Admire the twin obelisks and towering pylons of Luxor Temple, built by Amenhotep III and Ramesses II. Your guide brings the ancient Opet Festival to life." },
+          { stop: 4, title: "Return to Hotel", details: "Private transfer back to your Luxor hotel." },
+        ],
+        included: [
+          "Private Egyptologist guide",
+          "A/C vehicle & driver",
+          "Hotel pickup & drop-off",
+          "Entrance to Karnak Temple",
+          "Entrance to Luxor Temple",
+          "Bottled water",
+        ],
+        excluded: [
+          "Flights & visa",
+          "Lunch",
+          "Tipping",
+          "Open Air Museum inside Karnak (optional)",
+        ],
+        highlights: [
+          "Hypostyle Hall — 134 towering papyrus columns",
+          "Standing obelisks of Queen Hatshepsut",
+          "Twin 25-metre obelisks at Luxor Temple entrance",
+          "Private guide with no crowds or shared buses",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 95, description: "Private, 1 person" },
+          { title: "Couple", price: 65, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 55, description: "Per person" },
+        ],
+        pickupLocation: "Your Luxor hotel",
+        pickupTime: "08:00 AM or 03:00 PM (stunning at sunset)",
+        availability: "Daily",
+        guideLanguages: ["English", "French", "Spanish", "German", "Italian"],
+        importantNotes: [
+          "Karnak is vast — wear flat, comfortable shoes",
+          "Visit at sunrise or sunset for the best light",
+          "Sun hat and water essential in summer",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before the tour.",
+      },
+      {
+        slug: "luxor-west-bank",
+        title: "Luxor West Bank Day Tour",
+        subtitle: "Valley of the Kings, Hatshepsut Temple & Colossi of Memnon",
+        duration: "6 Hours",
+        price: 65,
+        image: "/tours-packages/Temple-of-Hatshepsut-egypt-768x600.png",
+        category: "Luxor Day Tours",
+        tags: ["Most Popular"],
+        isPremium: true,
+        reviews: { rating: 4.9, count: 341 },
+        overview:
+          "Cross to the West Bank of the Nile — the Kingdom of the Dead — for an unforgettable day among Egypt's most celebrated royal monuments. Descend into pharaonic tombs in the Valley of the Kings, stand before the breathtaking mortuary temple of Queen Hatshepsut, and photograph the ancient Colossi of Memnon.",
+        itinerary: [
+          { stop: 1, title: "Colossi of Memnon", details: "Begin at the two giant seated statues of Amenhotep III, once flanking his enormous mortuary temple." },
+          { stop: 2, title: "Valley of the Kings", details: "Enter the royal necropolis where pharaohs from the 18th to 20th Dynasties were entombed. Your ticket includes three royal tombs — your guide recommends the finest open that day." },
+          { stop: 3, title: "Temple of Hatshepsut (Deir el-Bahri)", details: "Marvel at the magnificent three-tiered mortuary temple carved into the Theban cliff face — one of the great architectural achievements of the ancient world." },
+          { stop: 4, title: "Valley of the Queens (Optional)", details: "Optional extension to see the beautifully decorated tomb of Queen Nefertari, the most beloved wife of Ramesses II." },
+          { stop: 5, title: "Return to Hotel", details: "Private vehicle returns you to your Luxor hotel." },
+        ],
+        included: [
+          "Private Egyptologist guide",
+          "A/C vehicle & driver",
+          "Hotel pickup & drop-off",
+          "Valley of the Kings entrance (3 standard tombs)",
+          "Temple of Hatshepsut entrance",
+          "Colossi of Memnon viewpoint",
+          "Bottled water",
+        ],
+        excluded: [
+          "Tutankhamun's tomb (~$30, optional)",
+          "Nefertari tomb (~$100, optional)",
+          "Lunch (can be arranged)",
+          "Tipping",
+          "Flights & visa",
+        ],
+        highlights: [
+          "Descend into magnificent royal tombs in the Valley of the Kings",
+          "Hatshepsut's cliffside temple — ancient Egypt's architectural crown jewel",
+          "Colossi of Memnon — the iconic desert sentinels",
+          "Optional Nefertari tomb — most colourful in all of Egypt",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 110, description: "Private, 1 person" },
+          { title: "Couple", price: 80, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 65, description: "Per person" },
+        ],
+        pickupLocation: "Your Luxor hotel",
+        pickupTime: "07:00 AM (beat the heat and crowds)",
+        availability: "Daily",
+        guideLanguages: ["English", "French", "Spanish", "German", "Italian"],
+        importantNotes: [
+          "No photography inside tombs (separate camera ticket required)",
+          "Valley gets extremely hot — visit early morning",
+          "Bring sun protection and plenty of water",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before departure.",
+      },
+      {
+        slug: "luxor-full-day",
+        title: "Luxor Full Day Tour — East & West Bank",
+        subtitle: "The complete Luxor experience in one epic day",
+        duration: "10 Hours",
+        price: 95,
+        image: "/tours-packages/Luxor-Temple-egypt-768x600.png",
+        category: "Luxor Day Tours",
+        tags: ["Full Day", "Best Value"],
+        isPremium: true,
+        reviews: { rating: 4.9, count: 289 },
+        overview:
+          "The ultimate Luxor experience — combining both banks of the Nile into one comprehensive private day tour. Visit the Valley of the Kings, Hatshepsut Temple, and Colossi of Memnon on the West Bank; then cross the Nile for Karnak Temple and Luxor Temple in the afternoon.",
+        itinerary: [
+          { stop: 1, title: "West Bank Morning: Valley of the Kings", details: "Early start at 07:00 AM — cross the Nile to the West Bank. Begin with the Valley of the Kings (3 royal tombs included). Cooler morning temperatures make tomb exploration comfortable." },
+          { stop: 2, title: "Temple of Hatshepsut & Colossi", details: "Continue to the spectacular Deir el-Bahri temple and the Colossi of Memnon guardians." },
+          { stop: 3, title: "Lunch on the Nile", details: "Enjoy a traditional Egyptian lunch at a Nile-view restaurant before crossing back to the East Bank." },
+          { stop: 4, title: "East Bank: Karnak Temple", details: "Spend 90 minutes exploring the Karnak complex — the Hypostyle Hall, Sacred Lake, and shrines of the Theban triad." },
+          { stop: 5, title: "Luxor Temple at Sunset", details: "End the day at Luxor Temple as the setting sun turns the sandstone golden — one of Egypt's most magical sights." },
+          { stop: 6, title: "Return to Hotel", details: "Private transfer back to your Luxor hotel, arriving around 06:00 PM." },
+        ],
+        included: [
+          "Private Egyptologist guide (full day)",
+          "A/C vehicle & driver",
+          "Hotel pickup & drop-off",
+          "All entrance fees (both banks)",
+          "Lunch at Nile-view restaurant",
+          "Bottled water",
+        ],
+        excluded: [
+          "Optional tomb upgrades (Tutankhamun, Nefertari)",
+          "Tipping",
+          "Flights & visa",
+        ],
+        highlights: [
+          "Valley of the Kings + Hatshepsut + Karnak + Luxor Temple in one day",
+          "Luxor Temple at golden sunset",
+          "Lunch with Nile views",
+          "The most comprehensive Luxor day possible",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 160, description: "Private, 1 person" },
+          { title: "Couple", price: 115, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 95, description: "Per person" },
+        ],
+        pickupLocation: "Your Luxor hotel",
+        pickupTime: "07:00 AM",
+        availability: "Daily",
+        guideLanguages: ["English", "French", "Spanish", "German", "Italian"],
+        importantNotes: [
+          "This is a long day — pace yourself and start early",
+          "Camera tickets available at the Valley of the Kings gate",
+          "Sun protection essential all day",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before the tour.",
+      },
+    ],
+  },
+
+  // ── ASWAN ───────────────────────────────────────────────────────
+  {
+    id: "aswan-day-tours",
+    title: "Aswan Day Tours",
+    description:
+      "Aswan is Egypt's most serene and beautiful city — where the Sahara meets the Nile in a landscape of golden dunes, granite boulders, and Nubian villages. Our day tours reveal ancient temples, island sanctuaries, and the wonder of Abu Simbel.",
+    tours: [
+      {
+        slug: "aswan-highlights",
+        title: "Aswan Highlights Day Tour",
+        subtitle: "Philae Temple, High Dam, Unfinished Obelisk & Nubian Village",
+        duration: "6 Hours",
+        price: 60,
+        image: "/tours-packages/visit-Philae-Temple-768x600.png",
+        category: "Aswan Day Tours",
+        tags: ["Most Popular"],
+        isPremium: true,
+        reviews: { rating: 4.8, count: 214 },
+        overview:
+          "Experience the very best of Aswan in one perfectly paced private day tour. Stand inside the world's largest surviving ancient obelisk (still embedded in the quarry), cross to the island of Philae to explore the exquisite temple of Isis, and marvel at the Aswan High Dam — one of the world's great feats of modern engineering.",
+        itinerary: [
+          { stop: 1, title: "Unfinished Obelisk", details: "See the largest known ancient obelisk — 42m long and weighing 1,200 tonnes — still lying in the quarry where it cracked during carving." },
+          { stop: 2, title: "Aswan High Dam", details: "Visit the 3.8km-wide dam built with Soviet cooperation in the 1960s, creating Lake Nasser — the world's largest artificial lake." },
+          { stop: 3, title: "Philae Temple by Motorboat", details: "Board a short motorboat to the island of Agilika, home to the magnificent Temple of Isis — the last temple built in the old Egyptian style, saved by UNESCO in the 1970s." },
+          { stop: 4, title: "Nubian Village", details: "Optional short boat ride to a traditional Nubian village to experience the unique culture, colourful houses, and warm hospitality." },
+          { stop: 5, title: "Return to Hotel", details: "Private transfer back to your Aswan hotel." },
+        ],
+        included: [
+          "Private Egyptologist guide",
+          "A/C vehicle & driver",
+          "Hotel pickup & drop-off",
+          "Motorboat to Philae Island",
+          "Entrance fees (Obelisk, Dam, Philae Temple)",
+          "Bottled water",
+        ],
+        excluded: [
+          "Lunch (can be arranged)",
+          "Nubian village boat (optional ~$10)",
+          "Tipping",
+          "Flights & visa",
+        ],
+        highlights: [
+          "The Temple of Isis on Philae — Egypt's most picturesque island temple",
+          "The world's largest ancient unfinished obelisk",
+          "Aswan High Dam — engineering on a pharaonic scale",
+          "Optional Nubian village cultural experience",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 100, description: "Private, 1 person" },
+          { title: "Couple", price: 75, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 60, description: "Per person" },
+        ],
+        pickupLocation: "Your Aswan hotel",
+        pickupTime: "08:00 AM",
+        availability: "Daily",
+        guideLanguages: ["English", "French", "Spanish"],
+        importantNotes: [
+          "Bring a hat and sunscreen — Aswan is Egypt's sunniest city",
+          "Motorboat ride takes ~10 minutes each way",
+          "Modest dress required at Philae Temple",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before the tour.",
+      },
+      {
+        slug: "abu-simbel-day-trip",
+        title: "Abu Simbel Day Trip from Aswan",
+        subtitle: "The greatest temples of Ramesses II — a UNESCO World Heritage masterpiece",
+        duration: "8 Hours",
+        price: 110,
+        image: "/tours-packages/Island-of-Agilika-egypt-768x600.png",
+        category: "Aswan Day Tours",
+        tags: ["Iconic", "UNESCO"],
+        isPremium: true,
+        reviews: { rating: 5.0, count: 178 },
+        overview:
+          "Journey deep into the Nubian desert to witness one of humanity's greatest architectural achievements — the twin temples of Abu Simbel, carved directly into a mountainside by Ramesses II over 3,200 years ago. The site's dramatic relocation in the 1960s to save it from Lake Nasser is itself one of the greatest engineering stories ever told.",
+        itinerary: [
+          { stop: 1, title: "Early Departure from Aswan", details: "Depart Aswan at 04:00 AM by private vehicle. Travel ~280km through the timeless Nubian landscape along Lake Nasser, arriving at Abu Simbel just as it opens." },
+          { stop: 2, title: "Great Temple of Ramesses II", details: "Stand before the four colossal 20-metre statues of Ramesses II. Enter the inner sanctuary where twice a year, sunlight penetrates 65m into the mountain to illuminate the faces of the gods." },
+          { stop: 3, title: "Temple of Hathor (Nefertari Temple)", details: "Visit the smaller but equally impressive temple dedicated to Queen Nefertari and goddess Hathor — an extraordinary act of royal devotion unique in ancient Egypt." },
+          { stop: 4, title: "Scenic Lake Nasser Views", details: "Walk to the viewpoint overlooking the vast expanse of Lake Nasser stretching into Sudan." },
+          { stop: 5, title: "Return to Aswan", details: "Private vehicle returns to Aswan, arriving approximately 02:00–03:00 PM." },
+        ],
+        included: [
+          "Private Egyptologist guide",
+          "A/C vehicle (round trip from Aswan)",
+          "Hotel pickup & drop-off",
+          "Entrance fees to both Abu Simbel temples",
+          "Bottled water & snacks",
+        ],
+        excluded: [
+          "Flights & visa",
+          "Lunch (stop available on route)",
+          "Tipping",
+        ],
+        highlights: [
+          "Ramesses II's iconic 20-metre colossal statues",
+          "The Sun Festival light alignment phenomenon",
+          "Queen Nefertari's exquisite temple — unique in Egypt",
+          "The engineering marvel of the UNESCO relocation story",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 185, description: "Private, 1 person" },
+          { title: "Couple", price: 135, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 110, description: "Per person" },
+        ],
+        pickupLocation: "Your Aswan hotel",
+        pickupTime: "04:00 AM (early start for sunrise arrival)",
+        availability: "Daily",
+        guideLanguages: ["English", "French", "Spanish"],
+        importantNotes: [
+          "Very early start — plan to sleep early the night before",
+          "Bring a warm layer for the pre-dawn desert drive",
+          "No photography of military installations along the route",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before departure.",
+      },
+    ],
+  },
+
+  // ── RED SEA & SINAI ─────────────────────────────────────────────
+  {
+    id: "red-sea-sinai-day-tours",
+    title: "Red Sea & Sinai Day Tours",
+    description:
+      "From Hurghada's coral-fringed reefs to the sacred peaks of Sinai, Egypt's coastal and desert escapes offer adventure, spirituality, and natural wonder unlike anywhere on earth.",
+    tours: [
+      {
+        slug: "hurghada-snorkeling-tour",
+        title: "Hurghada Snorkeling & Red Sea Day Tour",
+        subtitle: "Explore vibrant coral reefs and encounter tropical marine life",
+        duration: "6 Hours",
+        price: 45,
+        image: "/tours-packages/hurghada-beaches-768x600.png",
+        category: "Red Sea & Sinai Day Tours",
+        tags: ["Adventure", "Beach"],
+        reviews: { rating: 4.8, count: 342 },
+        overview:
+          "Plunge into the crystal-clear waters of the Red Sea on this thrilling snorkeling day tour from Hurghada. Sail by private speedboat to the finest coral reefs in Egypt, teeming with colourful fish, sea turtles, and reef sharks. No diving experience necessary — snorkel equipment and a safety guide are included.",
+        itinerary: [
+          { stop: 1, title: "Pickup & Marina Transfer", details: "Pickup from your Hurghada hotel and transfer to the marina by 09:00 AM." },
+          { stop: 2, title: "First Reef Snorkel Stop", details: "Sail to the first reef location (~30 min). Enter the water and explore the living coral garden. Watch for parrotfish, angelfish, and moray eels." },
+          { stop: 3, title: "Second Reef & Sea Turtle Spot", details: "Sail to a second reef known for regular green sea turtle sightings. 45 minutes of snorkeling with guide supervision." },
+          { stop: 4, title: "Lunch on the Boat", details: "Enjoy a traditional Egyptian BBQ lunch served on deck while anchored in a sheltered bay." },
+          { stop: 5, title: "Orange Island Beach", details: "Anchor at a sandy desert island for relaxation, swimming, and optional sunbathing." },
+          { stop: 6, title: "Return to Marina", details: "Return to Hurghada by 04:00 PM, private transfer back to hotel." },
+        ],
+        included: [
+          "Hotel pickup & drop-off in Hurghada",
+          "Private speedboat",
+          "Snorkel mask, fins & life jacket",
+          "Certified marine guide",
+          "BBQ lunch on the boat",
+          "Soft drinks and water",
+        ],
+        excluded: [
+          "Flights & visa",
+          "Scuba diving (can be arranged separately)",
+          "Underwater camera rental",
+          "Tipping",
+        ],
+        highlights: [
+          "Red Sea coral gardens with 200+ species of fish",
+          "High chance of sea turtle encounters",
+          "Desert island beach stop",
+          "Private boat — no crowded tourist vessels",
+        ],
+        pricingOptions: [
+          { title: "Per Person", price: 45, description: "Minimum 2 people" },
+          { title: "Private Charter", price: 280, description: "Entire boat for up to 8 people" },
+        ],
+        pickupLocation: "Your Hurghada hotel",
+        pickupTime: "09:00 AM",
+        availability: "Daily (weather permitting)",
+        guideLanguages: ["English", "French", "German", "Russian"],
+        importantNotes: [
+          "Bring reef-safe sunscreen only",
+          "Sea sickness tablets available on request",
+          "Children under 5 must be supervised at all times",
+        ],
+        cancellationPolicy: "Free cancellation up to 24 hours before the tour (weather cancellations fully refunded).",
+      },
+      {
+        slug: "mount-sinai-sunrise-hike",
+        title: "Mount Sinai Sunrise Hike",
+        subtitle: "Ascend the sacred mountain of Moses for a transcendent sunrise",
+        duration: "Overnight (departing at night)",
+        price: 85,
+        image: "/tours-packages/desert-camping-768x600.png",
+        category: "Red Sea & Sinai Day Tours",
+        tags: ["Adventure", "Spiritual"],
+        isPremium: true,
+        reviews: { rating: 4.9, count: 156 },
+        overview:
+          "Hike to the summit of Mount Sinai (2,285m) by moonlight to witness one of the world's most spiritual sunrises. According to Abrahamic tradition, Moses received the Ten Commandments on this sacred peak. The night ascent — followed by a dramatic sunrise and descent past St Catherine's Monastery — is a profoundly moving experience regardless of faith.",
+        itinerary: [
+          { stop: 1, title: "Depart Sharm or Dahab", details: "Pickup at 11:30 PM. Transfer by private vehicle to the base of Mount Sinai at St Catherine (~1.5–2 hours drive)." },
+          { stop: 2, title: "Night Ascent", details: "Begin the ascent at ~01:30 AM. Follow the main camel path up the mountain with your guide and torch. The 3-hour hike passes through dramatic moonlit desert scenery." },
+          { stop: 3, title: "Summit: Sunrise at 2,285m", details: "Arrive at the summit around 30 minutes before dawn. Watch the sun rise over the mountains of Sinai — an unforgettable panoramic spectacle." },
+          { stop: 4, title: "Descent: Steps of Repentance", details: "Descend via the traditional 3,750 Steps of Repentance carved by a monk as penance. Arrive at the base by 09:00 AM." },
+          { stop: 5, title: "St Catherine's Monastery", details: "Visit the 6th-century monastery — the world's oldest continuously operating Christian monastery — and see the Burning Bush site." },
+          { stop: 6, title: "Return Transfer", details: "Private vehicle returns you to Sharm el-Sheikh or Dahab by approximately 01:00 PM." },
+        ],
+        included: [
+          "Licensed guide for the full trek",
+          "Round-trip private A/C vehicle",
+          "Hotel pickup & drop-off",
+          "Entrance to St Catherine's Monastery",
+          "Bottled water",
+        ],
+        excluded: [
+          "Camel ride for ascent (optional ~$25)",
+          "Sleeping bag rental (essential in winter)",
+          "Flights & visa",
+          "Tipping",
+          "Food & drinks on the mountain",
+        ],
+        highlights: [
+          "Transcendent sunrise from a biblical summit at 2,285m",
+          "Night hike through Sinai's moonlit landscape",
+          "St Catherine's Monastery — world's oldest operating monastery",
+          "The Burning Bush — one of the holiest spots in the Abrahamic faiths",
+        ],
+        pricingOptions: [
+          { title: "Solo Traveler", price: 140, description: "Private guide, 1 person" },
+          { title: "Couple", price: 105, description: "Per person for 2" },
+          { title: "Small Group (3–6)", price: 85, description: "Per person" },
+        ],
+        pickupLocation: "Your Sharm el-Sheikh or Dahab hotel",
+        pickupTime: "11:30 PM (departing the night before)",
+        availability: "Daily",
+        guideLanguages: ["English", "French", "Spanish"],
+        importantNotes: [
+          "Wear warm layers — summit temperatures can drop to 0°C in winter",
+          "The hike is moderately strenuous — reasonable fitness required",
+          "Bring a quality torch / headlamp",
+        ],
+        cancellationPolicy: "Free cancellation up to 48 hours before departure.",
+      },
+      {
+        slug: "hurghada-desert-safari",
+        title: "Hurghada Desert Safari & Bedouin Camp",
+        subtitle: "Quad bikes, dune surfing & a Bedouin dinner under the stars",
+        duration: "5 Hours (Sunset)",
+        price: 50,
+        image: "/tours-packages/desert-camping-768x600.png",
+        category: "Red Sea & Sinai Day Tours",
+        tags: ["Adventure"],
+        reviews: { rating: 4.7, count: 198 },
+        overview:
+          "Swap the beach for the spectacular Eastern Desert as the sun goes down. This thrilling sunset safari takes you deep into Hurghada's sand sea for quad-bike riding, camel trekking, and dune surfing before gathering at a Bedouin camp for a traditional dinner and a sky blazing with stars.",
+        itinerary: [
+          { stop: 1, title: "Pickup & Desert Transfer", details: "Pickup at 03:00 PM, transfer to the desert basecamp (20 minutes from town)." },
+          { stop: 2, title: "Quad Bike Adventure", details: "Gear up and ride quad bikes through the golden dunes with a guide. 30-minute guided route through the desert landscape." },
+          { stop: 3, title: "Camel Ride & Dune Surfing", details: "Mount a camel for a sunset dune walk, then try sandboarding down a pristine dune." },
+          { stop: 4, title: "Bedouin Camp & Dinner", details: "Settle into a traditional Bedouin camp as the stars emerge. Enjoy a BBQ dinner with Egyptian bread, salads, and grilled meats. Watch a traditional Tanoura dance show." },
+          { stop: 5, title: "Stargazing & Return", details: "Stargaze in one of Egypt's darkest skies before the private transfer returns you to your hotel by ~09:00 PM." },
+        ],
+        included: [
+          "Hotel pickup & drop-off",
+          "Quad bike ride (30 min)",
+          "Camel ride",
+          "Sandboarding",
+          "Bedouin dinner with BBQ",
+          "Soft drinks and water",
+          "Tanoura show",
+        ],
+        excluded: [
+          "Tipping",
+          "Alcoholic beverages",
+          "Professional photos (optional)",
+          "Flights & visa",
+        ],
+        highlights: [
+          "Quad biking through the Sahara at sunset",
+          "Camel ride with dramatic dune panoramas",
+          "Traditional Bedouin camp experience",
+          "Stargazing in one of Egypt's darkest skies",
+        ],
+        pricingOptions: [
+          { title: "Per Person", price: 50, description: "Minimum 2 people" },
+          { title: "Private Group", price: 220, description: "Up to 6 people" },
+        ],
+        pickupLocation: "Your Hurghada hotel",
+        pickupTime: "03:00 PM",
+        availability: "Daily",
+        guideLanguages: ["English", "German", "Russian", "French"],
+        importantNotes: [
+          "Minimum age for quad biking: 16 years",
+          "Wear closed shoes for the quad ride",
+          "Bring a light jacket for the evening",
+        ],
+        cancellationPolicy: "Free cancellation up to 24 hours before the tour.",
+      },
+    ],
+  },
+];
+
+// ─────────────────────────────────────────────────────────────────
+//  Helpers
+// ─────────────────────────────────────────────────────────────────
+
+export const ALL_DAY_TOURS: DayTour[] = DAY_TOUR_GROUPS.flatMap((g) => g.tours);
+
+export function getDayTourBySlug(slug: string): DayTour | undefined {
+  return ALL_DAY_TOURS.find((t) => t.slug === slug);
+}
+
+export const ALL_DAY_TOUR_SLUGS: string[] = ALL_DAY_TOURS.map((t) => t.slug);
