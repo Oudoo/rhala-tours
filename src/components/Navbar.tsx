@@ -97,12 +97,12 @@ export default function Navbar() {
                 </Link>
 
                 {/* Desktop Links */}
-                <div className="hidden md:flex items-center gap-8">
+                <div className="hidden lg:flex items-center gap-3">
                     {navLinks.map((link) => (
                         <div key={link.name} className="relative group">
                             <Link
                                 href={link.href}
-                                className="text-navy hover:text-gold transition-colors font-medium text-sm tracking-wide flex items-center gap-1 py-4 whitespace-nowrap"
+                                className="text-navy hover:text-gold transition-colors font-medium text-xs tracking-wide flex items-center gap-1 py-4 whitespace-nowrap"
                             >
                                 {link.name}
                                 {link.dropdown && (
@@ -151,7 +151,7 @@ export default function Navbar() {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-navy"
+                    className="lg:hidden text-navy"
                     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                 >
                     {isMobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -165,7 +165,7 @@ export default function Navbar() {
                         initial={{ opacity: 0, y: -20, height: 0 }}
                         animate={{ opacity: 1, y: 0, height: '100vh' }}
                         exit={{ opacity: 0, y: -20, height: 0 }}
-                        className="absolute top-full left-0 right-0 bg-[#F3ECDA] z-50 shadow-lg md:hidden overflow-y-auto"
+                        className="absolute top-full left-0 right-0 bg-[#F3ECDA] z-50 shadow-lg lg:hidden overflow-y-auto"
                     >
                         <div className="p-6 flex flex-col gap-2 pb-24 border-t border-navy/10">
                             <div className="mb-3">

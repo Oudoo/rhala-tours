@@ -54,14 +54,16 @@ const SERVICES = [
   },
 ];
 
-// ── Animation variants ───────────────────────────────────────────────────────
+// ── Animation helpers ────────────────────────────────────────────────────────
+
+const EASE: [number, number, number, number] = [0.25, 0.46, 0.45, 0.94];
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
   visible: (i: number = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: 0.6, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] as [number, number, number, number] },
+    transition: { duration: 0.6, delay: i * 0.1, ease: EASE },
   }),
 };
 
@@ -76,19 +78,13 @@ const fadeIn = {
 
 export default function AboutPage() {
   return (
-    <div className="bg-cream min-h-screen">
-      {/* ════════════ 1. HERO ════════════ */}
-      <section className="relative h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/tours-packages/Hanging-Church-in-Egypt-768x600.png"
-          alt="Authentic downtown Cairo architecture"
-          fill
-          className="object-cover"
-          priority
-        />
-        {/* Overlay gradient */}
-        <div className="absolute inset-0 bg-gradient-to-b from-navy/70 via-navy/50 to-navy/80" />
+    <div className="bg-cream min-h-screen pt-20">
+      {/* ════════════ 1. HERO (no photo — solid navy gradient) ════════════ */}
+      <section className="relative h-[75vh] min-h-[550px] flex items-center justify-center overflow-hidden bg-navy">
+        {/* Decorative gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-navy via-[#1a2744] to-[#0e1a30]" />
+        {/* Subtle pattern / texture */}
+        <div className="absolute inset-0 opacity-[0.04] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAgMEwyMCA0ME0wIDIwTDQwIDIwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBmaWxsPSJub25lIi8+PC9zdmc+')]" />
 
         {/* Content */}
         <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
@@ -98,7 +94,7 @@ export default function AboutPage() {
             variants={fadeIn}
             className="mb-6"
           >
-            <span className="inline-block text-gold/90 tracking-[0.3em] uppercase font-semibold text-xs md:text-sm border border-gold/30 px-5 py-2 rounded-full backdrop-blur-sm">
+            <span className="inline-block text-gold/90 tracking-[0.3em] uppercase font-semibold text-xs md:text-sm border border-gold/30 px-5 py-2 rounded-full">
               Since 2010
             </span>
           </motion.div>
@@ -205,7 +201,7 @@ export default function AboutPage() {
             initial={{ opacity: 0, scale: 0.95, x: 40 }}
             whileInView={{ opacity: 1, scale: 1, x: 0 }}
             viewport={{ once: true, margin: '-80px' }}
-            transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+            transition={{ duration: 0.7, ease: EASE }}
             className="relative"
           >
             {/* Main image */}
@@ -271,34 +267,33 @@ export default function AboutPage() {
 
           {/* Grid */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {SERVICES.map((service, idx) => (
-              <motion.div
-                key={service.title}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-40px' }}
-                variants={fadeUp}
-                custom={idx}
-                className="group bg-white/60 backdrop-blur-sm p-8 rounded-2xl
-                           border border-navy/5 hover:border-gold/30
-                           hover:shadow-lg hover:-translate-y-1
-                           transition-all duration-300"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
-                  <service.icon
-                    size={26}
-                    className="text-gold"
-                    strokeWidth={1.5}
-                  />
-                </div>
-                <h3 className="text-navy font-bold text-lg mb-3 leading-snug">
-                  {service.title}
-                </h3>
-                <p className="text-navy/60 text-sm leading-relaxed">
-                  {service.description}
-                </p>
-              </motion.div>
-            ))}
+            {SERVICES.map((service, idx) => {
+              const Icon = service.icon;
+              return (
+                <motion.div
+                  key={service.title}
+                  initial="hidden"
+                  whileInView="visible"
+                  viewport={{ once: true, margin: '-40px' }}
+                  variants={fadeUp}
+                  custom={idx}
+                  className="group bg-white/60 backdrop-blur-sm p-8 rounded-2xl
+                             border border-navy/5 hover:border-gold/30
+                             hover:shadow-lg hover:-translate-y-1
+                             transition-all duration-300"
+                >
+                  <div className="w-14 h-14 rounded-2xl bg-gold/10 flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
+                    <Icon size={26} className="text-gold" strokeWidth={1.5} />
+                  </div>
+                  <h3 className="text-navy font-bold text-lg mb-3 leading-snug">
+                    {service.title}
+                  </h3>
+                  <p className="text-navy/60 text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </motion.div>
+              );
+            })}
           </div>
         </div>
       </section>

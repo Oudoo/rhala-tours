@@ -6,6 +6,7 @@ import TourCard from "@/components/TourCard";
 import { DURATION_GROUPS, ALL_TOURS } from "@/data/toursData";
 import { ArrowRight, DollarSign, ShieldCheck, Eye, MessageCircle, Users } from "lucide-react";
 import Image from "next/image";
+import BookingForm from "@/components/BookingForm";
 
 const BENEFITS = [
   { icon: DollarSign, title: "Competitive Prices", desc: "Best value without compromising quality" },
@@ -188,12 +189,27 @@ export default function ToursPackagesPage() {
         </div>
       </section>
 
-      {/* ══════════ Duration-grouped Sections ══════════ */}
+      {/* ══════════ Duration-grouped Sections + Booking Sidebar ══════════ */}
       <section className="py-24 bg-cream">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col gap-24">
-          {DURATION_GROUPS.map((group, gi) => (
-            <TourDurationSection key={group.durationDays} group={group} groupIndex={gi} />
-          ))}
+        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12">
+          {/* Tour Sections — main column */}
+          <div className="flex-1 flex flex-col gap-24 min-w-0">
+            {DURATION_GROUPS.map((group, gi) => (
+              <TourDurationSection key={group.durationDays} group={group} groupIndex={gi} />
+            ))}
+          </div>
+
+          {/* Sticky Booking Sidebar — desktop only */}
+          <aside className="hidden lg:block w-[380px] shrink-0">
+            <div className="sticky top-28">
+              <BookingForm sourcePage="Tour Packages" variant="sidebar" />
+            </div>
+          </aside>
+        </div>
+
+        {/* Mobile Booking Form — below duration sections */}
+        <div className="lg:hidden max-w-xl mx-auto px-6 mt-16">
+          <BookingForm sourcePage="Tour Packages" variant="sidebar" />
         </div>
       </section>
 
