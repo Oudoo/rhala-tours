@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { Menu, X, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import clsx from 'clsx';
+import { DesktopSearch, MobileSearch } from './SearchBar';
 
 export default function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -137,6 +138,7 @@ export default function Navbar() {
                             )}
                         </div>
                     ))}
+                    <DesktopSearch />
                     <a
                         href="https://wa.me/+201557469694"
                         target="_blank"
@@ -166,6 +168,9 @@ export default function Navbar() {
                         className="absolute top-full left-0 right-0 bg-[#F3ECDA] z-50 shadow-lg md:hidden overflow-y-auto"
                     >
                         <div className="p-6 flex flex-col gap-2 pb-24 border-t border-navy/10">
+                            <div className="mb-3">
+                                <MobileSearch onNavigate={() => setIsMobileMenuOpen(false)} />
+                            </div>
                             {navLinks.map((link) => (
                                 <div key={link.name} className="flex flex-col">
                                     {link.dropdown ? (
