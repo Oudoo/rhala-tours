@@ -17,8 +17,8 @@ export default async function SlugPage({ params }: { params: Promise<{ slug: str
   const tours = getMockToursForCategory(title);
 
   return (
-    <CategoryLayout 
-      title={`${title} Nile Cruises`} 
+    <CategoryLayout
+      title={`${title} Nile Cruises`}
       description={`Sail the legendary river with our exclusive ${title} cruise packages. Intimate, luxurious, and historic.`}
       tours={tours}
     />
