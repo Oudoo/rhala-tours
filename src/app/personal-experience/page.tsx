@@ -11,7 +11,7 @@ export default function PersonalExperienceHub() {
             title: "Adrenaline Seekers",
             description: "From desert safaris to deep sea diving, push your limits across Egypt's most extreme landscapes.",
             href: "/personal-experience/adrenaline-seekers",
-            image: "https://images.unsplash.com/photo-1577700201588-69dfbf8816c2?q=80&w=1000&auto=format&fit=crop",
+            image: "/tours-packages/desert-camping-768x600.png",
             icon: <Zap className="text-gold" size={24} />,
             color: "from-orange-500/20 to-transparent",
             tag: "High Energy"
@@ -20,7 +20,7 @@ export default function PersonalExperienceHub() {
             title: "Honeymoon",
             description: "Romantic escapes designed for two. Discover luxury cruises and private coastal retreats in the land of Pharaohs.",
             href: "/personal-experience/honeymoon",
-            image: "https://images.unsplash.com/photo-1548685913-68d2ca38de4f?q=80&w=2000&auto=format&fit=crop",
+            image: "/tours-packages/nile-cruise-luxor-2-768x600.png",
             icon: <Heart className="text-gold" size={24} />,
             color: "from-pink-500/20 to-transparent",
             tag: "Romantic"
@@ -29,7 +29,7 @@ export default function PersonalExperienceHub() {
             title: "Local Experiences",
             description: "Step off the beaten path and immerse yourself in the authentic rhythms of Egyptian life, markets, and traditions.",
             href: "/personal-experience/local-experiences",
-            image: "https://images.unsplash.com/photo-1552423814-24830a23b9d7?q=80&w=2000&auto=format&fit=crop",
+            image: "/tours-packages/Hanging-Church-in-Egypt-768x600.png",
             icon: <MapPin className="text-gold" size={24} />,
             color: "from-green-500/20 to-transparent",
             tag: "Authentic"
@@ -41,7 +41,7 @@ export default function PersonalExperienceHub() {
             {/* Hero Section */}
             <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
                 <Image
-                    src="https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?q=80&w=2000&auto=format&fit=crop"
+                    src="/tours-packages/The-Great-Pyramids-768x600.png"
                     alt="Breathtaking Egyptian landscape"
                     fill
                     className="object-cover"
