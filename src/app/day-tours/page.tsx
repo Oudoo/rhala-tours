@@ -38,7 +38,7 @@ export default function DayToursPage() {
       </section>
 
       {/* ── Region Quick-Nav ──────────────────────────────────── */}
-      <nav className="bg-white border-b border-cream sticky top-[72px] z-40 shadow-sm">
+      <nav className="bg-white border-b border-cream sticky top-[96px] z-40 shadow-sm">
         <div className="max-w-7xl mx-auto px-6 overflow-x-auto">
           <ul className="flex gap-1 py-1 whitespace-nowrap">
             {REGION_NAV.map((r) => (
