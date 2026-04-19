@@ -95,7 +95,6 @@ export default function ContactPage() {
                                     Chat on WhatsApp
                                 </a>
                             </div>
-                            <MessageCircle size={100} className="absolute -bottom-4 -right-4 text-cream/10 rotate-12" />
                         </div>
                     </motion.div>
 
