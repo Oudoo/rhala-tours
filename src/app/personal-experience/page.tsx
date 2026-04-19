@@ -86,48 +86,39 @@ export default function PersonalExperienceHub() {
                                 initial={{ opacity: 0, y: 40 }}
                                 animate={{ opacity: 1, y: 0 }}
                                 transition={{ delay: index * 0.15 + 0.3 }}
-                                className="group relative"
+                                className="group"
                             >
-                                <Link href={exp.href} className="block relative h-[500px] rounded-3xl overflow-hidden shadow-2xl">
-                                    {/* Background Image */}
-                                    <Image
-                                        src={exp.image}
-                                        alt={exp.title}
-                                        fill
-                                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                                    />
-                                    
-                                    {/* Overlays */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/20"></div>
-                                    <div className={`absolute inset-0 bg-gradient-to-br ${exp.color} opacity-0 group-hover:opacity-60 transition-opacity duration-700`}></div>
-
-                                    {/* Content */}
-                                    <div className="absolute inset-0 p-10 flex flex-col justify-end">
-                                        <div className="flex items-center gap-3 mb-4">
-                                            <div className="p-2 bg-cream/10 backdrop-blur-md rounded-lg">
-                                                {exp.icon}
-                                            </div>
-                                            <span className="text-gold/80 text-xs font-bold uppercase tracking-widest leading-none">
+                                <Link href={exp.href} className="block bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 border border-navy/5">
+                                    {/* Image */}
+                                    <div className="relative h-64 overflow-hidden">
+                                        <Image
+                                            src={exp.image}
+                                            alt={exp.title}
+                                            fill
+                                            className="object-cover transition-transform duration-700 group-hover:scale-110"
+                                        />
+                                        {/* Tag badge over image */}
+                                        <div className="absolute top-4 left-4 flex items-center gap-2 bg-navy/70 backdrop-blur-sm px-3 py-1.5 rounded-full">
+                                            <span className="text-gold">{exp.icon}</span>
+                                            <span className="text-white text-xs font-bold uppercase tracking-widest">
                                                 {exp.tag}
                                             </span>
                                         </div>
-                                        
-                                        <h2 className="text-3xl font-bold text-cream mb-4 group-hover:text-gold transition-colors duration-300">
-                                            {exp.title}
-                                        </h2>
-                                        
-                                        <p className="text-cream/80 text-sm leading-relaxed mb-8">
-                                            {exp.description}
-                                        </p>
-
-                                        <div className="flex items-center gap-2 text-gold font-bold text-sm tracking-wider uppercase group-hover:gap-4 transition-all duration-300">
-                                            Explore Section
-                                            <ArrowRight size={18} />
-                                        </div>
                                     </div>
 
-                                    {/* Decorative border */}
-                                    <div className="absolute inset-0 border border-white/10 rounded-3xl group-hover:border-gold/30 transition-colors duration-500"></div>
+                                    {/* Text content */}
+                                    <div className="p-8">
+                                        <h2 className="text-2xl font-bold text-navy mb-3 group-hover:text-gold transition-colors duration-300">
+                                            {exp.title}
+                                        </h2>
+                                        <p className="text-navy/60 text-sm leading-relaxed mb-6">
+                                            {exp.description}
+                                        </p>
+                                        <div className="flex items-center gap-2 text-gold font-bold text-sm tracking-wider uppercase group-hover:gap-4 transition-all duration-300">
+                                            Explore Section
+                                            <ArrowRight size={16} />
+                                        </div>
+                                    </div>
                                 </Link>
                             </motion.div>
                         ))}
