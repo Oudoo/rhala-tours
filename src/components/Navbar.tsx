@@ -26,11 +26,11 @@ export default function Navbar() {
             name: 'Day Tours',
             href: '/day-tours',
             dropdown: [
-                { name: 'Cairo & Giza Day Tours', href: '/day-tours/cairo-giza' },
-                { name: 'Alexandria Day Tours', href: '/day-tours/alexandria' },
-                { name: 'Luxor Day Tours', href: '/day-tours/luxor' },
-                { name: 'Red Sea & Sinai Tours', href: '/day-tours/red-sea-sinai' },
-                { name: 'Aswan & Nubia Day Tours', href: '/day-tours/aswan-nubia' }
+                { name: 'Cairo & Giza Day Tours', href: '/day-tours#cairo-day-tours' },
+                { name: 'Alexandria Day Tours', href: '/day-tours#alexandria-day-tours' },
+                { name: 'Luxor Day Tours', href: '/day-tours#luxor-day-tours' },
+                { name: 'Red Sea & Sinai Tours', href: '/day-tours#red-sea-sinai-day-tours' },
+                { name: 'Aswan & Nubia Day Tours', href: '/day-tours#aswan-day-tours' }
             ]
         },
         {
@@ -56,9 +56,9 @@ export default function Navbar() {
             name: 'Nile Cruise',
             href: '/nile-cruise',
             dropdown: [
-                { name: 'Luxor & Aswan Nile Cruises', href: '/nile-cruise/luxor-aswan' },
-                { name: 'Lake Nasser Nile Cruises', href: '/nile-cruise/lake-nasser' },
-                { name: 'Dahabiya Nile Cruises', href: '/nile-cruise/dahabiya' }
+                { name: 'Luxor & Aswan Nile Cruises', href: '/nile-cruise#luxor-aswan-cruises' },
+                { name: 'Lake Nasser Nile Cruises', href: '/nile-cruise#lake-nasser-cruises' },
+                { name: 'Dahabiya Nile Cruises', href: '/nile-cruise#dahabiya-cruises' }
             ]
         },
         {
@@ -102,7 +102,7 @@ export default function Navbar() {
                         <div key={link.name} className="relative group">
                             <Link
                                 href={link.href}
-                                className="text-navy hover:text-gold transition-colors font-medium text-xs tracking-wide flex items-center gap-1 py-4 whitespace-nowrap"
+                                className="text-navy hover:text-gold transition-colors font-medium text-[15px] tracking-wide flex items-center gap-1 py-4 whitespace-nowrap"
                             >
                                 {link.name}
                                 {link.dropdown && (
