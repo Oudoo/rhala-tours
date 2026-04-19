@@ -79,22 +79,16 @@ const fadeIn = {
 export default function AboutPage() {
   return (
     <div className="bg-cream min-h-screen pt-20">
-      {/* ════════════ 1. HERO (no photo — solid navy gradient) ════════════ */}
-      <section className="relative h-[75vh] min-h-[550px] flex items-center justify-center overflow-hidden bg-navy">
-        {/* Decorative gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-br from-navy via-[#1a2744] to-[#0e1a30]" />
-        {/* Subtle pattern / texture */}
-        <div className="absolute inset-0 opacity-[0.04] bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMjAgMEwyMCA0ME0wIDIwTDQwIDIwIiBzdHJva2U9IiNmZmYiIHN0cm9rZS13aWR0aD0iMC41IiBmaWxsPSJub25lIi8+PC9zdmc+')]" />
-
-        {/* Content */}
-        <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
+      {/* ════════════ 1. HERO (clean cream background) ════════════ */}
+      <section className="bg-cream py-24 md:py-32 flex items-center justify-center">
+        <div className="text-center max-w-4xl mx-auto px-6">
           <motion.div
             initial="hidden"
             animate="visible"
             variants={fadeIn}
             className="mb-6"
           >
-            <span className="inline-block text-gold/90 tracking-[0.3em] uppercase font-semibold text-xs md:text-sm border border-gold/30 px-5 py-2 rounded-full">
+            <span className="inline-block text-gold tracking-[0.3em] uppercase font-bold text-xs mb-0">
               Since 2010
             </span>
           </motion.div>
@@ -104,11 +98,11 @@ export default function AboutPage() {
             animate="visible"
             variants={fadeUp}
             custom={1}
-            className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-8 leading-[1.1] tracking-tight"
+            className="text-4xl md:text-6xl lg:text-7xl font-bold text-navy mb-8 leading-[1.1] tracking-tight"
           >
             See Egypt not as a visitor,
             <br />
-            <span className="text-gold">but as a guest.</span>
+            <span className="text-gold italic">but as a guest.</span>
           </motion.h1>
 
           <motion.p
@@ -116,15 +110,12 @@ export default function AboutPage() {
             animate="visible"
             variants={fadeUp}
             custom={2}
-            className="text-lg md:text-xl text-white/85 leading-relaxed max-w-2xl mx-auto font-light"
+            className="text-lg md:text-xl text-navy/70 leading-relaxed max-w-2xl mx-auto font-light"
           >
             We don&apos;t just guide tours — we create meaningful experiences
             that connect you to the soul of Egypt.
           </motion.p>
         </div>
-
-        {/* Bottom fade to cream */}
-        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-cream to-transparent" />
       </section>
 
       {/* ════════════ 2. THE STORY (Split-Screen) ════════════ */}
@@ -299,35 +290,34 @@ export default function AboutPage() {
       </section>
 
       {/* ════════════ 4. CTA BANNER — 100% Private ════════════ */}
-      <section className="relative py-28 md:py-36 overflow-hidden">
-        {/* Background image */}
-        <Image
-          src="/tours-packages/desert-camping-768x600.png"
-          alt="Desert landscape"
-          fill
-          className="object-cover"
-        />
-        <div className="absolute inset-0 bg-navy/85" />
-
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+      <section className="py-28 md:py-36 bg-[#EDE7D5]">
+        <div className="max-w-4xl mx-auto px-6 text-center">
           <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h2
+            <motion.span
               variants={fadeUp}
               custom={0}
-              className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight"
+              className="inline-block text-gold uppercase tracking-[0.3em] font-bold text-xs mb-6"
+            >
+              Tailormade for You
+            </motion.span>
+
+            <motion.h2
+              variants={fadeUp}
+              custom={1}
+              className="text-4xl md:text-6xl font-bold text-navy mb-6 leading-tight"
             >
               100% Private.{' '}
-              <span className="text-gold">100% Yours.</span>
+              <span className="text-gold italic">100% Yours.</span>
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
-              custom={1}
-              className="text-white/80 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-8"
+              custom={2}
+              className="text-navy/70 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto mb-8"
             >
               Whether you have a few hours to spare on a layover or two months
               to explore every corner of Egypt, we craft a plan specifically for
@@ -337,26 +327,26 @@ export default function AboutPage() {
             {/* Spanish-speaking badge */}
             <motion.div
               variants={fadeUp}
-              custom={2}
-              className="inline-flex items-center gap-2.5 bg-white/10 backdrop-blur-sm
-                         border border-white/20 rounded-full px-5 py-2.5 mb-10"
+              custom={3}
+              className="inline-flex items-center gap-2.5 bg-navy/5
+                         border border-navy/10 rounded-full px-5 py-2.5 mb-10"
             >
               <Globe size={16} className="text-gold" />
-              <span className="text-white/90 text-sm font-medium">
+              <span className="text-navy/80 text-sm font-medium">
                 Proudly catering to our Spanish-speaking guests from across the
                 globe.{' '}
                 <span className="text-gold font-bold">¡Hablamos Español!</span>
               </span>
             </motion.div>
 
-            <motion.div variants={fadeUp} custom={3}>
+            <motion.div variants={fadeUp} custom={4}>
               <a
                 href="https://wa.me/+201557469694"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 bg-gold text-navy
                            px-10 py-4 rounded-full font-bold text-lg
-                           hover:bg-white transition-colors duration-300
+                           hover:bg-navy hover:text-cream transition-colors duration-300
                            shadow-lg hover:shadow-xl
                            transform hover:-translate-y-0.5 active:translate-y-0"
               >

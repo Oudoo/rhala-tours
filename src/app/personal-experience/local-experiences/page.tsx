@@ -26,7 +26,7 @@ const EXPERIENCES = [
         title: "Motorcycle City Rides",
         icon: Compass,
         description: "Feel the pulse of the city on a guided motorcycle tour. Safely navigate the energetic streets of Cairo at dusk, coast along the Alexandrian corniche, or weave through the relaxed vibes of Dahab for an unmatched perspective.",
-        image: "/tours-packages/visit-Egyptian-Museum-768x600.png",
+        image: "/tours-packages/Abydos-768x600.png",
     }
 ];
 

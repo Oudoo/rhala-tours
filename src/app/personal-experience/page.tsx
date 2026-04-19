@@ -98,8 +98,8 @@ export default function PersonalExperienceHub() {
                                     />
                                     
                                     {/* Overlays */}
-                                    <div className={`absolute inset-0 bg-gradient-to-t from-navy/90 via-navy/40 to-transparent transition-opacity duration-500 group-hover:opacity-90`}></div>
-                                    <div className={`absolute inset-0 bg-gradient-to-br ${exp.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}></div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/70 to-navy/20"></div>
+                                    <div className={`absolute inset-0 bg-gradient-to-br ${exp.color} opacity-0 group-hover:opacity-60 transition-opacity duration-700`}></div>
 
                                     {/* Content */}
                                     <div className="absolute inset-0 p-10 flex flex-col justify-end">
@@ -116,7 +116,7 @@ export default function PersonalExperienceHub() {
                                             {exp.title}
                                         </h2>
                                         
-                                        <p className="text-cream/70 text-sm leading-relaxed mb-8 opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500">
+                                        <p className="text-cream/80 text-sm leading-relaxed mb-8">
                                             {exp.description}
                                         </p>
 

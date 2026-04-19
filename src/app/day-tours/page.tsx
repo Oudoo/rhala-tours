@@ -1,5 +1,3 @@
-import Image from 'next/image';
-import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import DayTourCard from '@/components/DayTourCard';
 import { DAY_TOUR_GROUPS } from '@/data/dayToursData';
@@ -18,31 +16,20 @@ export default function DayToursPage() {
     <div className="min-h-screen bg-cream">
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative pt-32 pb-20 md:pt-44 md:pb-28 overflow-hidden bg-navy min-h-[65vh] flex items-center justify-center">
-        <div className="absolute inset-0 z-0">
-          <Image
-            src="/tours-packages/Day-tour-to-Pyramids-768x600.png"
-            alt="Egypt Day Tours"
-            fill
-            className="object-cover opacity-35 mix-blend-overlay"
-            priority
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/60 to-transparent" />
-        </div>
-
-        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
-          <span className="text-gold uppercase tracking-[0.2em] font-bold text-sm block mb-4">
+      <section className="bg-cream pt-32 pb-20 md:pt-44 md:pb-28 flex items-center justify-center">
+        <div className="max-w-4xl mx-auto px-6 text-center">
+          <span className="text-gold uppercase tracking-[0.3em] font-bold text-xs block mb-4">
             Egypt Day Excursions
           </span>
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold text-navy mb-6 leading-tight tracking-tight">
             Egypt Day Tours
           </h1>
-          <p className="text-lg md:text-xl text-white/80 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
+          <p className="text-lg md:text-xl text-navy/70 max-w-2xl mx-auto mb-10 leading-relaxed font-light">
             Hand-picked private day tours across Egypt — from the pyramids of Cairo to the temples of Luxor, the reefs of the Red Sea, and beyond. All guided, all private, all unforgettable.
           </p>
           <a
             href="#cairo-day-tours"
-            className="inline-flex items-center gap-2 bg-gold text-navy px-8 py-4 rounded-full font-bold hover:bg-white transition-colors duration-300"
+            className="inline-flex items-center gap-2 bg-gold text-navy px-8 py-4 rounded-full font-bold hover:bg-navy hover:text-cream transition-colors duration-300"
           >
             Browse Tours
             <ArrowRight size={20} />
