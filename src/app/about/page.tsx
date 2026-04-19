@@ -206,7 +206,7 @@ export default function AboutPage() {
             </div>
 
             {/* Floating accent card */}
-            <div className="absolute -bottom-6 -left-6 bg-navy text-white p-6 rounded-2xl shadow-xl max-w-[200px]">
+            <div className="absolute bottom-6 left-6 bg-navy text-white p-6 rounded-2xl shadow-xl max-w-[200px] z-10">
               <p className="text-3xl font-bold text-gold mb-1">15+</p>
               <p className="text-sm text-white/80 leading-snug">
                 Years crafting authentic Egyptian journeys
