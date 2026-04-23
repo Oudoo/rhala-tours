@@ -7,6 +7,7 @@ import { DURATION_GROUPS, ALL_TOURS } from "@/data/toursData";
 import { ArrowRight, DollarSign, ShieldCheck, Eye, MessageCircle, Users } from "lucide-react";
 import Image from "next/image";
 import BookingForm from "@/components/BookingForm";
+import FloatingOfferButton from "@/components/FloatingOfferButton";
 
 const BENEFITS = [
   { icon: DollarSign, title: "Competitive Prices", desc: "Best value without compromising quality" },
@@ -199,19 +200,17 @@ export default function ToursPackagesPage() {
             ))}
           </div>
 
-          {/* Sticky Booking Sidebar — desktop only */}
+          {/* Sticky Booking Sidebar — desktop only. Scrollable when taller than viewport. */}
           <aside className="hidden lg:block w-[340px] shrink-0">
-            <div className="sticky top-28">
+            <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto pr-1 scrollbar-hide">
               <BookingForm sourcePage="Tour Packages" variant="sidebar" />
             </div>
           </aside>
         </div>
-
-        {/* Mobile Booking Form — below duration sections */}
-        <div className="lg:hidden max-w-xl mx-auto px-6 mt-16">
-          <BookingForm sourcePage="Tour Packages" variant="sidebar" />
-        </div>
       </section>
+
+      {/* Floating "Special Offer" CTA — mobile/tablet only, opens form drawer */}
+      <FloatingOfferButton sourcePage="Tour Packages" />
 
       {/* ══════════ CTA Footer ══════════ */}
       <section className="py-20 bg-navy">
