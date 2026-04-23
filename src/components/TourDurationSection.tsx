@@ -50,8 +50,8 @@ export default function TourDurationSection({ group, groupIndex }: Props) {
         </p>
       </motion.div>
 
-      {/* Tour cards grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Tour cards grid — 2-col at lg (when sidebar appears), 3-col at xl+ */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-8">
         {group.tours.map((tour, i) => (
           <motion.div
             key={tour.title}
@@ -63,6 +63,7 @@ export default function TourDurationSection({ group, groupIndex }: Props) {
             <TourCard
               tour={tour}
               index={groupIndex * 10 + i}
+              fluid
             />
           </motion.div>
         ))}

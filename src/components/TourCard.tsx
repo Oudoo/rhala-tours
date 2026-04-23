@@ -25,7 +25,7 @@ export interface TourProps extends Partial<Tour> {
     }
 }
 
-export default function TourCard({ tour, index = 0 }: { tour: TourProps, index?: number }) {
+export default function TourCard({ tour, index = 0, fluid = false }: { tour: TourProps, index?: number, fluid?: boolean }) {
     const { customStyles } = tour;
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -34,7 +34,7 @@ export default function TourCard({ tour, index = 0 }: { tour: TourProps, index?:
             <motion.div
                 onClick={() => setIsModalOpen(true)}
                 whileHover={{ y: -10 }}
-                className={`min-w-[300px] w-[350px] bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group flex flex-col h-full ${tour.isPremium ? 'border-2 border-gold/20' : ''}`}
+                className={`${fluid ? 'w-full min-w-0' : 'min-w-[300px] w-[350px]'} bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group flex flex-col h-full ${tour.isPremium ? 'border-2 border-gold/20' : ''}`}
             >
             <div className="relative h-64 overflow-hidden shrink-0">
                 <Image

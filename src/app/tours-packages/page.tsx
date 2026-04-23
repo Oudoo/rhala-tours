@@ -191,7 +191,7 @@ export default function ToursPackagesPage() {
 
       {/* ══════════ Duration-grouped Sections + Booking Sidebar ══════════ */}
       <section className="py-24 bg-cream">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12">
+        <div className="max-w-screen-2xl mx-auto px-6 flex flex-col lg:flex-row gap-10">
           {/* Tour Sections — main column */}
           <div className="flex-1 flex flex-col gap-24 min-w-0">
             {DURATION_GROUPS.map((group, gi) => (
@@ -200,7 +200,7 @@ export default function ToursPackagesPage() {
           </div>
 
           {/* Sticky Booking Sidebar — desktop only */}
-          <aside className="hidden lg:block w-[380px] shrink-0">
+          <aside className="hidden lg:block w-[340px] shrink-0">
             <div className="sticky top-28">
               <BookingForm sourcePage="Tour Packages" variant="sidebar" />
             </div>
