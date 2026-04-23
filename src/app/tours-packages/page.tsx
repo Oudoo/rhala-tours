@@ -202,7 +202,7 @@ export default function ToursPackagesPage() {
 
           {/* Sticky Booking Sidebar — desktop only. Scrollable when taller than viewport. */}
           <aside className="hidden lg:block w-[340px] shrink-0">
-            <div className="sticky top-28 max-h-[calc(100vh-8rem)] overflow-y-auto pr-1 scrollbar-hide">
+            <div className="sticky top-28">
               <BookingForm sourcePage="Tour Packages" variant="sidebar" />
             </div>
           </aside>
