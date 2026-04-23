@@ -26,42 +26,37 @@ export default function FloatingOfferButton({ sourcePage = 'Tour Packages' }: Pr
 
     return (
         <>
-            {/* Floating pulsing button — mobile/tablet only */}
+            {/* Floating compact button — mobile/tablet only */}
             <motion.button
                 onClick={() => setIsOpen(true)}
-                initial={{ x: 100, opacity: 0 }}
+                initial={{ x: 60, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 1, type: 'spring', stiffness: 200 }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.08 }}
+                whileTap={{ scale: 0.92 }}
                 aria-label="Open Special Offer form"
                 className="lg:hidden fixed right-0 top-1/2 -translate-y-1/2 z-40
-                           flex items-center gap-2
-                           bg-gold text-navy font-bold
-                           pl-4 pr-5 py-3
-                           rounded-l-2xl
-                           shadow-2xl shadow-gold/40
-                           border-2 border-r-0 border-white/30"
+                           flex flex-col items-center gap-1
+                           bg-gold text-navy
+                           px-2 pt-3 pb-2
+                           rounded-l-xl
+                           shadow-lg shadow-gold/30"
             >
-                {/* Pulsing ring */}
-                <span className="absolute inset-0 rounded-l-2xl border-2 border-gold animate-ping opacity-40 pointer-events-none" />
+                {/* Subtle pulsing dot */}
+                <span className="absolute top-1.5 right-1.5 w-1.5 h-1.5 rounded-full bg-white animate-ping opacity-60 pointer-events-none" />
 
-                {/* Content */}
+                {/* Icon */}
                 <motion.span
-                    animate={{ rotate: [0, 15, -15, 0] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
-                    className="relative z-10"
+                    animate={{ rotate: [0, 12, -12, 0] }}
+                    transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut', repeatDelay: 1 }}
                 >
-                    <Sparkles size={20} className="text-navy" />
+                    <Sparkles size={18} className="text-navy" />
                 </motion.span>
-                <div className="relative z-10 flex flex-col items-start leading-tight">
-                    <span className="text-[10px] uppercase tracking-widest text-navy/70 font-semibold">
-                        Limited
-                    </span>
-                    <span className="text-sm uppercase tracking-wider">
-                        Special Offer
-                    </span>
-                </div>
+
+                {/* Label — vertical text */}
+                <span className="text-[9px] font-bold uppercase tracking-widest text-navy leading-none text-center" style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)' }}>
+                    Special Offer
+                </span>
             </motion.button>
 
             {/* Drawer / Modal */}
