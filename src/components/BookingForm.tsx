@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import { useBooking } from '@/context/BookingContext';
+import { addBooking } from '@/actions/bookings';
 import { CheckCircle, Loader2, Send, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -16,7 +16,6 @@ export default function BookingForm({
     sourcePage = 'Unknown',
     variant = 'full',
 }: BookingFormProps) {
-    const { addInquiry } = useBooking();
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -38,7 +37,7 @@ export default function BookingForm({
         // Small delay to show spinner
         await new Promise((r) => setTimeout(r, 800));
 
-        addInquiry({
+        await addBooking({
             fullName,
             email,
             phone,
@@ -75,8 +74,10 @@ export default function BookingForm({
 
     return (
         <div
-            className={`bg-white rounded-3xl shadow-xl border border-navy/5 overflow-hidden ${
-                isSidebar ? 'p-6' : 'p-8 md:p-12'
+            className={`bg-white rounded-3xl shadow-xl border border-navy/5 ${
+                isSidebar
+                    ? 'p-6 max-h-[calc(100vh-8rem)] overflow-y-auto overflow-x-hidden'
+                    : 'p-8 md:p-12 overflow-hidden'
             }`}
         >
             <AnimatePresence mode="wait">

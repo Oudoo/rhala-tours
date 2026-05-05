@@ -2,16 +2,20 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import Link from 'next/link';
 import { ArrowUpRight } from 'lucide-react';
 
 interface DestinationProps {
     name: string;
     image: string;
     description: string;
+    href?: string;
 }
 
 export default function DestinationCard({ destination, index = 0 }: { destination: DestinationProps, index?: number }) {
+    const href = destination.href ?? '/day-tours';
     return (
+        <Link href={href} className="block h-full">
         <motion.div
             whileHover={{ y: -10 }}
             className="bg-white rounded-3xl overflow-hidden shadow-lg cursor-pointer group flex flex-col h-full border border-navy/5 transition-all duration-300 hover:shadow-xl"
@@ -61,5 +65,6 @@ export default function DestinationCard({ destination, index = 0 }: { destinatio
                 </div>
             </div>
         </motion.div>
+        </Link>
     );
 }

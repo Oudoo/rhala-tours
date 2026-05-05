@@ -1,39 +1,103 @@
 'use client';
 
-import Image from 'next/image';
+import { useState } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import {
   CheckCircle,
   XCircle,
   Clock,
-  MapPin,
-  Calendar,
-  Globe,
-  Star,
-  ArrowLeft,
   MessageCircle,
+  ArrowLeft,
+  Star,
+  ChevronDown,
   ChevronRight,
+  Anchor,
+  Waves,
+  BedDouble,
+  Ship,
 } from 'lucide-react';
-
+import { NileCruise } from '@/data/nileCruiseData';
 
 const WHATSAPP_NUMBER = '201557469694';
 
-export default function DayTourDetailClient({ tour }: { tour: any }) {
+// ── Accordion item for itinerary day ─────────────────────────────
+function ItineraryDay({
+  day,
+  isOpen,
+  onToggle,
+}: {
+  day: { day: number; title: string; route: string; details: string };
+  isOpen: boolean;
+  onToggle: () => void;
+}) {
+  return (
+    <div
+      className={`rounded-2xl overflow-hidden border transition-colors duration-200 ${
+        isOpen
+          ? 'border-gold/40 bg-white shadow-md'
+          : 'border-navy/8 bg-white shadow-sm hover:border-gold/20'
+      }`}
+    >
+      <button
+        onClick={onToggle}
+        className="w-full flex items-center gap-4 p-5 text-left"
+        aria-expanded={isOpen}
+      >
+        {/* Day badge */}
+        <div
+          className={`shrink-0 w-12 h-12 rounded-full flex flex-col items-center justify-center text-[10px] font-bold leading-tight transition-colors ${
+            isOpen ? 'bg-gold text-navy' : 'bg-navy text-gold'
+          }`}
+        >
+          <span className="uppercase tracking-wide">Day</span>
+          <span className="text-base leading-none">{day.day}</span>
+        </div>
+
+        {/* Title & route */}
+        <div className="flex-1 min-w-0">
+          <h3 className="text-base font-bold text-navy line-clamp-1">{day.title}</h3>
+          <p className="text-xs text-navy/50 mt-0.5 flex items-center gap-1">
+            <Anchor size={11} />
+            {day.route}
+          </p>
+        </div>
+
+        <ChevronDown
+          size={20}
+          className={`shrink-0 text-gold transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+        />
+      </button>
+
+      {isOpen && (
+        <div className="px-5 pb-5 pt-0">
+          <div className="ml-16 border-l-2 border-gold/20 pl-5">
+            <p className="text-navy/70 leading-relaxed text-sm md:text-base">{day.details}</p>
+          </div>
+        </div>
+      )}
+    </div>
+  );
+}
+
+// ── Main client component ─────────────────────────────────────────
+export default function NileCruiseDetail({ cruise }: { cruise: NileCruise }) {
+  const [openDay, setOpenDay] = useState<number | null>(0);
 
   const whatsappMessage = encodeURIComponent(
-    `Hello, I am interested in the "${tour.title}" day tour. Please send me more details.`
+    `Hello, I am interested in the "${cruise.title}". Please send me more details and availability.`
   );
   const whatsappLink = `https://wa.me/${WHATSAPP_NUMBER}?text=${whatsappMessage}`;
-  const displayPrice = tour.pricingOptions?.[0]?.price ?? tour.price;
+  const displayPrice = cruise.pricingOptions?.[0]?.price ?? cruise.price;
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-cream pb-24 lg:pb-0">
 
       {/* ── Hero ──────────────────────────────────────────────── */}
       <section className="relative h-[70vh] min-h-[480px] flex items-end">
         <Image
-          src={tour.image}
-          alt={tour.title}
+          src={cruise.image}
+          alt={cruise.title}
           fill
           className="object-cover"
           priority
@@ -41,19 +105,20 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
         <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/50 to-transparent" />
 
         <Link
-          href="/day-tours"
+          href="/nile-cruise"
           className="absolute top-28 left-6 md:left-12 z-10 flex items-center gap-2 text-white/70 hover:text-white text-sm font-medium transition-colors"
         >
           <ArrowLeft size={16} />
-          All Day Tours
+          All Nile Cruises
         </Link>
 
         <div className="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-12 pb-12">
+          {/* Badges */}
           <div className="flex flex-wrap gap-2 mb-4">
             <span className="bg-gold text-navy px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
-              {tour.category}
+              {cruise.category}
             </span>
-            {tour.tags.map((tag) => (
+            {cruise.tags.map((tag) => (
               <span
                 key={tag}
                 className="bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
@@ -63,22 +128,22 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
             ))}
             <span className="bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1">
               <Clock size={12} />
-              {tour.duration}
+              {cruise.duration}
             </span>
           </div>
 
           <h1 className="text-4xl md:text-6xl font-bold text-white leading-tight mb-3 max-w-3xl">
-            {tour.title}
+            {cruise.title}
           </h1>
           <p className="text-white/75 text-lg md:text-xl max-w-2xl leading-relaxed mb-5">
-            {tour.subtitle}
+            {cruise.subtitle}
           </p>
 
-          {tour.reviews && (
+          {cruise.reviews && (
             <div className="flex items-center gap-2 text-white/80 text-sm font-medium">
               <Star size={16} className="text-gold fill-gold" />
-              <span className="font-bold text-white">{tour.reviews.rating}</span>
-              <span>({tour.reviews.count} verified reviews)</span>
+              <span className="font-bold text-white">{cruise.reviews.rating}</span>
+              <span>({cruise.reviews.count} verified reviews)</span>
             </div>
           )}
         </div>
@@ -93,70 +158,82 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
 
             {/* Overview */}
             <section>
-              <SectionLabel>Tour Overview</SectionLabel>
-              <h2 className="text-2xl md:text-3xl font-bold text-navy mb-5">
-                About This Experience
-              </h2>
-              <p className="text-navy/75 leading-relaxed text-lg">
-                {tour.overview}
-              </p>
+              <SectionLabel>Cruise Overview</SectionLabel>
+              <h2 className="text-2xl md:text-3xl font-bold text-navy mb-5">About This Cruise</h2>
+              <p className="text-navy/75 leading-relaxed text-lg">{cruise.overview}</p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-8">
-                <InfoPill icon={<MapPin size={20} className="text-gold" />} label="Pickup" value={tour.pickupLocation} sub={tour.pickupTime} />
-                <InfoPill icon={<Calendar size={20} className="text-gold" />} label="Availability" value={tour.availability} sub={`Guides: ${tour.guideLanguages.join(', ')}`} />
+                <InfoPill
+                  icon={<Ship size={20} className="text-gold" />}
+                  label="Ship"
+                  value={cruise.shipName}
+                  sub={cruise.category}
+                />
+                <InfoPill
+                  icon={<Clock size={20} className="text-gold" />}
+                  label="Duration"
+                  value={cruise.duration}
+                  sub="Full board included"
+                />
               </div>
             </section>
 
-            {/* Highlights */}
-            {tour.highlights.length > 0 && (
-              <section>
-                <SectionLabel>Highlights</SectionLabel>
-                <h2 className="text-2xl md:text-3xl font-bold text-navy mb-6">
-                  What Makes This Tour Special
-                </h2>
-                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {tour.highlights.map((h, i) => (
-                    <li key={i} className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-navy/5">
-                      <ChevronRight size={18} className="text-gold shrink-0 mt-0.5" />
-                      <span className="text-navy/80 text-sm leading-snug">{h}</span>
+            {/* Ship Facilities & Cabins */}
+            <section>
+              <SectionLabel>On Board</SectionLabel>
+              <h2 className="text-2xl md:text-3xl font-bold text-navy mb-8">
+                Ship Facilities &amp; Cabins
+              </h2>
+
+              <div className="bg-white rounded-2xl p-6 shadow-sm border border-navy/5 mb-6">
+                <h3 className="flex items-center gap-2 text-base font-bold text-navy mb-5">
+                  <Waves size={18} className="text-gold" />
+                  Ship Amenities
+                </h3>
+                <ul className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                  {cruise.shipFacilities.map((facility, i) => (
+                    <li key={i} className="flex items-start gap-3 text-sm text-navy/80">
+                      <ChevronRight size={15} className="text-gold shrink-0 mt-0.5" />
+                      {facility}
                     </li>
                   ))}
                 </ul>
-              </section>
-            )}
+              </div>
 
-            {/* Itinerary */}
-            <section>
-              <SectionLabel>Itinerary</SectionLabel>
-              <h2 className="text-2xl md:text-3xl font-bold text-navy mb-8">
-                Step-by-Step Tour Flow
-              </h2>
-
-              <div className="space-y-0">
-                {tour.itinerary.map((stop, i) => (
-                  <div key={stop.stop} className="flex gap-5 group">
-                    <div className="flex flex-col items-center shrink-0">
-                      <div className="w-11 h-11 rounded-full bg-navy text-gold font-bold flex items-center justify-center text-sm group-hover:bg-gold group-hover:text-navy transition-colors shadow-sm">
-                        {stop.stop}
-                      </div>
-                      {i < tour.itinerary.length - 1 && (
-                        <div className="w-0.5 flex-1 bg-navy/10 my-2" />
-                      )}
-                    </div>
-                    <div className="pb-8 pt-1 min-w-0">
-                      <h3 className="text-lg font-bold text-navy mb-2">{stop.title}</h3>
-                      <p className="text-navy/65 leading-relaxed text-sm md:text-base">
-                        {stop.details}
-                      </p>
-                    </div>
+              <div className="space-y-4">
+                <h3 className="flex items-center gap-2 text-base font-bold text-navy">
+                  <BedDouble size={18} className="text-gold" />
+                  Cabin Types
+                </h3>
+                {cruise.cabinTypes.map((cabin, i) => (
+                  <div key={i} className="bg-white rounded-2xl p-5 shadow-sm border border-navy/5">
+                    <p className="font-bold text-navy text-sm mb-1">{cabin.name}</p>
+                    <p className="text-navy/60 text-sm leading-relaxed">{cabin.description}</p>
                   </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Itinerary accordion */}
+            <section>
+              <SectionLabel>Day-by-Day</SectionLabel>
+              <h2 className="text-2xl md:text-3xl font-bold text-navy mb-8">Detailed Itinerary</h2>
+
+              <div className="space-y-3">
+                {cruise.itinerary.map((day, i) => (
+                  <ItineraryDay
+                    key={day.day}
+                    day={day}
+                    isOpen={openDay === i}
+                    onToggle={() => setOpenDay(openDay === i ? null : i)}
+                  />
                 ))}
               </div>
             </section>
 
             {/* Inclusions & Exclusions */}
             <section>
-              <SectionLabel>What&apos;s Included</SectionLabel>
+              <SectionLabel>What&apos;s Covered</SectionLabel>
               <h2 className="text-2xl md:text-3xl font-bold text-navy mb-8">
                 Inclusions &amp; Exclusions
               </h2>
@@ -168,7 +245,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                     What&apos;s Included
                   </h3>
                   <ul className="space-y-3">
-                    {tour.included.map((item, i) => (
+                    {cruise.included.map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-navy/80">
                         <CheckCircle size={15} className="text-emerald-500 shrink-0 mt-0.5" />
                         {item}
@@ -183,7 +260,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                     Not Included
                   </h3>
                   <ul className="space-y-3">
-                    {tour.excluded.map((item, i) => (
+                    {cruise.excluded.map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-navy/80">
                         <XCircle size={15} className="text-red-400 shrink-0 mt-0.5" />
                         {item}
@@ -195,14 +272,14 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
             </section>
 
             {/* Important notes */}
-            {tour.importantNotes.length > 0 && (
+            {cruise.importantNotes.length > 0 && (
               <section>
                 <SectionLabel>Good to Know</SectionLabel>
                 <h2 className="text-2xl md:text-3xl font-bold text-navy mb-6">
                   Important Information
                 </h2>
                 <ul className="bg-white rounded-2xl p-6 shadow-sm border border-navy/5 space-y-3">
-                  {tour.importantNotes.map((note, i) => (
+                  {cruise.importantNotes.map((note, i) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-navy/80">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2" />
                       {note}
@@ -210,7 +287,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                   ))}
                 </ul>
                 <p className="mt-4 text-sm text-navy/50 border-l-4 border-gold pl-4 py-1">
-                  {tour.cancellationPolicy}
+                  {cruise.cancellationPolicy}
                 </p>
               </section>
             )}
@@ -221,6 +298,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
           <aside className="w-full lg:w-80 shrink-0">
             <div className="lg:sticky lg:top-32 space-y-5">
 
+              {/* Booking card */}
               <div className="bg-navy rounded-3xl p-7 text-cream shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gold/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none" />
 
@@ -229,16 +307,15 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                     Starting from
                   </p>
                   <p className="text-4xl font-black text-navy">
-                    ${displayPrice}
+                    ${displayPrice.toLocaleString()}
                     <span className="text-sm font-bold text-navy/60 ml-1">/ person</span>
                   </p>
                 </div>
 
                 <div className="bg-white/5 rounded-xl p-4 mb-6 space-y-3 text-sm border border-white/10 relative">
-                  <SpecRow icon={<Clock size={15} />} label="Duration" value={tour.duration} />
-                  <SpecRow icon={<MapPin size={15} />} label="Pickup" value={tour.pickupLocation} />
-                  <SpecRow icon={<Calendar size={15} />} label="Availability" value={tour.availability} />
-                  <SpecRow icon={<Globe size={15} />} label="Languages" value={tour.guideLanguages.slice(0, 3).join(', ')} />
+                  <SpecRow icon={<Clock size={15} />} label="Duration" value={cruise.duration} />
+                  <SpecRow icon={<Ship size={15} />} label="Ship" value={cruise.shipName} />
+                  <SpecRow icon={<Anchor size={15} />} label="Route" value={cruise.category} />
                 </div>
 
                 <a
@@ -255,20 +332,21 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                 </p>
               </div>
 
-              {tour.pricingOptions.length > 0 && (
+              {/* Pricing options */}
+              {cruise.pricingOptions.length > 0 && (
                 <div className="bg-white rounded-2xl p-6 shadow-sm border border-navy/5">
                   <h4 className="font-bold text-navy text-sm uppercase tracking-wider mb-4">
                     Pricing Breakdown
                   </h4>
                   <div className="space-y-3">
-                    {tour.pricingOptions.map((opt, i) => (
+                    {cruise.pricingOptions.map((opt, i) => (
                       <div key={i} className="flex justify-between items-start">
                         <div>
                           <p className="text-sm font-bold text-navy">{opt.title}</p>
                           <p className="text-xs text-navy/50">{opt.description}</p>
                         </div>
                         <span className="text-gold font-bold text-lg shrink-0 ml-3">
-                          ${opt.price}
+                          ${opt.price.toLocaleString()}
                         </span>
                       </div>
                     ))}
@@ -276,13 +354,14 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                 </div>
               )}
 
+              {/* Trust badges */}
               <div className="bg-white rounded-2xl p-6 shadow-sm border border-navy/5">
                 <ul className="space-y-4">
                   {[
-                    { icon: <CheckCircle size={18} className="text-gold" />, text: 'No hidden fees — transparent pricing' },
-                    { icon: <Calendar size={18} className="text-gold" />, text: 'Free cancellation up to 48 hrs' },
-                    { icon: <MapPin size={18} className="text-gold" />, text: 'Door-to-door hotel pickup' },
-                    { icon: <Globe size={18} className="text-gold" />, text: 'Certified Egyptologist guides' },
+                    { icon: <CheckCircle size={18} className="text-gold" />, text: 'Full-board meals included' },
+                    { icon: <Ship size={18} className="text-gold" />, text: '5-star Nile ship accommodation' },
+                    { icon: <Anchor size={18} className="text-gold" />, text: 'All temple entrance fees covered' },
+                    { icon: <MessageCircle size={18} className="text-gold" />, text: 'Private licensed Egyptologist guide' },
                   ].map((b, i) => (
                     <li key={i} className="flex items-center gap-3 text-sm font-medium text-navy/80">
                       {b.icon}
@@ -302,7 +381,10 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
       <div className="fixed bottom-0 left-0 right-0 z-50 lg:hidden bg-white border-t border-navy/10 p-4 flex items-center gap-4">
         <div className="flex-1">
           <p className="text-xs text-navy/50 font-bold uppercase tracking-wider">From</p>
-          <p className="text-2xl font-bold text-navy">${displayPrice}<span className="text-sm font-normal text-navy/50"> / person</span></p>
+          <p className="text-2xl font-bold text-navy">
+            ${displayPrice.toLocaleString()}
+            <span className="text-sm font-normal text-navy/50"> / person</span>
+          </p>
         </div>
         <a
           href={whatsappLink}
@@ -319,7 +401,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
   );
 }
 
-// ── Small helper sub-components ───────────────────────────────────
+// ── Shared helper sub-components ─────────────────────────────────
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (

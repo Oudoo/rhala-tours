@@ -25,7 +25,7 @@ export interface TourProps extends Partial<Tour> {
     }
 }
 
-export default function TourCard({ tour, index = 0 }: { tour: TourProps, index?: number }) {
+export default function TourCard({ tour, index = 0, fluid = false }: { tour: TourProps, index?: number, fluid?: boolean }) {
     const { customStyles } = tour;
     const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -34,7 +34,7 @@ export default function TourCard({ tour, index = 0 }: { tour: TourProps, index?:
             <motion.div
                 onClick={() => setIsModalOpen(true)}
                 whileHover={{ y: -10 }}
-                className={`min-w-[300px] w-[350px] bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group flex flex-col h-full ${tour.isPremium ? 'border-2 border-gold/20' : ''}`}
+                className={`${fluid ? 'w-full min-w-0' : 'min-w-[300px] w-[350px]'} bg-white rounded-2xl overflow-hidden shadow-lg cursor-pointer group flex flex-col h-full ${tour.isPremium ? 'border-2 border-gold/20' : ''}`}
             >
             <div className="relative h-64 overflow-hidden shrink-0">
                 <Image
@@ -83,9 +83,9 @@ export default function TourCard({ tour, index = 0 }: { tour: TourProps, index?:
                         {tour.duration}
                     </div>
                     {(tour.pricingOptions?.[0]?.price || tour.price) != null && (
-                        <div className="text-right leading-none bg-navy rounded-lg px-3 py-2">
-                            <span className="text-white/60 text-[10px] uppercase font-bold tracking-wider block mb-1">From</span>
-                            <span className="text-gold font-bold text-lg">
+                        <div className="text-right leading-none bg-gold rounded-lg px-3 py-2 shadow-sm">
+                            <span className="text-navy/80 text-[10px] uppercase font-black tracking-wider block mb-1">From</span>
+                            <span className="text-navy font-black text-lg">
                                 ${(tour.pricingOptions?.[0]?.price || tour.price)?.toLocaleString()}
                             </span>
                         </div>

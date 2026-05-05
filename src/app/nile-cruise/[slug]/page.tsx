@@ -1,27 +1,20 @@
-import CategoryLayout from "@/components/CategoryLayout";
-import { getMockToursForCategory } from "@/data/mockCategoryData";
+import { notFound } from 'next/navigation';
+import { getNileCruiseBySlug, ALL_NILE_CRUISE_SLUGS } from '@/data/nileCruiseData';
+import NileCruiseDetail from '@/components/NileCruiseDetail';
 
 export function generateStaticParams() {
-  return [
-    { slug: 'luxor-aswan' },
-    { slug: 'lake-nasser' },
-    { slug: 'dahabiya' }
-  ];
+  return ALL_NILE_CRUISE_SLUGS.map((slug) => ({ slug }));
 }
 
-export default async function SlugPage({ params }: { params: Promise<{ slug: string }> }) {
-  const slug = (await params).slug;
-  const rawTitle = slug.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-  const title = slug === 'luxor-aswan' ? 'Luxor to Aswan' : rawTitle;
+export default async function NileCruiseDetailPage({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const cruise = getNileCruiseBySlug(slug);
 
-  const tours = getMockToursForCategory(title);
+  if (!cruise) notFound();
 
-  return (
-    <CategoryLayout
-      title={`${title} Nile Cruises`}
-      description={`Sail the legendary river with our exclusive ${title} cruise packages. Intimate, luxurious, and historic.`}
-      tours={tours}
-    />
-  );
+  return <NileCruiseDetail cruise={cruise} />;
 }
-

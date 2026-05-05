@@ -1,12 +1,12 @@
-'use client';
-
 import ToursExplorer from "@/components/ToursExplorer";
 import TourDurationSection from "@/components/TourDurationSection";
 import TourCard from "@/components/TourCard";
 import { ArrowRight, DollarSign, ShieldCheck, Eye, MessageCircle, Users } from "lucide-react";
 import Image from "next/image";
 import BookingForm from "@/components/BookingForm";
-import { useTours } from "@/context/ToursContext";
+import FloatingOfferButton from "@/components/FloatingOfferButton";
+import { getTourPackages } from "@/actions/tours";
+import { DURATION_GROUPS as STATIC_DURATION_GROUPS } from "@/data/toursData";
 
 const BENEFITS = [
   { icon: DollarSign, title: "Competitive Prices", desc: "Best value without compromising quality" },
@@ -16,9 +16,16 @@ const BENEFITS = [
   { icon: Users, title: "Friendly Tour Guides", desc: "Expert Egyptologists who bring history alive" },
 ];
 
-export default function ToursPackagesPage() {
-  const { durationGroups: DURATION_GROUPS, allTours: ALL_TOURS } = useTours();
-  const FEATURED_TOURS = ALL_TOURS.filter((t) => t.isPremium).slice(0, 8);
+export default async function ToursPackagesPage() {
+  const allTours = await getTourPackages();
+  
+  // Reconstruct duration groups with DB data
+  const durationGroups = STATIC_DURATION_GROUPS.map(group => ({
+    ...group,
+    tours: allTours.filter(t => t.groupId === group.label)
+  }));
+  
+  const FEATURED_TOURS = allTours.filter((t) => t.isPremium).slice(0, 8);
   return (
     <div className="flex flex-col min-h-screen bg-cream">
 
@@ -191,27 +198,25 @@ export default function ToursPackagesPage() {
 
       {/* ══════════ Duration-grouped Sections + Booking Sidebar ══════════ */}
       <section className="py-24 bg-cream">
-        <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row gap-12">
+        <div className="max-w-screen-2xl mx-auto px-6 flex flex-col lg:flex-row gap-10">
           {/* Tour Sections — main column */}
           <div className="flex-1 flex flex-col gap-24 min-w-0">
-            {DURATION_GROUPS.map((group, gi) => (
+            {durationGroups.map((group, gi) => (
               <TourDurationSection key={group.durationDays} group={group} groupIndex={gi} />
             ))}
           </div>
 
-          {/* Sticky Booking Sidebar — desktop only */}
-          <aside className="hidden lg:block w-[380px] shrink-0">
+          {/* Sticky Booking Sidebar — desktop only. Scrollable when taller than viewport. */}
+          <aside className="hidden lg:block w-[340px] shrink-0">
             <div className="sticky top-28">
               <BookingForm sourcePage="Tour Packages" variant="sidebar" />
             </div>
           </aside>
         </div>
-
-        {/* Mobile Booking Form — below duration sections */}
-        <div className="lg:hidden max-w-xl mx-auto px-6 mt-16">
-          <BookingForm sourcePage="Tour Packages" variant="sidebar" />
-        </div>
       </section>
+
+      {/* Floating "Special Offer" CTA — mobile/tablet only, opens form drawer */}
+      <FloatingOfferButton sourcePage="Tour Packages" />
 
       {/* ══════════ CTA Footer ══════════ */}
       <section className="py-20 bg-navy">
