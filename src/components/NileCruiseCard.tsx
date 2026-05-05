@@ -57,9 +57,9 @@ export default function NileCruiseCard({ cruise, index = 0 }: { cruise: NileCrui
               <Clock size={16} className="mr-1" />
               {cruise.duration}
             </div>
-            <div className="text-right leading-none">
-              <span className="text-navy/50 text-[10px] uppercase font-bold tracking-wider block mb-1">From</span>
-              <span className="text-navy font-bold text-lg">${cruise.price}</span>
+            <div className="text-right leading-none bg-gold rounded-lg px-3 py-2 shadow-sm">
+              <span className="text-navy/80 text-[10px] uppercase font-black tracking-wider block mb-1">From</span>
+              <span className="text-navy font-black text-lg">${cruise.price}</span>
             </div>
           </div>
 

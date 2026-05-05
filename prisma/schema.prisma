@@ -1,0 +1,111 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model BookingInquiry {
+  id          String   @id @default(cuid())
+  fullName    String
+  email       String
+  phone       String
+  isWhatsApp  Boolean  @default(false)
+  country     String
+  arrivalDate String
+  adults      Int      @default(1)
+  children    Int      @default(0)
+  extraInfo   String?
+  sourcePage  String
+  createdAt   DateTime @default(now())
+  status      String   @default("new") // 'new', 'contacted', 'archived'
+}
+
+model TourPackage {
+  id                 String   @id @default(cuid())
+  slug               String   @unique
+  title              String
+  subtitle           String?
+  duration           String
+  price              Float
+  image              String
+  category           String?
+  tags               String   // JSON stringified array
+  isPremium          Boolean  @default(false)
+  rating             Float?
+  reviewCount        Int?
+  overview           String
+  itinerary          String   // JSON stringified array
+  included           String   // JSON stringified array
+  excluded           String   // JSON stringified array
+  highlights         String   // JSON stringified array
+  pricingOptions     String   // JSON stringified array
+  accommodation      String?
+  meals              String?  // JSON stringified array
+  importantNotes     String?  // JSON stringified array
+  cancellationPolicy String?
+  
+  groupId            String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model DayTour {
+  id                 String   @id @default(cuid())
+  slug               String   @unique
+  title              String
+  subtitle           String?
+  duration           String
+  price              Float
+  image              String
+  category           String?
+  tags               String   // JSON stringified array
+  isPremium          Boolean  @default(false)
+  rating             Float?
+  reviewCount        Int?
+  overview           String
+  itinerary          String   // JSON stringified array
+  included           String   // JSON stringified array
+  excluded           String   // JSON stringified array
+  highlights         String   // JSON stringified array
+  pricingOptions     String   // JSON stringified array
+  pickupLocation     String?
+  pickupTime         String?
+  availability       String?
+  guideLanguages     String?  // JSON stringified array
+  importantNotes     String?  // JSON stringified array
+  cancellationPolicy String?
+  
+  groupId            String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}
+
+model NileCruise {
+  id                 String   @id @default(cuid())
+  slug               String   @unique
+  title              String
+  subtitle           String?
+  duration           String
+  price              Float
+  image              String
+  category           String?
+  tags               String   // JSON stringified array
+  isPremium          Boolean  @default(false)
+  rating             Float?
+  reviewCount        Int?
+  overview           String
+  itinerary          String   // JSON stringified array
+  included           String   // JSON stringified array
+  excluded           String   // JSON stringified array
+  facilities         String?  // JSON stringified array
+  cabins             String?  // JSON stringified array
+  sailingSchedule    String?
+  cancellationPolicy String?
+  
+  groupId            String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+}

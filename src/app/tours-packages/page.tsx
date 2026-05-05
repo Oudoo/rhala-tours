@@ -1,5 +1,3 @@
-'use client';
-
 import ToursExplorer from "@/components/ToursExplorer";
 import TourDurationSection from "@/components/TourDurationSection";
 import TourCard from "@/components/TourCard";
@@ -7,7 +5,8 @@ import { ArrowRight, DollarSign, ShieldCheck, Eye, MessageCircle, Users } from "
 import Image from "next/image";
 import BookingForm from "@/components/BookingForm";
 import FloatingOfferButton from "@/components/FloatingOfferButton";
-import { useTours } from "@/context/ToursContext";
+import { getTourPackages } from "@/actions/tours";
+import { DURATION_GROUPS as STATIC_DURATION_GROUPS } from "@/data/toursData";
 
 const BENEFITS = [
   { icon: DollarSign, title: "Competitive Prices", desc: "Best value without compromising quality" },
@@ -17,9 +16,16 @@ const BENEFITS = [
   { icon: Users, title: "Friendly Tour Guides", desc: "Expert Egyptologists who bring history alive" },
 ];
 
-export default function ToursPackagesPage() {
-  const { durationGroups: DURATION_GROUPS, allTours: ALL_TOURS } = useTours();
-  const FEATURED_TOURS = ALL_TOURS.filter((t) => t.isPremium).slice(0, 8);
+export default async function ToursPackagesPage() {
+  const allTours = await getTourPackages();
+  
+  // Reconstruct duration groups with DB data
+  const durationGroups = STATIC_DURATION_GROUPS.map(group => ({
+    ...group,
+    tours: allTours.filter(t => t.groupId === group.label)
+  }));
+  
+  const FEATURED_TOURS = allTours.filter((t) => t.isPremium).slice(0, 8);
   return (
     <div className="flex flex-col min-h-screen bg-cream">
 
@@ -195,7 +201,7 @@ export default function ToursPackagesPage() {
         <div className="max-w-screen-2xl mx-auto px-6 flex flex-col lg:flex-row gap-10">
           {/* Tour Sections — main column */}
           <div className="flex-1 flex flex-col gap-24 min-w-0">
-            {DURATION_GROUPS.map((group, gi) => (
+            {durationGroups.map((group, gi) => (
               <TourDurationSection key={group.durationDays} group={group} groupIndex={gi} />
             ))}
           </div>

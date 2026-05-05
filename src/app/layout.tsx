@@ -5,7 +5,6 @@ import Footer from "@/components/Footer";
 import WhatsAppButton from "@/components/WhatsAppButton";
 import { JournalProvider } from "@/context/JournalContext";
 import { BookingProvider } from "@/context/BookingContext";
-import { ToursProvider } from "@/context/ToursContext";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -29,16 +28,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${montserrat.variable} antialiased font-sans`}>
-        <ToursProvider>
-          <BookingProvider>
-            <JournalProvider>
-              <Navbar />
-              <main>{children}</main>
-              <WhatsAppButton />
-              <Footer />
-            </JournalProvider>
-          </BookingProvider>
-        </ToursProvider>
+        <BookingProvider>
+          <JournalProvider>
+            <Navbar />
+            <main>{children}</main>
+            <WhatsAppButton />
+            <Footer />
+          </JournalProvider>
+        </BookingProvider>
       </body>
     </html>
   );

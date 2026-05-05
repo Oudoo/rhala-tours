@@ -65,11 +65,13 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private air-conditioned vehicle & driver",
           "Hotel / airport pickup and drop-off",
           "Bottled water throughout",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "International flights or airfare",
           "Egypt entry visa",
           "Inside pyramid entry ticket (optional, ~$15)",
@@ -122,13 +124,13 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private A/C vehicle & driver",
           "Hotel pickup & drop-off",
-          "Entrance to Egyptian Museum",
-          "Entrance to Hanging Church & Coptic Museum",
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "International flights",
           "Egypt entry visa",
           "Royal Mummy Room ticket (~$10, optional)",
@@ -178,6 +180,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 5, title: "Return to Cairo", details: "Private transfer back to your hotel, arriving by 5:00 PM." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private Egyptologist guide",
           "Air-conditioned vehicle & driver",
           "Hotel pickup & drop-off",
@@ -185,6 +188,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Flights & visa",
           "Tipping",
           "Personal shopping",
@@ -232,14 +236,14 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 4, title: "Return Transfer", details: "Private vehicle drops you back at your hotel." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private Egyptologist guide",
           "A/C vehicle & driver",
           "Hotel pickup & drop-off",
-          "Entrance to Coptic Museum",
-          "Entrance to Saladin Citadel & Mohamed Ali Mosque",
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Flights & visa",
           "Lunch (can be added on request)",
           "Personal expenses & tipping",
@@ -288,12 +292,13 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private air-conditioned vehicle & driver",
           "Hotel pickup and drop-off",
           "Bottled water",
         ],
         excluded: [
-          "Entrance fees to the Grand Egyptian Museum",
+          "Entrance fees to all sites",
           "Meals & snacks",
           "Royal Mummies Hall ticket (optional extra)",
           "International flights or airfare",
@@ -357,11 +362,13 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 7, title: "Return to Cairo", details: "Depart Alexandria ~05:00 PM, arriving in Cairo around 07:30 PM." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private Egyptologist guide",
           "Round-trip transport from Cairo (A/C vehicle)",
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Flights & visa",
           "Tipping",
           "Personal expenses",
@@ -408,12 +415,14 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 4, title: "Corniche Stroll", details: "End the tour with a leisurely walk along Alexandria's iconic seafront boulevard before returning to your hotel." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private licensed guide",
           "A/C vehicle & driver",
           "Hotel pickup & drop-off (Alexandria only)",
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Lunch (not included — half day)",
           "Flights & visa",
           "Tipping",
@@ -470,14 +479,14 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 4, title: "Return to Hotel", details: "Private transfer back to your Luxor hotel." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private Egyptologist guide",
           "A/C vehicle & driver",
           "Hotel pickup & drop-off",
-          "Entrance to Karnak Temple",
-          "Entrance to Luxor Temple",
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Flights & visa",
           "Lunch",
           "Tipping",
@@ -526,6 +535,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 5, title: "Return to Hotel", details: "Private vehicle returns you to your Luxor hotel." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private Egyptologist guide",
           "A/C vehicle & driver",
           "Hotel pickup & drop-off",
@@ -535,6 +545,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Tutankhamun's tomb (~$30, optional)",
           "Nefertari tomb (~$100, optional)",
           "Lunch (can be arranged)",
@@ -585,6 +596,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 6, title: "Return to Hotel", details: "Private transfer back to your Luxor hotel, arriving around 06:00 PM." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private Egyptologist guide (full day)",
           "A/C vehicle & driver",
           "Hotel pickup & drop-off",
@@ -592,6 +604,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Optional tomb upgrades (Tutankhamun, Nefertari)",
           "Tipping",
           "Flights & visa",
@@ -640,6 +653,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Hot air balloon ride (approx. 45 minutes)",
           "Nile motorboat crossing",
           "Private air-conditioned vehicle on West Bank",
@@ -647,7 +661,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           "Bottled water",
         ],
         excluded: [
-          "Entrance fees to Valley of the Kings, Hatshepsut Temple",
+          "Entrance fees to all sites",
           "Meals & breakfast",
           "Inside tomb photography ticket (optional)",
           "International flights or airfare",
@@ -709,6 +723,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 5, title: "Return to Hotel", details: "Private transfer back to your Aswan hotel." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private Egyptologist guide",
           "A/C vehicle & driver",
           "Hotel pickup & drop-off",
@@ -716,6 +731,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Lunch (can be arranged)",
           "Nubian village boat (optional ~$10)",
           "Tipping",
@@ -764,12 +780,14 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 5, title: "Return to Aswan", details: "Private vehicle returns to Aswan, arriving approximately 02:00–03:00 PM." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Private Egyptologist guide",
           "A/C vehicle (round trip from Aswan)",
           "Hotel pickup & drop-off",
           "Bottled water & snacks",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Flights & visa",
           "Lunch (stop available on route)",
           "Tipping",
@@ -817,12 +835,14 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Traditional motorboat Nile cruise",
           "Nubian home visit with tea & henna",
           "Hotel pickup and drop-off",
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Entrance fees (none required)",
           "Meals & dinner",
           "Souvenirs & personal purchases",
@@ -885,6 +905,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 6, title: "Return to Marina", details: "Return to Hurghada by 04:00 PM, private transfer back to hotel." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Hotel pickup & drop-off in Hurghada",
           "Private speedboat",
           "Snorkel mask, fins & life jacket",
@@ -893,6 +914,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           "Soft drinks and water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Flights & visa",
           "Scuba diving (can be arranged separately)",
           "Underwater camera rental",
@@ -941,13 +963,14 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 6, title: "Return Transfer", details: "Private vehicle returns you to Sharm el-Sheikh or Dahab by approximately 01:00 PM." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Licensed guide for the full trek",
           "Round-trip private A/C vehicle",
           "Hotel pickup & drop-off",
-          "Entrance to St Catherine's Monastery",
           "Bottled water",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Camel ride for ascent (optional ~$25)",
           "Sleeping bag rental (essential in winter)",
           "Flights & visa",
@@ -996,6 +1019,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           { stop: 5, title: "Stargazing & Return", details: "Stargaze in one of Egypt's darkest skies before the private transfer returns you to your hotel by ~09:00 PM." },
         ],
         included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "Hotel pickup & drop-off",
           "Quad bike ride (30 min)",
           "Camel ride",
@@ -1005,6 +1029,7 @@ export const DAY_TOUR_GROUPS: DayTourGroup[] = [
           "Tanoura show",
         ],
         excluded: [
+          "Entrance fees to all sites",
           "Tipping",
           "Alcoholic beverages",
           "Professional photos (optional)",

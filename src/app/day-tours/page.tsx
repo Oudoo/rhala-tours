@@ -1,10 +1,9 @@
-'use client';
-
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import DayTourCard from '@/components/DayTourCard';
-import { useTours } from '@/context/ToursContext';
+import { getDayTours } from '@/actions/tours';
+import { DAY_TOUR_GROUPS as STATIC_DAY_TOUR_GROUPS } from '@/data/dayToursData';
 
 // Quick-nav items shown below the hero
 const REGION_NAV = [
@@ -15,8 +14,14 @@ const REGION_NAV = [
   { label: 'Red Sea & Sinai', href: '#red-sea-sinai-day-tours' },
 ];
 
-export default function DayToursPage() {
-  const { dayTourGroups: DAY_TOUR_GROUPS } = useTours();
+export default async function DayToursPage() {
+  const allTours = await getDayTours();
+  
+  // Reconstruct day tour groups
+  const dayTourGroups = STATIC_DAY_TOUR_GROUPS.map(group => ({
+    ...group,
+    tours: allTours.filter(t => t.groupId === group.id)
+  }));
   return (
     <div className="min-h-screen bg-cream">
 
@@ -61,7 +66,7 @@ export default function DayToursPage() {
       </nav>
 
       {/* ── Tour Groups ───────────────────────────────────────── */}
-      {DAY_TOUR_GROUPS.map((group, gi) => (
+      {dayTourGroups.map((group, gi) => (
         <section
           key={group.id}
           id={group.id}

@@ -57,9 +57,9 @@ export default function DayTourCard({ tour, index = 0 }: { tour: DayTour; index?
               <Clock size={16} className="mr-1" />
               {tour.duration}
             </div>
-            <div className="text-right leading-none bg-navy rounded-lg px-3 py-2">
-              <span className="text-white/60 text-[10px] uppercase font-bold tracking-wider block mb-1">From</span>
-              <span className="text-gold font-bold text-lg">${tour.price}</span>
+            <div className="text-right leading-none bg-gold rounded-lg px-3 py-2 shadow-sm">
+              <span className="text-navy/80 text-[10px] uppercase font-black tracking-wider block mb-1">From</span>
+              <span className="text-navy font-black text-lg">${tour.price}</span>
             </div>
           </div>
 

@@ -14,15 +14,11 @@ import {
   MessageCircle,
   ChevronRight,
 } from 'lucide-react';
-import { useTours } from '@/context/ToursContext';
-import { DayTour } from '@/data/dayToursData';
+
 
 const WHATSAPP_NUMBER = '201557469694';
 
-export default function DayTourDetailClient({ slug, fallbackTour }: { slug: string; fallbackTour: DayTour }) {
-  // Prefer context data (CMS-editable) over the static fallback
-  const { getDayTourBySlug } = useTours();
-  const tour = getDayTourBySlug(slug) ?? fallbackTour;
+export default function DayTourDetailClient({ tour }: { tour: any }) {
 
   const whatsappMessage = encodeURIComponent(
     `Hello, I am interested in the "${tour.title}" day tour. Please send me more details.`
@@ -228,13 +224,15 @@ export default function DayTourDetailClient({ slug, fallbackTour }: { slug: stri
               <div className="bg-navy rounded-3xl p-7 text-cream shadow-2xl relative overflow-hidden">
                 <div className="absolute top-0 right-0 w-40 h-40 bg-gold/10 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none" />
 
-                <p className="text-white/60 text-xs uppercase tracking-widest font-bold mb-1 relative">
-                  Starting from
-                </p>
-                <p className="text-4xl font-bold text-white mb-6 relative">
-                  ${displayPrice}
-                  <span className="text-sm font-normal text-white/50 ml-1">/ person</span>
-                </p>
+                <div className="bg-gold rounded-2xl p-4 mb-6 shadow-xl relative text-center">
+                  <p className="text-navy/80 text-xs uppercase tracking-widest font-black mb-1">
+                    Starting from
+                  </p>
+                  <p className="text-4xl font-black text-navy">
+                    ${displayPrice}
+                    <span className="text-sm font-bold text-navy/60 ml-1">/ person</span>
+                  </p>
+                </div>
 
                 <div className="bg-white/5 rounded-xl p-4 mb-6 space-y-3 text-sm border border-white/10 relative">
                   <SpecRow icon={<Clock size={15} />} label="Duration" value={tour.duration} />
