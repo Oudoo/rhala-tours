@@ -129,7 +129,6 @@ export async function addTourPackage(data: any) {
       title: data.title,
       subtitle: data.subtitle || '',
       duration: data.duration,
-      durationDays: data.durationDays,
       price: data.price || 0,
       image: data.image,
       groupId: data.durationDays <= 5 ? "Quick Getaways (1-5 Days)" : data.durationDays <= 9 ? "Classic Egypt (6-9 Days)" : "Extensive Explorations (10+ Days)",
