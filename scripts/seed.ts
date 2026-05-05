@@ -1,6 +1,6 @@
 import { PrismaClient } from '@prisma/client';
-import { DURATION_GROUPS } from '../src/data/toursData';
-import { DAY_TOUR_GROUPS } from '../src/data/dayToursData';
+const { DURATION_GROUPS } = require('../src/data/toursData');
+const { DAY_TOUR_GROUPS } = require('../src/data/dayToursData');
 // Ensure these paths resolve correctly when running ts-node.
 
 const prisma = new PrismaClient();
