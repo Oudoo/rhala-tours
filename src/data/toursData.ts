@@ -76,13 +76,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -130,13 +131,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -184,13 +186,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -237,13 +240,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -291,13 +295,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -354,13 +359,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -409,13 +415,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -473,13 +480,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -538,13 +546,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -604,13 +613,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -662,13 +672,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -720,13 +731,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -787,13 +799,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -846,13 +859,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -914,13 +928,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -974,13 +989,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -1043,13 +1059,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -1104,13 +1121,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -1174,13 +1192,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -1236,13 +1255,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -1307,13 +1327,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -1379,13 +1400,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
@@ -1445,13 +1467,14 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Experience the true culture and history of Egypt"
         ],
         included: [
-          "Expert Tour Guide (Egyptologist)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
-          "Entrance Fees to Sites",
-          "Bottled Water & Snacks"
+                    "Bottled Water & Snacks"
         ],
         excluded: [
+          "Entrance Fees to Sites",
+          "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
           "Tipping (Gratuities)",
