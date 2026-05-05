@@ -1,12 +1,12 @@
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+'use client';
+
 import ToursExplorer from "@/components/ToursExplorer";
 import TourDurationSection from "@/components/TourDurationSection";
 import TourCard from "@/components/TourCard";
-import { DURATION_GROUPS, ALL_TOURS } from "@/data/toursData";
 import { ArrowRight, DollarSign, ShieldCheck, Eye, MessageCircle, Users } from "lucide-react";
 import Image from "next/image";
 import BookingForm from "@/components/BookingForm";
+import { useTours } from "@/context/ToursContext";
 
 const BENEFITS = [
   { icon: DollarSign, title: "Competitive Prices", desc: "Best value without compromising quality" },
@@ -16,9 +16,9 @@ const BENEFITS = [
   { icon: Users, title: "Friendly Tour Guides", desc: "Expert Egyptologists who bring history alive" },
 ];
 
-const FEATURED_TOURS = ALL_TOURS.filter((t) => t.isPremium).slice(0, 8);
-
 export default function ToursPackagesPage() {
+  const { durationGroups: DURATION_GROUPS, allTours: ALL_TOURS } = useTours();
+  const FEATURED_TOURS = ALL_TOURS.filter((t) => t.isPremium).slice(0, 8);
   return (
     <div className="flex flex-col min-h-screen bg-cream">
 

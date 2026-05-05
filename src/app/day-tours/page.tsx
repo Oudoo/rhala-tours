@@ -1,8 +1,10 @@
+'use client';
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import DayTourCard from '@/components/DayTourCard';
-import { DAY_TOUR_GROUPS } from '@/data/dayToursData';
+import { useTours } from '@/context/ToursContext';
 
 // Quick-nav items shown below the hero
 const REGION_NAV = [
@@ -14,6 +16,7 @@ const REGION_NAV = [
 ];
 
 export default function DayToursPage() {
+  const { dayTourGroups: DAY_TOUR_GROUPS } = useTours();
   return (
     <div className="min-h-screen bg-cream">
 

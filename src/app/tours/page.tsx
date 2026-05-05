@@ -3,10 +3,10 @@
 import { motion } from 'framer-motion';
 import TourCard from '@/components/TourCard';
 import { SlidersHorizontal } from 'lucide-react';
-
-import { ALL_TOURS } from '@/data/toursData';
+import { useTours } from '@/context/ToursContext';
 
 export default function ToursPage() {
+    const { allTours: ALL_TOURS } = useTours();
     return (
         <div className="pt-20 bg-cream min-h-screen">
             {/* Header */}

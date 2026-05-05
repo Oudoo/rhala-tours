@@ -83,9 +83,9 @@ export default function TourCard({ tour, index = 0 }: { tour: TourProps, index?:
                         {tour.duration}
                     </div>
                     {(tour.pricingOptions?.[0]?.price || tour.price) != null && (
-                        <div className="text-right leading-none">
-                            <span className="text-navy/50 text-[10px] uppercase font-bold tracking-wider block mb-1">From</span>
-                            <span className="text-navy font-bold text-lg">
+                        <div className="text-right leading-none bg-navy rounded-lg px-3 py-2">
+                            <span className="text-white/60 text-[10px] uppercase font-bold tracking-wider block mb-1">From</span>
+                            <span className="text-gold font-bold text-lg">
                                 ${(tour.pricingOptions?.[0]?.price || tour.price)?.toLocaleString()}
                             </span>
                         </div>

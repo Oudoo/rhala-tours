@@ -17,9 +17,12 @@ import {
     Users,
     MessageSquare,
     Inbox,
+    Package,
+    Sun,
 } from 'lucide-react';
+import { TourPackagesManager, DayToursManager, ResetCMSButton } from '@/components/admin/ToursCMS';
 
-type AdminTab = 'pending' | 'published' | 'inquiries';
+type AdminTab = 'inquiries' | 'tour-packages' | 'day-tours' | 'pending' | 'published';
 
 export default function AdminPage() {
     const { articles, approveArticle, rejectArticle, deleteArticle } = useJournal();
@@ -94,6 +97,23 @@ export default function AdminPage() {
                         )}
                     </button>
                     <button
+                        onClick={() => { setActiveTab('tour-packages'); setSelectedArticle(null); setSelectedInquiry(null); }}
+                        className={`w-full text-left p-3 rounded-lg flex items-center gap-2 transition-colors ${activeTab === 'tour-packages' ? 'bg-white/10 text-gold' : 'hover:bg-white/5'}`}
+                    >
+                        <Package size={16} />
+                        Tour Packages
+                    </button>
+                    <button
+                        onClick={() => { setActiveTab('day-tours'); setSelectedArticle(null); setSelectedInquiry(null); }}
+                        className={`w-full text-left p-3 rounded-lg flex items-center gap-2 transition-colors ${activeTab === 'day-tours' ? 'bg-white/10 text-gold' : 'hover:bg-white/5'}`}
+                    >
+                        <Sun size={16} />
+                        Day Tours
+                    </button>
+                    <div className="border-t border-white/10 my-4 pt-2">
+                        <p className="text-[10px] uppercase tracking-widest text-white/30 px-3 mb-2">Content</p>
+                    </div>
+                    <button
                         onClick={() => { setActiveTab('pending'); setSelectedArticle(null); setSelectedInquiry(null); }}
                         className={`w-full text-left p-3 rounded-lg flex justify-between items-center transition-colors ${activeTab === 'pending' ? 'bg-white/10 text-gold' : 'hover:bg-white/5'}`}
                     >
@@ -109,13 +129,16 @@ export default function AdminPage() {
                         <span>Published Stories</span>
                         <span className="text-xs opacity-50">{publishedArticles.length}</span>
                     </button>
+                    <div className="border-t border-white/10 my-4 pt-2">
+                        <ResetCMSButton />
+                    </div>
                 </nav>
             </aside>
 
             {/* Main Content */}
             <main className="flex-1 p-6 md:p-12 overflow-y-auto h-[calc(100vh-6rem)]">
                 <div className="max-w-6xl mx-auto">
-                    {activeTab === 'inquiries' ? (
+                    {activeTab === 'inquiries' && (
                         <InquiriesView
                             inquiries={inquiries}
                             selectedInquiry={selectedInquiry}
@@ -123,7 +146,10 @@ export default function AdminPage() {
                             onDelete={deleteInquiry}
                             onUpdateStatus={updateStatus}
                         />
-                    ) : (
+                    )}
+                    {activeTab === 'tour-packages' && <TourPackagesManager />}
+                    {activeTab === 'day-tours' && <DayToursManager />}
+                    {(activeTab === 'pending' || activeTab === 'published') && (
                         <ArticlesView
                             activeTab={activeTab}
                             pendingArticles={pendingArticles}
