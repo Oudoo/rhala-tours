@@ -102,7 +102,7 @@ export default function Navbar() {
                         <div key={link.name} className="relative group">
                             <Link
                                 href={link.href}
-                                className="text-navy hover:text-gold transition-colors font-medium text-xs tracking-wide flex items-center gap-1 py-4 whitespace-nowrap"
+                                className="text-navy hover:text-gold transition-colors font-medium text-[15px] tracking-wide flex items-center gap-1 py-4 whitespace-nowrap"
                             >
                                 {link.name}
                                 {link.dropdown && (
