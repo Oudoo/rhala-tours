@@ -1,7 +1,7 @@
-'use server';
+// 'use server';
 
 import { prisma } from '@/lib/prisma';
-import { revalidatePath } from 'next/cache';
+// import { revalidatePath } from 'next/cache';
 
 export async function getTourPackages() {
   const tours = await prisma.tourPackage.findMany();
@@ -42,15 +42,15 @@ export async function updateTourPackage(slug: string, data: any) {
       cancellationPolicy: data.cancellationPolicy,
     }
   });
-  revalidatePath('/tours-packages');
-  revalidatePath('/tours-packages/[slug]', 'page');
-  revalidatePath('/admin');
+  // revalidatePath('/tours-packages');
+  // revalidatePath('/tours-packages/[slug]', 'page');
+  // revalidatePath('/admin');
 }
 
 export async function deleteTourPackage(slug: string) {
   await prisma.tourPackage.delete({ where: { slug } });
-  revalidatePath('/tours-packages');
-  revalidatePath('/admin');
+  // revalidatePath('/tours-packages');
+  // revalidatePath('/admin');
 }
 
 export async function getDayTours() {
@@ -110,15 +110,15 @@ export async function updateDayTour(slug: string, data: any) {
       cancellationPolicy: data.cancellationPolicy,
     }
   });
-  revalidatePath('/day-tours');
-  revalidatePath('/day-tours/[slug]', 'page');
-  revalidatePath('/admin');
+  // revalidatePath('/day-tours');
+  // revalidatePath('/day-tours/[slug]', 'page');
+  // revalidatePath('/admin');
 }
 
 export async function deleteDayTour(slug: string) {
   await prisma.dayTour.delete({ where: { slug } });
-  revalidatePath('/day-tours');
-  revalidatePath('/admin');
+  // revalidatePath('/day-tours');
+  // revalidatePath('/admin');
 }
 
 export async function addTourPackage(data: any) {
@@ -147,8 +147,8 @@ export async function addTourPackage(data: any) {
       cancellationPolicy: data.cancellationPolicy,
     }
   });
-  revalidatePath('/tours-packages');
-  revalidatePath('/admin');
+  // revalidatePath('/tours-packages');
+  // revalidatePath('/admin');
 }
 
 export async function addDayTour(data: any) {
@@ -179,6 +179,6 @@ export async function addDayTour(data: any) {
       cancellationPolicy: data.cancellationPolicy,
     }
   });
-  revalidatePath('/day-tours');
-  revalidatePath('/admin');
+  // revalidatePath('/day-tours');
+  // revalidatePath('/admin');
 }

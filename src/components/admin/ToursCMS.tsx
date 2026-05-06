@@ -3,7 +3,7 @@
 import { useState, useEffect } from 'react';
 import { Tour } from '@/data/toursData';
 import { DayTour } from '@/data/dayToursData';
-import { getTourPackages, getDayTours, updateTourPackage, deleteTourPackage, addTourPackage, updateDayTour, deleteDayTour, addDayTour } from '@/actions/tours';
+// import { getTourPackages, getDayTours, updateTourPackage, deleteTourPackage, addTourPackage, updateDayTour, deleteDayTour, addDayTour } from '@/actions/tours';
 import { DURATION_GROUPS as STATIC_DURATION_GROUPS } from '@/data/toursData';
 import { DAY_TOUR_GROUPS as STATIC_DAY_TOUR_GROUPS } from '@/data/dayToursData';
 import {
@@ -20,10 +20,10 @@ export function TourPackagesManager() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   const fetchTours = async () => {
-    const allTours = await getTourPackages();
+    // For static preview: Use static data directly
     const groups = STATIC_DURATION_GROUPS.map(group => ({
       ...group,
-      tours: allTours.filter(t => t.groupId === group.label)
+      tours: group.tours || []
     }));
     setDurationGroups(groups);
   };
@@ -33,20 +33,17 @@ export function TourPackagesManager() {
   }, []);
 
   const handleUpdate = async (gi: number, ti: number, updated: Tour) => {
-    await updateTourPackage(updated.slug || '', updated);
-    await fetchTours();
+    alert("This is a static preview. Your changes to '" + updated.title + "' would be saved to the database in the production version.");
   };
 
   const handleDelete = async (slug: string) => {
     if (confirm('Delete this tour?')) {
-      await deleteTourPackage(slug);
-      await fetchTours();
+      alert("This is a static preview. This tour would be deleted from the database in the production version.");
     }
   };
 
   const handleAdd = async (newTour: Tour) => {
-    await addTourPackage(newTour);
-    await fetchTours();
+    alert("This is a static preview. New tours would be added to the database in the production version.");
   };
 
   const allCount = durationGroups.reduce((a, g) => a + g.tours.length, 0);
@@ -136,10 +133,10 @@ export function DayToursManager() {
   const [expanded, setExpanded] = useState<number | null>(null);
 
   const fetchTours = async () => {
-    const allTours = await getDayTours();
+    // For static preview: Use static data directly
     const groups = STATIC_DAY_TOUR_GROUPS.map(group => ({
       ...group,
-      tours: allTours.filter(t => t.groupId === group.id)
+      tours: group.tours || []
     }));
     setDayTourGroups(groups);
   };
@@ -149,20 +146,17 @@ export function DayToursManager() {
   }, []);
 
   const handleUpdate = async (gi: number, ti: number, updated: DayTour) => {
-    await updateDayTour(updated.slug || '', updated);
-    await fetchTours();
+    alert("This is a static preview. Your changes to '" + updated.title + "' would be saved to the database in the production version.");
   };
 
   const handleDelete = async (slug: string) => {
     if (confirm('Delete this tour?')) {
-      await deleteDayTour(slug);
-      await fetchTours();
+      alert("This is a static preview. This tour would be deleted from the database in the production version.");
     }
   };
 
   const handleAdd = async (newTour: DayTour) => {
-    await addDayTour(newTour);
-    await fetchTours();
+    alert("This is a static preview. New day tours would be added to the database in the production version.");
   };
 
   const allCount = dayTourGroups.reduce((a, g) => a + g.tours.length, 0);

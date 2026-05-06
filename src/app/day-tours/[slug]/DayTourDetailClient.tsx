@@ -53,7 +53,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
             <span className="bg-gold text-navy px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">
               {tour.category}
             </span>
-            {tour.tags.map((tag) => (
+            {tour.tags.map((tag: string) => (
               <span
                 key={tag}
                 className="bg-white/20 backdrop-blur-md text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider"
@@ -115,7 +115,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                   What Makes This Tour Special
                 </h2>
                 <ul className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                  {tour.highlights.map((h, i) => (
+                  {tour.highlights.map((h: string, i: number) => (
                     <li key={i} className="flex items-start gap-3 bg-white rounded-xl p-4 shadow-sm border border-navy/5">
                       <ChevronRight size={18} className="text-gold shrink-0 mt-0.5" />
                       <span className="text-navy/80 text-sm leading-snug">{h}</span>
@@ -133,7 +133,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
               </h2>
 
               <div className="space-y-0">
-                {tour.itinerary.map((stop, i) => (
+                {tour.itinerary.map((stop: any, i: number) => (
                   <div key={stop.stop} className="flex gap-5 group">
                     <div className="flex flex-col items-center shrink-0">
                       <div className="w-11 h-11 rounded-full bg-navy text-gold font-bold flex items-center justify-center text-sm group-hover:bg-gold group-hover:text-navy transition-colors shadow-sm">
@@ -168,7 +168,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                     What&apos;s Included
                   </h3>
                   <ul className="space-y-3">
-                    {tour.included.map((item, i) => (
+                    {tour.included.map((item: string, i: number) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-navy/80">
                         <CheckCircle size={15} className="text-emerald-500 shrink-0 mt-0.5" />
                         {item}
@@ -183,7 +183,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                     Not Included
                   </h3>
                   <ul className="space-y-3">
-                    {tour.excluded.map((item, i) => (
+                    {tour.excluded.map((item: string, i: number) => (
                       <li key={i} className="flex items-start gap-3 text-sm text-navy/80">
                         <XCircle size={15} className="text-red-400 shrink-0 mt-0.5" />
                         {item}
@@ -202,7 +202,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                   Important Information
                 </h2>
                 <ul className="bg-white rounded-2xl p-6 shadow-sm border border-navy/5 space-y-3">
-                  {tour.importantNotes.map((note, i) => (
+                  {tour.importantNotes.map((note: string, i: number) => (
                     <li key={i} className="flex items-start gap-3 text-sm text-navy/80">
                       <span className="w-1.5 h-1.5 rounded-full bg-gold shrink-0 mt-2" />
                       {note}
@@ -261,7 +261,7 @@ export default function DayTourDetailClient({ tour }: { tour: any }) {
                     Pricing Breakdown
                   </h4>
                   <div className="space-y-3">
-                    {tour.pricingOptions.map((opt, i) => (
+                    {tour.pricingOptions.map((opt: any, i: number) => (
                       <div key={i} className="flex justify-between items-start">
                         <div>
                           <p className="text-sm font-bold text-navy">{opt.title}</p>

@@ -1,7 +1,7 @@
-'use server';
+// 'use server';
 
 import { prisma } from '@/lib/prisma';
-import { revalidatePath } from 'next/cache';
+// import { revalidatePath } from 'next/cache';
 
 export async function getBookings() {
   return await prisma.bookingInquiry.findMany({
@@ -27,7 +27,7 @@ export async function addBooking(data: {
       status: 'new'
     }
   });
-  revalidatePath('/admin');
+  // revalidatePath('/admin');
   return newBooking;
 }
 
@@ -36,12 +36,12 @@ export async function updateBookingStatus(id: string, status: string) {
     where: { id },
     data: { status }
   });
-  revalidatePath('/admin');
+  // revalidatePath('/admin');
 }
 
 export async function deleteBooking(id: string) {
   await prisma.bookingInquiry.delete({
     where: { id }
   });
-  revalidatePath('/admin');
+  // revalidatePath('/admin');
 }

@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { addBooking } from '@/actions/bookings';
 import { CheckCircle, Loader2, Send, Sparkles } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -37,17 +36,10 @@ export default function BookingForm({
         // Small delay to show spinner
         await new Promise((r) => setTimeout(r, 800));
 
-        await addBooking({
-            fullName,
-            email,
-            phone,
-            isWhatsApp,
-            country,
-            arrivalDate,
-            adults,
-            children,
-            extraInfo,
-            sourcePage,
+        // For static export: store locally; will be replaced with server action on Hostinger
+        console.log('Booking inquiry:', {
+            fullName, email, phone, isWhatsApp, country,
+            arrivalDate, adults, children, extraInfo, sourcePage,
         });
 
         setIsSubmitting(false);

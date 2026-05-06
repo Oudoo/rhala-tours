@@ -1,7 +1,6 @@
-import { getTourPackages } from '@/actions/tours';
 import ToursClient from './ToursClient';
+import { ALL_TOURS } from '@/data/toursData';
 
-export default async function ToursPage() {
-    const allTours = await getTourPackages();
-    return <ToursClient allTours={allTours} />;
+export default function ToursPage() {
+    return <ToursClient allTours={ALL_TOURS} />;
 }
