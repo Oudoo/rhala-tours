@@ -1,9 +1,11 @@
 'use client';
 
-import { useState } from 'react';
-import { useTours } from '@/context/ToursContext';
+import { useState, useEffect } from 'react';
 import { Tour } from '@/data/toursData';
 import { DayTour } from '@/data/dayToursData';
+// import { getTourPackages, getDayTours, updateTourPackage, deleteTourPackage, addTourPackage, updateDayTour, deleteDayTour, addDayTour } from '@/actions/tours';
+import { DURATION_GROUPS as STATIC_DURATION_GROUPS } from '@/data/toursData';
+import { DAY_TOUR_GROUPS as STATIC_DAY_TOUR_GROUPS } from '@/data/dayToursData';
 import {
   Pencil, Trash2, Plus, X, Save, DollarSign, ChevronDown, ChevronUp, RotateCcw,
 } from 'lucide-react';
@@ -12,10 +14,37 @@ import {
 //  Tour Packages Tab
 // ─────────────────────────────────────────────────────────────
 export function TourPackagesManager() {
-  const { durationGroups, updateTourPackage, deleteTourPackage, addTourPackage } = useTours();
+  const [durationGroups, setDurationGroups] = useState<any[]>([]);
   const [editing, setEditing] = useState<{ gi: number; ti: number; tour: Tour } | null>(null);
   const [adding, setAdding] = useState<number | null>(null);
   const [expanded, setExpanded] = useState<number | null>(null);
+
+  const fetchTours = async () => {
+    // For static preview: Use static data directly
+    const groups = STATIC_DURATION_GROUPS.map(group => ({
+      ...group,
+      tours: group.tours || []
+    }));
+    setDurationGroups(groups);
+  };
+
+  useEffect(() => {
+    fetchTours();
+  }, []);
+
+  const handleUpdate = async (gi: number, ti: number, updated: Tour) => {
+    alert("This is a static preview. Your changes to '" + updated.title + "' would be saved to the database in the production version.");
+  };
+
+  const handleDelete = async (slug: string) => {
+    if (confirm('Delete this tour?')) {
+      alert("This is a static preview. This tour would be deleted from the database in the production version.");
+    }
+  };
+
+  const handleAdd = async (newTour: Tour) => {
+    alert("This is a static preview. New tours would be added to the database in the production version.");
+  };
 
   const allCount = durationGroups.reduce((a, g) => a + g.tours.length, 0);
 
@@ -43,7 +72,7 @@ export function TourPackagesManager() {
 
           {expanded === gi && (
             <div className="mt-2 space-y-2">
-              {group.tours.map((tour, ti) => (
+              {group.tours.map((tour: any, ti: number) => (
                 <div key={ti} className="bg-white rounded-lg p-4 shadow-sm border border-navy/5 flex items-center gap-4">
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-navy text-sm truncate">{tour.title}</p>
@@ -58,7 +87,7 @@ export function TourPackagesManager() {
                     </div>
                   </div>
                   <button onClick={() => setEditing({ gi, ti, tour: { ...tour } })} className="p-2 text-gold hover:bg-gold/10 rounded-lg"><Pencil size={16} /></button>
-                  <button onClick={() => { if (confirm('Delete this tour?')) deleteTourPackage(gi, ti); }} className="p-2 text-red-400 hover:bg-red-50 rounded-lg"><Trash2 size={16} /></button>
+                  <button onClick={() => handleDelete(tour.slug)} className="p-2 text-red-400 hover:bg-red-50 rounded-lg"><Trash2 size={16} /></button>
                 </div>
               ))}
               <button
@@ -76,7 +105,7 @@ export function TourPackagesManager() {
       {editing && (
         <TourEditModal
           tour={editing.tour}
-          onSave={(updated) => { updateTourPackage(editing.gi, editing.ti, updated); setEditing(null); }}
+          onSave={(updated) => { handleUpdate(editing.gi, editing.ti, updated); setEditing(null); }}
           onClose={() => setEditing(null)}
         />
       )}
@@ -86,7 +115,7 @@ export function TourPackagesManager() {
         <TourEditModal
           tour={createBlankTour(durationGroups[adding].durationDays)}
           isNew
-          onSave={(newTour) => { addTourPackage(adding, newTour); setAdding(null); }}
+          onSave={(newTour) => { handleAdd(newTour); setAdding(null); }}
           onClose={() => setAdding(null)}
         />
       )}
@@ -98,10 +127,37 @@ export function TourPackagesManager() {
 //  Day Tours Tab
 // ─────────────────────────────────────────────────────────────
 export function DayToursManager() {
-  const { dayTourGroups, updateDayTour, deleteDayTour, addDayTour } = useTours();
+  const [dayTourGroups, setDayTourGroups] = useState<any[]>([]);
   const [editing, setEditing] = useState<{ gi: number; ti: number; tour: DayTour } | null>(null);
   const [adding, setAdding] = useState<number | null>(null);
   const [expanded, setExpanded] = useState<number | null>(null);
+
+  const fetchTours = async () => {
+    // For static preview: Use static data directly
+    const groups = STATIC_DAY_TOUR_GROUPS.map(group => ({
+      ...group,
+      tours: group.tours || []
+    }));
+    setDayTourGroups(groups);
+  };
+
+  useEffect(() => {
+    fetchTours();
+  }, []);
+
+  const handleUpdate = async (gi: number, ti: number, updated: DayTour) => {
+    alert("This is a static preview. Your changes to '" + updated.title + "' would be saved to the database in the production version.");
+  };
+
+  const handleDelete = async (slug: string) => {
+    if (confirm('Delete this tour?')) {
+      alert("This is a static preview. This tour would be deleted from the database in the production version.");
+    }
+  };
+
+  const handleAdd = async (newTour: DayTour) => {
+    alert("This is a static preview. New day tours would be added to the database in the production version.");
+  };
 
   const allCount = dayTourGroups.reduce((a, g) => a + g.tours.length, 0);
 
@@ -127,7 +183,7 @@ export function DayToursManager() {
 
           {expanded === gi && (
             <div className="mt-2 space-y-2">
-              {group.tours.map((tour, ti) => (
+              {group.tours.map((tour: any, ti: number) => (
                 <div key={ti} className="bg-white rounded-lg p-4 shadow-sm border border-navy/5 flex items-center gap-4">
                   <div className="flex-1 min-w-0">
                     <p className="font-bold text-navy text-sm truncate">{tour.title}</p>
@@ -137,7 +193,7 @@ export function DayToursManager() {
                     </div>
                   </div>
                   <button onClick={() => setEditing({ gi, ti, tour: { ...tour } })} className="p-2 text-gold hover:bg-gold/10 rounded-lg"><Pencil size={16} /></button>
-                  <button onClick={() => { if (confirm('Delete this tour?')) deleteDayTour(gi, ti); }} className="p-2 text-red-400 hover:bg-red-50 rounded-lg"><Trash2 size={16} /></button>
+                  <button onClick={() => handleDelete(tour.slug)} className="p-2 text-red-400 hover:bg-red-50 rounded-lg"><Trash2 size={16} /></button>
                 </div>
               ))}
               <button
@@ -154,7 +210,7 @@ export function DayToursManager() {
       {editing && (
         <DayTourEditModal
           tour={editing.tour}
-          onSave={(updated) => { updateDayTour(editing.gi, editing.ti, updated); setEditing(null); }}
+          onSave={(updated) => { handleUpdate(editing.gi, editing.ti, updated); setEditing(null); }}
           onClose={() => setEditing(null)}
         />
       )}
@@ -163,7 +219,7 @@ export function DayToursManager() {
         <DayTourEditModal
           tour={createBlankDayTour(dayTourGroups[adding].title)}
           isNew
-          onSave={(newTour) => { addDayTour(adding, newTour); setAdding(null); }}
+          onSave={(newTour) => { handleAdd(newTour); setAdding(null); }}
           onClose={() => setAdding(null)}
         />
       )}
@@ -175,15 +231,7 @@ export function DayToursManager() {
 //  Reset CMS Button
 // ─────────────────────────────────────────────────────────────
 export function ResetCMSButton() {
-  const { resetToDefaults } = useTours();
-  return (
-    <button
-      onClick={() => { if (confirm('Reset all tour data to defaults? This cannot be undone.')) resetToDefaults(); }}
-      className="w-full text-left p-3 rounded-lg flex items-center gap-2 text-red-400 hover:bg-red-500/10 transition-colors text-sm"
-    >
-      <RotateCcw size={14} /> Reset CMS Data
-    </button>
-  );
+  return null; // Disabled for DB phase, rely on seed script
 }
 
 // ─────────────────────────────────────────────────────────────

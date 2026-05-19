@@ -12,21 +12,21 @@ const EXPERIENCES = [
         title: "Hidden Local Cafes",
         icon: Coffee,
         description: "Escape the tourist traps and sip traditional Egyptian coffee (Ahwa) or mint tea in centuries-old cafes hidden in the bustling alleys of Islamic Cairo or historic Alexandria. Mix with the locals, play backgammon, and soak in the authentic atmosphere.",
-        image: "https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=1000&auto=format&fit=crop",
+        image: "/tours-packages/Hanging-Church-in-Egypt-768x600.png",
     },
     {
         id: "walking",
         title: "Authentic Walking Tours",
         icon: Map,
         description: "Wander through vibrant local markets, historical neighborhoods, and secret passageways with our expert local guides. From the aromatic spice markets of Khan el-Khalili to the vivid streets of Aswan, experience the colors and sounds of everyday Egyptian life.",
-        image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?q=80&w=1000&auto=format&fit=crop",
+        image: "/tours-packages/alex-Citadel-of-Qaitbay-egypt-768x600.png",
     },
     {
         id: "motorcycle",
         title: "Motorcycle City Rides",
         icon: Compass,
         description: "Feel the pulse of the city on a guided motorcycle tour. Safely navigate the energetic streets of Cairo at dusk, coast along the Alexandrian corniche, or weave through the relaxed vibes of Dahab for an unmatched perspective.",
-        image: "https://images.unsplash.com/photo-1558981403-c5f9899a28bc?q=80&w=1000&auto=format&fit=crop",
+        image: "/tours-packages/Abydos-768x600.png",
     }
 ];
 
@@ -36,7 +36,7 @@ export default function LocalExperiencesPage() {
             {/* Hero Section */}
             <section className="relative h-[60vh] min-h-[500px] flex items-center justify-center overflow-hidden">
                 <Image
-                    src="https://images.unsplash.com/photo-1539655823528-76ad895311e3?q=80&w=2000&auto=format&fit=crop"
+                    src="/tours-packages/Karnak-Temple-768x600.png"
                     alt="Authentic Egyptian Local Market"
                     fill
                     className="object-cover"

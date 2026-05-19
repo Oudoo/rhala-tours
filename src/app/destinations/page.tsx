@@ -7,42 +7,50 @@ const DESTINATIONS = [
     {
         name: "Cairo",
         image: "/tours-packages/The-Great-Pyramids-768x600.png",
-        description: "The city of a thousand minarets, home to the Great Pyramids and the Sphinx."
+        description: "The city of a thousand minarets, home to the Great Pyramids and the Sphinx.",
+        href: "/day-tours#cairo-day-tours"
     },
     {
         name: "Luxor",
         image: "/tours-packages/Luxor-Temple-egypt-768x600.png",
-        description: "The world's greatest open-air museum, featuring Karnak and the Valley of the Kings."
+        description: "The world's greatest open-air museum, featuring Karnak and the Valley of the Kings.",
+        href: "/day-tours#luxor-day-tours"
     },
     {
         name: "Aswan",
         image: "/tours-packages/nile-cruise-768x600.png",
-        description: "A serene city on the Nile, famous for its Nubian culture and the Philae Temple."
+        description: "A serene city on the Nile, famous for its Nubian culture and the Philae Temple.",
+        href: "/day-tours#aswan-day-tours"
     },
     {
         name: "Alexandria",
         image: "/tours-packages/alex-Citadel-of-Qaitbay-egypt-768x600.png",
-        description: "The Pearl of the Mediterranean, founded by Alexander the Great."
+        description: "The Pearl of the Mediterranean, founded by Alexander the Great.",
+        href: "/day-tours#alexandria-day-tours"
     },
     {
         name: "Siwa Oasis",
         image: "/tours-packages/Deir-el-Bahri-768x600.png",
-        description: "An urban oasis in the Western Desert, known for its distinct culture and salt lakes."
+        description: "An urban oasis in the Western Desert, known for its distinct culture and salt lakes.",
+        href: "/day-tours"
     },
     {
         name: "Hurghada",
         image: "/tours-packages/hurghada-beaches-768x600.png",
-        description: "A premier red sea resort town with stunning coral reefs and sandy beaches."
+        description: "A premier red sea resort town with stunning coral reefs and sandy beaches.",
+        href: "/day-tours#red-sea-sinai-day-tours"
     },
     {
         name: "Dahab",
         image: "/tours-packages/Beach-in-Hurghada-egypt-768x600.png",
-        description: "A laid-back coastal town, a diver's paradise and a hub for windsurfing."
+        description: "A laid-back coastal town, a diver's paradise and a hub for windsurfing.",
+        href: "/day-tours#red-sea-sinai-day-tours"
     },
     {
         name: "White Desert",
         image: "/tours-packages/Island-of-Agilika-egypt-768x600.png",
-        description: "A surreal landscape of chalk rock formations created by sandstorms."
+        description: "A surreal landscape of chalk rock formations created by sandstorms.",
+        href: "/day-tours"
     }
 ];
 

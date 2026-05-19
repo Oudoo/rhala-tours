@@ -19,7 +19,7 @@ export default function HoneymoonPage() {
             {/* Romantic Hero Section */}
             <section className="relative h-[80vh] min-h-[600px] flex items-center justify-center overflow-hidden">
                 <Image
-                    src="https://images.unsplash.com/photo-1548685913-68d2ca38de4f?q=80&w=2000&auto=format&fit=crop"
+                    src="/tours-packages/nile-cruise-luxor-2-768x600.png"
                     alt="Couple enjoying a romantic trip in Egypt"
                     fill
                     className="object-cover"

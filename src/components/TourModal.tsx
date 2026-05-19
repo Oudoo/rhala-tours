@@ -94,9 +94,9 @@ export default function TourModal({ isOpen, onClose, tour }: TourModalProps) {
                                 </div>
                                 
                                 {/* Dynamic Pricing Header */}
-                                <div className="bg-white/10 backdrop-blur-md rounded-2xl p-4 border border-white/20 shrink-0 text-right hidden md:block">
-                                    <p className="text-white/70 text-sm uppercase tracking-wider mb-1 font-bold">Starting from</p>
-                                    <p className="text-white text-3xl font-bold">${displayPrice}</p>
+                                <div className="bg-gold rounded-2xl p-4 shadow-xl shrink-0 text-right hidden md:block">
+                                    <p className="text-navy/80 text-sm uppercase tracking-wider mb-1 font-black">Starting from</p>
+                                    <p className="text-navy text-3xl font-black">${displayPrice}</p>
                                 </div>
                             </div>
                         </div>

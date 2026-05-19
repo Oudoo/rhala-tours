@@ -1,5 +1,7 @@
 export interface Tour {
+  slug?: string;
   title: string;
+  subtitle?: string;
   duration: string;
   durationDays: number;
   image: string;
@@ -77,12 +79,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -132,12 +135,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -187,12 +191,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -241,12 +246,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -296,12 +302,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -360,12 +367,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -416,12 +424,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -481,12 +490,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -547,12 +557,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -614,12 +625,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -673,12 +685,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -732,12 +745,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -800,12 +814,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -860,12 +875,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -929,12 +945,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -990,12 +1007,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -1060,12 +1078,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -1122,12 +1141,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -1193,12 +1213,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -1256,12 +1277,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -1328,12 +1350,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -1401,12 +1424,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -1468,12 +1492,13 @@ export const DURATION_GROUPS: DurationGroup[] = [
         ],
         included: [
           "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)",
           "All Transfers by Private A/C Vehicle",
           "Hotel/Airport Pickup & Drop-off",
                     "Bottled Water & Snacks"
         ],
         excluded: [
-          "Entrance Fees to Sites",
+          "Entrance fees to all sites",
           "Meals (Lunch & Dinner)",
           "International Flights & Airfare",
           "Entry Visa to Egypt",
@@ -1499,7 +1524,7 @@ export const DURATION_GROUPS: DurationGroup[] = [
         title: "Egypt Romantic Holiday- Nile Cruise & Sharm El Sheikh",
         duration: "12 Days / 11 Nights",
         durationDays: 12,
-        image: "https://images.unsplash.com/photo-1544413647-79f04ca38247?q=80&w=1470&auto=format&fit=crop",
+        image: "/tours-packages/nile-cruise-luxor-768x600.png",
         description: "Experience the ultimate romantic getaway with a magical Nile cruise combined with the sun-drenched beaches of Sharm El Sheikh.",
         tags: ["Honeymoon", "Nile Cruise", "Beach", "Romantic"],
         category: "Honeymoon",
@@ -1528,8 +1553,10 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Romantic beach stay in Sharm El Sheikh",
           "VIP transfers and special honeymoon amenities"
         ],
-        included: ["5-Star Hotel & Cruise", "Domestic Flights", "Private Egyptologist Guide", "Honeymoon special setup"],
-        excluded: ["International airfare", "Tipping", "Optional excursions"],
+        included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)","5-Star Hotel & Cruise", "Domestic Flights", "Private Egyptologist Guide", "Honeymoon special setup"],
+        excluded: [
+          "Entrance fees to all sites","International airfare", "Tipping", "Optional excursions"],
         cancellationPolicy: "Free cancellation up to 30 days before departure.",
         reviews: { rating: 5.0, count: 48 }
       },
@@ -1537,7 +1564,7 @@ export const DURATION_GROUPS: DurationGroup[] = [
         title: "Egypt Romantic Vacation- Nile & The Red Sea",
         duration: "15 Days / 14 Nights",
         durationDays: 15,
-        image: "https://images.unsplash.com/photo-1512100356132-d3224d4586d3?q=80&w=1470&auto=format&fit=crop",
+        image: "/tours-packages/hurghada-beaches-768x600.png",
         description: "A grand 15-day romantic odyssey covering the best of Egypt, from the ancient wonders of Cairo to the serenity of a Nile cruise and the tropical paradise of the Red Sea.",
         tags: ["Grand Tour", "Red Sea", "Nile Cruise", "Honeymoon", "Romantic"],
         category: "Honeymoon",
@@ -1569,8 +1596,10 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Balanced mix of history and relaxation",
           "Expert private Egyptologist guides"
         ],
-        included: ["All accommodations", "Domestic flights", "Nile Cruise", "Private transfers", "Most meals"],
-        excluded: ["Visa", "International travel", "Tipping"],
+        included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)","All accommodations", "Domestic flights", "Nile Cruise", "Private transfers", "Most meals"],
+        excluded: [
+          "Entrance fees to all sites","Visa", "International travel", "Tipping"],
         cancellationPolicy: "Flexible cancellation up to 45 days before departure.",
         reviews: { rating: 4.9, count: 62 }
       },
@@ -1578,7 +1607,7 @@ export const DURATION_GROUPS: DurationGroup[] = [
         title: "Beauty of The Nile Tour",
         duration: "12 Days / 11 Nights",
         durationDays: 12,
-        image: "https://images.unsplash.com/photo-1544413647-79f04ca38247?q=80&w=1470&auto=format&fit=crop",
+        image: "/tours-packages/nile-cruise-768x600.png",
         description: "An elegant and culturally rich journey focusing on the timeless beauty of the Nile River and the monumental history that lines its banks.",
         tags: ["Culture", "Nile", "History", "Classic", "Honeymoon", "Romantic"],
         category: "Honeymoon",
@@ -1607,8 +1636,10 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Scenic felucca ride at sunset",
           "Visits to multiple UNESCO World Heritage sites"
         ],
-        included: ["Boutique hotels", "Domestic airfare", "Private guide", "Entrance fees"],
-        excluded: ["Tipping", "Personal items", "Lunches and dinners in cities"],
+        included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)","Boutique hotels", "Domestic airfare", "Private guide", ],
+        excluded: [
+          "Entrance fees to all sites","Tipping", "Personal items", "Lunches and dinners in cities"],
         cancellationPolicy: "Standard cancellation policy applies.",
         reviews: { rating: 4.8, count: 34 }
       },
@@ -1616,7 +1647,7 @@ export const DURATION_GROUPS: DurationGroup[] = [
         title: "Egypt Luxury Honeymoon Holiday",
         duration: "14 Days / 13 Nights",
         durationDays: 14,
-        image: "https://images.unsplash.com/photo-1503177119275-0aa32b3a9368?q=80&w=1471&auto=format&fit=crop",
+        image: "/tours-packages/Luxor-Temple-tour-egypt-768x600.png",
         description: "Indulge in pure luxury with this 14-day dedicated honeymoon experience, featuring only the finest resorts and a private cruise section.",
         tags: ["Luxury", "Honeymoon", "Private", "Elite", "Romantic"],
         category: "Honeymoon",
@@ -1647,8 +1678,10 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "Dedicated 24/7 concierge service",
           "Private yacht and limousine transfers"
         ],
-        included: ["All inclusive luxury stay", "Private yacht", "VIP airport services", "Special photography session"],
-        excluded: ["International travel", "Personal shopping"],
+        included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)","All inclusive luxury stay", "Private yacht", "VIP airport services", "Special photography session"],
+        excluded: [
+          "Entrance fees to all sites","International travel", "Personal shopping"],
         cancellationPolicy: "Strict but fair - please inquire for details.",
         reviews: { rating: 5.0, count: 21 }
       },
@@ -1656,7 +1689,7 @@ export const DURATION_GROUPS: DurationGroup[] = [
         title: "Long Nile Cruise from Cairo to Aswan",
         duration: "15 Days / 14 Nights",
         durationDays: 15,
-        image: "https://images.unsplash.com/photo-1544413647-79f04ca38247?q=80&w=1470&auto=format&fit=crop",
+        image: "/tours-packages/nile-cruise-luxor-2-768x600.png",
         description: "The rarest of Egyptian experiences: a full 15-day cruise starting from Cairo and sailing all the way south to Aswan, visiting the rarely seen sites of Middle Egypt.",
         tags: ["Rare", "Epic", "Nile Cruise", "Deep History", "Honeymoon", "Romantic"],
         category: "Honeymoon",
@@ -1688,8 +1721,10 @@ export const DURATION_GROUPS: DurationGroup[] = [
           "The most relaxed and immersive way to see the Nile",
           "Includes the full Nile valley from north to south"
         ],
-        included: ["Full board on cruise", "All shore excursions", "Expert Egyptologist", "Airport transfers"],
-        excluded: ["Drinks on board", "Tipping", "Optional activities"],
+        included: [
+          "A private certified English Speaking Egyptologist During all day tours (All languages are available for extra charge)","Full board on cruise", "All shore excursions", "Expert Egyptologist", "Airport transfers"],
+        excluded: [
+          "Entrance fees to all sites","Drinks on board", "Tipping", "Optional activities"],
         cancellationPolicy: "60-day notice for full refund due to limited availability.",
         reviews: { rating: 4.7, count: 56 }
       },
